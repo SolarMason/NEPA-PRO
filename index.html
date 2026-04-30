@@ -2083,7 +2083,7 @@ document.querySelectorAll('.plan-cta, .od-cta, .el-cta, .bundle-cta').forEach(bt
   });
 
   // Show iOS prompt after a small delay so users see content first
-  if (isIOS) setTimeout(() => banner.classList.add('show'), 4500);
+  // iOS install banner auto-trigger removed — was intercepting taps and feeling intrusive.
 })();
 
 
