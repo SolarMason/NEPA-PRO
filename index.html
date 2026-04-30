@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
 <title>NEPA-PRO — Property Care on Subscription · Since 1987</title>
-<meta name="description" content="NEPA-PRO delivers expert property maintenance across Northeast Pennsylvania on a simple monthly plan. Routine maintenance, repairs, renovations, solar, electrical & plumbing — handled." />
+<meta name="description" content="NEPA-PRO is your home's autopilot. Expert property maintenance across Northeast Pennsylvania on a simple monthly plan — maintenance, repairs, renovations, solar, electrical & plumbing." />
 <!-- Favicons & PWA -->
 <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -18,20 +18,20 @@
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="NEPA-PRO" />
-<meta property="og:title" content="NEPA-PRO · Your home, handled." />
+<meta property="og:title" content="NEPA-PRO · Your Home's Autopilot." />
 <meta property="og:description" content="Northeast Pennsylvania's all-in-one property service team. Maintenance, repairs, solar, electrical, plumbing, IT, lawn & snow — on a simple monthly plan." />
 <meta property="og:url" content="https://nepa-pro.com/" />
 <meta property="og:image" content="https://nepa-pro.com/og-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="NEPA-PRO — Your home, handled. Property care subscription plans for Northeast Pennsylvania." />
+<meta property="og:image:alt" content="NEPA-PRO — Your Home's Autopilot. Property care subscription plans for Northeast Pennsylvania." />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="NEPA-PRO · Your home, handled." />
+<meta name="twitter:title" content="NEPA-PRO · Your Home's Autopilot." />
 <meta name="twitter:description" content="Northeast Pennsylvania's all-in-one property service team. Maintenance, repairs, solar, electrical, plumbing, IT, lawn & snow — on a simple monthly plan." />
 <meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
-<meta name="twitter:image:alt" content="NEPA-PRO — Your home, handled." />
+<meta name="twitter:image:alt" content="NEPA-PRO — Your Home's Autopilot." />
 
 <!-- iOS Web App / PWA -->
 <meta name="mobile-web-app-capable" content="yes" />
@@ -127,9 +127,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .appbar {
   position: sticky; top: 0; z-index: 50;
   padding-top: var(--safe-top);
-  background: rgba(11, 31, 58, .85);
-  backdrop-filter: saturate(160%) blur(18px);
-  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  background: #0B1F3A;
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
@@ -969,9 +967,7 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
 .tabbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
   padding: 8px 16px calc(8px + var(--safe-bottom));
-  background: rgba(255,255,255,.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: #FFFFFF;
   border-top: 1px solid var(--hairline);
 }
 .tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
@@ -1134,7 +1130,7 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   <div class="wrap hero-inner">
     <span class="eyebrow"><span class="badge-dot"></span> Property care, on subscription</span>
     <h1 class="display">
-      Your home, <em>handled</em>.<br/>
+      Your Home's <em>Autopilot.</em><br/>
       Every month. By NEPA-PRO.
     </h1>
     <p class="lede">
@@ -2090,25 +2086,7 @@ document.querySelectorAll('.plan-cta, .od-cta, .el-cta, .bundle-cta').forEach(bt
   if (isIOS) setTimeout(() => banner.classList.add('show'), 4500);
 })();
 
-/* =================================================================
-   5) Active tab in bottom bar — Home & Plans only (other tabs are pages)
-   ================================================================= */
-(function () {
-  const tabs = document.querySelectorAll('.tab');
-  if (!tabs.length) return;
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(en => {
-      if (en.isIntersecting) {
-        tabs.forEach(t => t.classList.remove('active'));
-        if (en.target.id === 'pricing') tabs[1] && tabs[1].classList.add('active');
-        else tabs[0] && tabs[0].classList.add('active');
-      }
-    });
-  }, { threshold: 0.4 });
-  ['hero','pricing','outdoor','elder','services','proof','cta'].forEach(id => {
-    const el = document.getElementById(id); el && obs.observe(el);
-  });
-})();
+
 </script>
 
 </body>

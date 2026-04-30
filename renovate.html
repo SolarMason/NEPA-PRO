@@ -59,7 +59,7 @@
   --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --tabbar-h: 62px;
+  --tabbar-h: 76px;
   --actionbar-h: 80px;
 }
 
@@ -82,8 +82,7 @@ input, select, textarea { font: inherit; }
 /* App bar */
 .appbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-  background: rgba(11, 31, 58, 0.92);
-  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  background: #0B1F3A; -webkit-
   border-bottom: 1px solid rgba(255,255,255,0.06);
   padding-top: var(--safe-top);
 }
@@ -537,12 +536,11 @@ input, select, textarea { font: inherit; }
 /* Action bar — sticky bottom */
 .action-bar {
   position: fixed;
-  bottom: var(--tabbar-h); left: 0; right: 0; z-index: 55;
+  bottom: calc(var(--tabbar-h) + var(--safe-bottom)); left: 0; right: 0; z-index: 65;
   background: rgba(255,255,255,0.96);
   backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-top: 1px solid var(--hairline-strong);
   padding: 10px 16px;
-  padding-bottom: 10px;
   box-shadow: 0 -4px 20px -8px rgba(7,23,46,.20);
 }
 .action-bar-inner {
@@ -611,11 +609,10 @@ input, select, textarea { font: inherit; }
 
 /* Tab bar */
 .tabbar {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  padding: 8px 16px calc(8px + var(--safe-bottom));
+  background: #FFFFFF;
   border-top: 1px solid var(--hairline);
-  padding: 6px 4px calc(6px + var(--safe-bottom));
 }
 .tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
 .tab {
