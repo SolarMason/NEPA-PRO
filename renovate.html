@@ -1,0 +1,2050 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>Renovation Estimator · NEPA-PRO</title>
+<meta name="description" content="Plan your full-scope renovation with realistic NEPA pricing. Itemized estimate, choose Basic / Standard / Premium finish levels, generate a branded PDF." />
+
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="Renovation Estimator · NEPA-PRO" />
+<meta property="og:description" content="Plan your full-scope renovation with realistic NEPA pricing. Itemized line-by-line, branded PDF estimate." />
+<meta property="og:url" content="https://nepa-pro.com/renovate" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Renovation Estimator · NEPA-PRO" />
+<meta name="twitter:description" content="Plan your full-scope renovation with realistic NEPA pricing." />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+
+<style>
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --ios-blue-pressed: #0066CC;
+  --ios-green: #34C759;
+  --ios-red: #FF3B30;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --bg-tint-2: #E5EAF2;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 62px;
+  --actionbar-h: 80px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  padding-top: calc(var(--safe-top) + 56px);
+  padding-bottom: calc(var(--actionbar-h) + var(--tabbar-h) + var(--safe-bottom));
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ios-blue); text-decoration: none; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+button { font: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; }
+
+/* App bar */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11, 31, 58, 0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--safe-top);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; max-width: 1100px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 8px 18px -8px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name { font-weight: 800; letter-spacing: .02em; line-height: 1; font-size: 18px; }
+.brand-name .accent { color: var(--amber-500); }
+.brand-sub { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 700; font-size: 13px; text-decoration: none;
+}
+
+/* Hero */
+.page-hero {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 70%, var(--bg) 100%);
+  padding: 28px 0 64px; color: #fff;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; right: -100px; top: -50px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,122,26,.18) 0%, transparent 70%);
+  filter: blur(40px);
+}
+.crumbs { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 14px; position: relative; z-index: 1; }
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs .sep { margin: 0 8px; opacity: .4; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.08); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 14px; position: relative; z-index: 1;
+  border: 1px solid rgba(255,255,255,.10);
+}
+.page-eyebrow .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-500); box-shadow: 0 0 8px var(--amber-500); }
+.page-hero h1 {
+  margin: 0 0 14px; font-size: clamp(36px, 8vw, 56px); line-height: 1.05;
+  font-weight: 800; letter-spacing: -.025em; color: #fff;
+  position: relative; z-index: 1;
+}
+.page-hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #ffd1a8, var(--amber-500));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.page-hero .lede {
+  margin: 0; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.78); max-width: 60ch;
+  position: relative; z-index: 1;
+}
+
+/* Trim level selector — pulled out of hero, prominent */
+.trim-card {
+  margin-top: -32px; position: relative; z-index: 2;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-md);
+}
+.trim-label { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.trim-label h3 { margin: 0; font-size: 15px; font-weight: 700; color: var(--ink); }
+.trim-label .info-link { font-size: 12px; color: var(--ios-blue); cursor: pointer; }
+.trim-options {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.trim-opt {
+  padding: 14px 8px;
+  border: 1.5px solid var(--hairline-strong);
+  background: #fff; border-radius: var(--r-md);
+  text-align: left;
+  transition: all .15s ease;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.trim-opt .name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.trim-opt .tag { font-size: 11px; color: var(--ink-3); }
+.trim-opt:hover { border-color: var(--amber-500); }
+.trim-opt.active {
+  background: var(--navy-800); border-color: var(--navy-800); color: #fff;
+}
+.trim-opt.active .name { color: #fff; }
+.trim-opt.active .tag { color: rgba(255,255,255,.65); }
+.trim-desc {
+  font-size: 12.5px; color: var(--ink-3); line-height: 1.5;
+  margin-top: 12px; padding: 10px 12px;
+  background: var(--bg-tint); border-radius: var(--r-sm);
+}
+
+/* Project info card */
+.project-card {
+  margin-top: 16px;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--hairline);
+}
+.project-card h3 {
+  margin: 0 0 14px; font-size: 15px; font-weight: 700;
+}
+.field-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.field-row:last-child { margin-bottom: 0; }
+.field-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.field-input {
+  padding: 12px 14px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-sm);
+  background: #fff;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  transition: border-color .15s ease;
+}
+.field-input:focus {
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(10,132,255,.15);
+}
+
+/* Groups */
+.groups { padding: 24px 0; }
+.group {
+  margin-bottom: 14px;
+  background: #fff; border-radius: var(--r-lg);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.group-header {
+  width: 100%;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff; border: none; text-align: left;
+  cursor: pointer;
+}
+.group-header-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+.group-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--bg-tint);
+  display: grid; place-items: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.group-text { flex: 1; min-width: 0; }
+.group-title {
+  font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 2px;
+}
+.group-desc {
+  font-size: 12.5px; color: var(--ink-3); line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+}
+.group-meta {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.group-subtotal {
+  font-size: 14px; font-weight: 700; color: var(--amber-600);
+  font-variant-numeric: tabular-nums;
+}
+.group-subtotal.zero { color: var(--ink-4); font-weight: 500; }
+.group-chevron {
+  width: 22px; height: 22px; color: var(--ink-3);
+  transition: transform .25s ease;
+}
+.group.open .group-chevron { transform: rotate(180deg); }
+
+.group-body {
+  border-top: 1px solid var(--hairline);
+  padding: 0;
+  display: none;
+}
+.group.open .group-body { display: block; }
+
+/* Category card */
+.category {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+.category:last-child { border-bottom: none; }
+.cat-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  margin-bottom: 10px;
+}
+.cat-title-block { flex: 1; min-width: 0; }
+.cat-title {
+  font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px;
+}
+.cat-desc {
+  font-size: 12.5px; color: var(--ink-3); line-height: 1.5;
+}
+.cat-tooltip {
+  font-size: 11.5px; color: var(--ink-4); line-height: 1.4;
+  margin-top: 6px; padding: 6px 10px;
+  background: var(--bg-tint); border-radius: 8px;
+  border-left: 2px solid var(--amber-500);
+}
+.cat-subtotal {
+  font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums;
+  color: var(--amber-600); flex-shrink: 0; min-width: 90px; text-align: right;
+}
+.cat-subtotal.zero { color: var(--ink-4); font-weight: 500; }
+
+.cat-fields {
+  display: grid; gap: 12px;
+  grid-template-columns: 1fr;
+}
+.cat-field { display: flex; flex-direction: column; gap: 5px; }
+.cat-field-label {
+  font-size: 12.5px; color: var(--ink-2); font-weight: 500;
+}
+.cat-field-input {
+  padding: 10px 12px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-sm);
+  background: #fff;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+  transition: border-color .15s ease;
+}
+.cat-field-input:focus {
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(10,132,255,.15);
+}
+
+/* Toggle */
+.toggle-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0; gap: 14px;
+}
+.toggle-wrap .cat-field-label { flex: 1; }
+.toggle {
+  position: relative;
+  width: 46px; height: 28px;
+  background: var(--bg-tint-2);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background .2s ease;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+}
+.toggle::after {
+  content: ''; position: absolute;
+  top: 2px; left: 2px;
+  width: 24px; height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  transition: transform .2s ease;
+}
+.toggle.on { background: var(--ios-green); }
+.toggle.on::after { transform: translateX(18px); }
+
+/* Soft costs preview */
+.soft-costs-card {
+  margin: 24px 0 16px;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border-radius: var(--r-lg);
+  padding: 22px 22px;
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.soft-costs-card::before {
+  content: ''; position: absolute; right: -40px; bottom: -40px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(255,122,26,.18) 0%, transparent 70%);
+  filter: blur(20px);
+}
+.soft-costs-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-500); margin-bottom: 8px;
+  position: relative; z-index: 1;
+}
+.soft-costs-card h3 {
+  margin: 0 0 14px; font-size: 18px; font-weight: 800; color: #fff;
+  position: relative; z-index: 1;
+}
+.cost-line {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 8px 0; font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  position: relative; z-index: 1;
+}
+.cost-line:last-of-type { border-bottom: none; }
+.cost-line .label { color: rgba(255,255,255,.78); }
+.cost-line .label small { display: block; font-size: 11px; color: rgba(255,255,255,.5); margin-top: 2px; }
+.cost-line .val { font-weight: 700; font-variant-numeric: tabular-nums; color: #fff; }
+.cost-line.subtotal {
+  margin-top: 8px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.20);
+  border-bottom: none;
+  font-size: 15px;
+}
+.cost-line.grand-total {
+  margin-top: 6px; padding: 16px 0 4px;
+  border-top: 1px solid rgba(255,255,255,.30);
+  font-size: 20px;
+}
+.cost-line.grand-total .val { color: var(--amber-500); font-size: 22px; }
+
+/* Plan Savings Card */
+.plan-savings-card {
+  margin: 16px 0 0;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.plan-savings-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 8px;
+}
+.plan-savings-card h3 {
+  margin: 0 0 6px; font-size: 22px; font-weight: 800; line-height: 1.2; color: var(--ink);
+  letter-spacing: -.01em;
+}
+.plan-savings-card h3 .save-amt {
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.plan-savings-sub {
+  font-size: 13.5px; color: var(--ink-3); margin: 0 0 18px; line-height: 1.5;
+}
+.plan-tiles {
+  display: grid; gap: 12px; grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .plan-tiles { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .plan-tiles { grid-template-columns: repeat(4, 1fr); }
+}
+.plan-tile {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1.5px solid var(--hairline-strong);
+  border-radius: var(--r-md);
+  padding: 18px 16px 16px;
+  position: relative;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.plan-tile:hover {
+  border-color: var(--amber-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.plan-tile.featured {
+  border-color: var(--amber-500);
+  border-width: 2px;
+  background: linear-gradient(180deg, #fff 0%, #FFFAF5 100%);
+  box-shadow: 0 12px 30px -12px rgba(255, 122, 26, 0.3);
+}
+.plan-tile-badge {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  color: #fff;
+  border-radius: var(--r-pill);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px -2px rgba(255, 122, 26, 0.5);
+}
+.plan-tile-name {
+  font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 2px;
+}
+.plan-tile-price {
+  font-size: 12px; color: var(--ink-3); margin-bottom: 14px;
+}
+.plan-tile-discount {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--amber-100, #FFE9D6);
+  color: var(--amber-600);
+  border-radius: var(--r-pill);
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+.plan-tile-orig {
+  font-size: 12.5px;
+  color: var(--ink-4);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.plan-tile-new {
+  font-size: 26px; font-weight: 800; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  margin-bottom: 2px;
+  letter-spacing: -.01em;
+}
+.plan-tile-savings {
+  font-size: 13px; font-weight: 700;
+  color: var(--ios-green);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 14px;
+}
+.plan-tile-cta {
+  width: 100%;
+  padding: 11px 12px;
+  background: var(--ios-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 700;
+  text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  transition: background .15s ease, transform .15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.plan-tile-cta:hover { background: var(--ios-blue-pressed); }
+.plan-tile-cta:active { transform: scale(.97); }
+.plan-tile-cta svg { width: 13px; height: 13px; }
+.plan-tile.featured .plan-tile-cta {
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+}
+.plan-tile.featured .plan-tile-cta:hover {
+  background: linear-gradient(135deg, var(--amber-600), #c95810);
+}
+
+.plan-savings-empty {
+  font-size: 14px; color: var(--ink-3); text-align: center;
+  padding: 24px 12px;
+  background: var(--bg-tint);
+  border-radius: var(--r-md);
+}
+
+.plan-savings-foot {
+  font-size: 11.5px; color: var(--ink-4); text-align: center;
+  margin-top: 14px; line-height: 1.5;
+}
+
+/* Action bar — sticky bottom */
+.action-bar {
+  position: fixed;
+  bottom: var(--tabbar-h); left: 0; right: 0; z-index: 55;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline-strong);
+  padding: 10px 16px;
+  padding-bottom: 10px;
+  box-shadow: 0 -4px 20px -8px rgba(7,23,46,.20);
+}
+.action-bar-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px;
+}
+.ab-total {
+  flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0;
+}
+.ab-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.ab-amount {
+  font-size: 22px; font-weight: 800; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.ab-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.ab-action {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 16px;
+  border-radius: var(--r-pill);
+  font-size: 14px; font-weight: 700;
+  border: none; text-decoration: none;
+  white-space: nowrap;
+  transition: transform .15s ease, background .15s ease;
+}
+.ab-action:active { transform: scale(.97); }
+.ab-action.primary { background: var(--ios-blue); color: #fff; }
+.ab-action.primary:hover { background: var(--ios-blue-pressed); }
+.ab-action.secondary {
+  background: var(--bg-tint); color: var(--ink-2);
+  display: none;
+}
+.ab-action svg { width: 16px; height: 16px; }
+
+/* Other actions: save, email, print — below total area */
+.extra-actions {
+  margin: 16px 0 24px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+}
+.extra-action {
+  padding: 12px 14px;
+  border: 1px solid var(--hairline-strong);
+  background: #fff;
+  border-radius: var(--r-md);
+  color: var(--ink-2); font-size: 13px; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  text-decoration: none;
+  transition: border-color .15s ease, background .15s ease;
+}
+.extra-action:hover {
+  border-color: var(--amber-500);
+  background: var(--bg-tint);
+}
+.extra-action svg { width: 16px; height: 16px; color: var(--ink-3); }
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 12px; color: var(--ink-4); line-height: 1.55;
+  padding: 16px 4px;
+  text-align: center;
+}
+.disclaimer strong { color: var(--ink-3); }
+
+/* Tab bar */
+.tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline);
+  padding: 6px 4px calc(6px + var(--safe-bottom));
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 2px; color: var(--ink-3); text-decoration: none;
+  font-size: 10px; font-weight: 600; letter-spacing: .02em;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab.active { color: var(--ios-blue); }
+
+/* Footer */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 32px 0 24px; margin-top: 32px;
+}
+footer .brand { color: #fff; margin-bottom: 24px; }
+.foot-grid { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; margin-top: 16px; }
+.foot-grid h4 { color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 10px; }
+.foot-grid a { display: block; color: rgba(255,255,255,.55); text-decoration: none; font-size: 14px; padding: 4px 0; }
+.foot-grid a:hover { color: #fff; }
+.foot-bottom {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+}
+
+/* Toasts */
+.toast {
+  position: fixed; bottom: calc(var(--tabbar-h) + var(--actionbar-h) + 16px);
+  left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--navy-800); color: #fff;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 100; opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+}
+.toast.error { background: var(--ios-red); }
+.toast.success { background: var(--ios-green); }
+
+/* Tablet */
+@media (min-width: 720px) {
+  .trim-options { gap: 12px; }
+  .cat-fields { grid-template-columns: repeat(2, 1fr); }
+  .extra-actions { grid-template-columns: repeat(4, 1fr); }
+  .foot-grid { grid-template-columns: repeat(4, 1fr); }
+  .foot-bottom { flex-direction: row; justify-content: space-between; }
+  .ab-action.secondary { display: inline-flex; }
+}
+
+/* Desktop */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: var(--actionbar-h); }
+  .action-bar { bottom: 0; padding-bottom: calc(10px + var(--safe-bottom)); }
+  .page-hero { padding: 48px 0 80px; }
+  .page-hero h1 { max-width: 22ch; }
+  .group-desc { -webkit-line-clamp: unset; }
+}
+</style>
+</head>
+<body data-active-tab="">
+
+<header class="appbar">
+  <div class="appbar-row">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span>Renovation Estimator</span>
+    </div>
+    <span class="page-eyebrow">
+      <span class="badge-dot"></span> NEPA pricing · 23 categories · Branded PDF estimate
+    </span>
+    <h1>Plan your <em>renovation.</em></h1>
+    <p class="lede">Itemized line-by-line. Real Northeast PA pricing for installed work — labor and materials included. Pick a finish level, fill in what's in scope, get a branded PDF estimate.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- TRIM SELECTOR -->
+  <div class="trim-card">
+    <div class="trim-label">
+      <h3>Finish level</h3>
+      <span class="info-link" id="trim-info-toggle">What's the difference?</span>
+    </div>
+    <div class="trim-options" id="trim-options">
+      <!-- populated by JS -->
+    </div>
+    <div class="trim-desc" id="trim-desc">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- PROJECT INFO -->
+  <div class="project-card">
+    <h3>Project info</h3>
+    <div class="field-row">
+      <label class="field-label" for="proj-name">Project name</label>
+      <input class="field-input" type="text" id="proj-name" placeholder="e.g. Cordaro kitchen remodel" />
+    </div>
+    <div class="field-row">
+      <label class="field-label" for="proj-client">Client name</label>
+      <input class="field-input" type="text" id="proj-client" placeholder="Optional" />
+    </div>
+    <div class="field-row">
+      <label class="field-label" for="proj-address">Property address</label>
+      <input class="field-input" type="text" id="proj-address" placeholder="Optional" />
+    </div>
+  </div>
+
+  <!-- GROUPS -->
+  <div class="groups" id="groups-container">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- SOFT COSTS PREVIEW -->
+  <div class="soft-costs-card" id="soft-costs">
+    <div class="soft-costs-eyebrow">Estimate breakdown</div>
+    <h3>Trade subtotal & soft costs</h3>
+    <div id="cost-breakdown">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- PLAN SAVINGS COMPARISON -->
+  <div class="plan-savings-card" id="plan-savings">
+    <div class="plan-savings-eyebrow">Save with a NEPA-PRO membership</div>
+    <h3 id="plan-savings-headline">Subscribe to a plan and save up to <span class="save-amt" id="max-savings">$0</span> on this project.</h3>
+    <p class="plan-savings-sub">Every NEPA-PRO member gets a discount on renovations applied automatically at booking. Pick the plan that fits your home and pocket the savings on day one.</p>
+    <div class="plan-tiles" id="plan-tiles"><!-- rendered by JS --></div>
+    <p class="plan-savings-foot">Plans are month-to-month. Cancel anytime. Discounts apply to all renovation projects, not just this one.</p>
+  </div>
+
+  <!-- EXTRA ACTIONS -->
+  <div class="extra-actions">
+    <button class="extra-action" id="btn-save" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      Save Progress
+    </button>
+    <button class="extra-action" id="btn-load" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Load Saved
+    </button>
+    <button class="extra-action" id="btn-email" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email Estimate
+    </button>
+    <button class="extra-action" id="btn-print" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print
+    </button>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <p class="disclaimer">
+    <strong>Estimate only.</strong> Final pricing depends on site conditions, material availability, permit requirements, and current market rates.
+    Numbers reflect typical NEPA installed pricing (labor + materials, standard finishes) as of Q1 2026.
+    For a binding quote, schedule a site visit at <a href="contact.html">nepa-pro.com/contact</a>.
+  </p>
+
+</div><!-- /.wrap -->
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="index.html#pricing">All Plans</a>
+        <a href="index.html#outdoor">Outdoor Care</a>
+        <a href="index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="renovate.html">Renovation Estimator</a>
+        <a href="qualify.html">Discount Qualify</a>
+        <a href="guides.html">Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ACTION BAR (fixed bottom) -->
+<div class="action-bar">
+  <div class="action-bar-inner">
+    <div class="ab-total">
+      <div class="ab-label">Estimated total</div>
+      <div class="ab-amount" id="ab-amount">$0</div>
+    </div>
+    <div class="ab-actions">
+      <button class="ab-action secondary" id="btn-reset" type="button" title="Reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9c-2.5 0-4.8 1-6.5 2.7L3 8"/><path d="M3 3v5h5"/></svg>
+        Reset
+      </button>
+      <button class="ab-action primary" id="btn-pdf" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab" href="index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab" href="inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab active" href="renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- jsPDF + autoTable (bundled locally) -->
+<script src="js/jspdf.umd.min.js"></script>
+<script src="js/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+// ============================================================
+// NEPA-PRO Renovation Estimator
+// ============================================================
+
+const DATA = {"trim_levels":{"basic":{"label":"Basic","tagline":"Builder-grade","desc":"Functional, modest finishes. Best for rentals, flips, or budget-conscious homeowners.","multiplier":0.85},"standard":{"label":"Standard","tagline":"Mid-grade","desc":"What most homeowners pick. Quality fixtures, durable finishes, solid warranty.","multiplier":1.0},"premium":{"label":"Premium","tagline":"Upgraded standard","desc":"Better grade within the standard tier. NOT luxury \u2014 no marble or custom millwork.","multiplier":1.3}},"categories":[{"id":"addition","label":"Whole-house addition","group":"structural","icon":"home_plus","desc":"New square footage built from foundation up. Includes foundation, framing, roofing, siding, windows, insulation, drywall, basic electrical/plumbing rough-in, HVAC tie-in, interior finish, paint.","tooltip":"Per sqft of new space. Excludes site grading, utility extensions over 50 ft.","fields":[{"id":"addition_sqft","label":"Square feet of addition","type":"number","step":50,"min":0,"placeholder":"e.g. 400"},{"id":"addition_includes_bath","label":"Includes a full bath?","type":"toggle"},{"id":"addition_includes_kitchen","label":"Includes a kitchenette?","type":"toggle"}],"prices":{"addition_per_sqft":{"basic":200,"standard":280,"premium":360},"bath_addon":{"basic":16000,"standard":24000,"premium":32000},"kitchenette_addon":{"basic":14000,"standard":20000,"premium":28000}}},{"id":"garage","label":"Detached garage","group":"structural","icon":"garage","desc":"New detached garage construction \u2014 slab, framing, siding, roofing, garage door, basic electrical (1 circuit + 1 light + 1 outlet pair). Per sqft of footprint.","tooltip":"Standard 2-car (~480 sqft) or 3-car (~720 sqft). Excludes upper-story living space.","fields":[{"id":"garage_sqft","label":"Garage footprint sqft","type":"number","step":24,"min":0,"placeholder":"e.g. 480"},{"id":"garage_doors","label":"Number of garage doors","type":"number","step":1,"min":0,"placeholder":"1 or 2"}],"prices":{"garage_per_sqft":{"basic":75,"standard":105,"premium":140},"garage_door_each":{"basic":1500,"standard":2400,"premium":3400}}},{"id":"kitchen","label":"Kitchen remodel","group":"remodels","icon":"kitchen","desc":"Full kitchen remodel \u2014 cabinets, counters, appliances (range, dishwasher, fridge), sink + faucet, lighting, flooring, paint, electrical updates, plumbing rework. Doesn't include moving load-bearing walls.","tooltip":"Sized by total kitchen footprint. Small=galley/100sqft, Medium=L-shape/175sqft, Large=open/250+sqft.","fields":[{"id":"kitchen_size","label":"Kitchen size","type":"select","options":[{"value":"none","label":"Not doing a kitchen"},{"value":"small","label":"Small (~100 sqft, galley)"},{"value":"medium","label":"Medium (~175 sqft, L-shape)"},{"value":"large","label":"Large (~250 sqft, open concept)"}]}],"prices":{"kitchen_small":{"basic":22000,"standard":32000,"premium":48000},"kitchen_medium":{"basic":38000,"standard":58000,"premium":78000},"kitchen_large":{"basic":60000,"standard":88000,"premium":115000}}},{"id":"bathroom","label":"Bathroom remodel","group":"remodels","icon":"bath","desc":"Per bath \u2014 full demo, new tile or LVP, new vanity, toilet, tub/shower, fixtures, ventilation, lighting, paint. Powder = half bath, no shower.","tooltip":"Add multiple of each type if doing several baths. Primary = larger primary suite bath with separate shower + tub.","fields":[{"id":"bath_powder_count","label":"Powder rooms (half-bath)","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"bath_full_count","label":"Full bathrooms","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"bath_primary_count","label":"Primary suite baths","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"bath_powder":{"basic":6000,"standard":10000,"premium":14000},"bath_full":{"basic":16000,"standard":24000,"premium":32000},"bath_primary":{"basic":32000,"standard":48000,"premium":65000}}},{"id":"basement","label":"Basement finishing","group":"remodels","icon":"basement","desc":"Convert unfinished basement to living space \u2014 framing, insulation, drywall, flooring (LVP), drop ceiling or finished ceiling, electrical (~6 outlets per 200 sqft), recessed lighting, paint. Add bath separately above.","tooltip":"Excludes egress window addition (separate cost). Excludes waterproofing if needed.","fields":[{"id":"basement_sqft","label":"Square feet to finish","type":"number","step":50,"min":0,"placeholder":"e.g. 700"},{"id":"basement_includes_kitchenette","label":"Includes a kitchenette / wet bar?","type":"toggle"},{"id":"basement_egress_windows","label":"Egress windows to add","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"basement_per_sqft":{"basic":45,"standard":65,"premium":88},"basement_kitchenette":{"basic":14000,"standard":20000,"premium":28000},"basement_egress":{"basic":4500,"standard":6000,"premium":8000}}},{"id":"porch","label":"Porch / sunroom","group":"remodels","icon":"porch","desc":"Covered porch addition or 3-season sunroom \u2014 foundation, framing, roof, screening (or windows for sunroom), composite or PT decking, electrical for ceiling fan/lights.","tooltip":"3-season sunroom is approximately 2x the cost of a screened porch.","fields":[{"id":"porch_screened_sqft","label":"Screened porch sqft","type":"number","step":16,"min":0,"placeholder":"0"},{"id":"porch_sunroom_sqft","label":"3-season sunroom sqft","type":"number","step":16,"min":0,"placeholder":"0"}],"prices":{"porch_screened":{"basic":70,"standard":95,"premium":125},"porch_sunroom":{"basic":140,"standard":200,"premium":270}}},{"id":"roofing","label":"Roof replacement","group":"envelope","icon":"roof","desc":"Tear-off existing roof + new underlayment, ice & water shield, drip edge, ridge vent, flashing, ridge cap. Asphalt = architectural 30-yr shingle (basic = 25-yr; premium = 50-yr).","tooltip":"Per sqft of roof surface (NOT footprint). Typical NEPA cape/colonial = ~1.4x footprint.","fields":[{"id":"roof_asphalt_sqft","label":"Asphalt shingle roof sqft","type":"number","step":100,"min":0,"placeholder":"e.g. 2400"},{"id":"roof_metal_sqft","label":"Standing-seam metal sqft","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"roof_skylights","label":"New skylights (replace or add)","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"roof_asphalt_per_sqft":{"basic":5.5,"standard":7.5,"premium":10.5},"roof_metal_per_sqft":{"basic":11.0,"standard":14.0,"premium":18.0},"skylight_each":{"basic":1400,"standard":2200,"premium":3200}}},{"id":"siding","label":"Siding replacement","group":"envelope","icon":"siding","desc":"Tear-off existing + new house wrap, trim, J-channel, soffit/fascia. Per sqft of wall area.","tooltip":"Typical 2-story home: ~2,000 sqft of wall. 1-story ranch: ~1,200 sqft.","fields":[{"id":"siding_vinyl_sqft","label":"Vinyl siding sqft","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"siding_fiber_sqft","label":"Fiber-cement (Hardie) sqft","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"siding_wood_sqft","label":"Wood / engineered wood sqft","type":"number","step":100,"min":0,"placeholder":"0"}],"prices":{"siding_vinyl":{"basic":5.5,"standard":7.5,"premium":9.0},"siding_fiber":{"basic":9.5,"standard":12.0,"premium":15.0},"siding_wood":{"basic":8.5,"standard":11.0,"premium":14.0}}},{"id":"windows","label":"Window replacement","group":"envelope","icon":"window","desc":"Per opening \u2014 full replacement (not insert), double-hung vinyl with low-E argon glass. Standard = 3'x5' or smaller. Large = 4'x6' or larger. Specialty = bay, picture, custom shape.","tooltip":"Premium = triple-pane / fiberglass. Includes interior trim. Excludes exterior trim repair if needed.","fields":[{"id":"window_standard_count","label":"Standard windows","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"window_large_count","label":"Large windows","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"window_specialty_count","label":"Specialty (bay / picture / shape)","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"window_standard":{"basic":750,"standard":1100,"premium":1500},"window_large":{"basic":1100,"standard":1600,"premium":2200},"window_specialty":{"basic":1800,"standard":2600,"premium":3800}}},{"id":"exterior_doors","label":"Exterior doors","group":"envelope","icon":"door","desc":"Front entry, back, side, or sliding patio. Includes pre-hung unit, hardware, weatherstripping, threshold. Excludes structural alterations.","tooltip":"Premium = fiberglass with woodgrain finish. Standard = steel insulated. Basic = aluminum-clad steel.","fields":[{"id":"exterior_door_count","label":"Exterior entry doors","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"patio_door_count","label":"Sliding patio doors","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"exterior_door":{"basic":1100,"standard":1750,"premium":2600},"patio_door":{"basic":1700,"standard":2400,"premium":3300}}},{"id":"flooring","label":"Flooring","group":"interior","icon":"floor","desc":"Per sqft installed including underlayment + transition strips. Subfloor prep included if minor (significant repair extra). Tile install includes thinset, grout, sealant.","tooltip":"Don't pick more than your home's actual sqft. Most homes: ~70% LVP/wood, ~20% tile, ~10% carpet.","fields":[{"id":"floor_lvp_sqft","label":"Luxury vinyl plank sqft","type":"number","step":50,"min":0,"placeholder":"0"},{"id":"floor_engineered_sqft","label":"Engineered hardwood sqft","type":"number","step":50,"min":0,"placeholder":"0"},{"id":"floor_solid_sqft","label":"Solid hardwood sqft","type":"number","step":50,"min":0,"placeholder":"0"},{"id":"floor_tile_sqft","label":"Ceramic / porcelain tile sqft","type":"number","step":25,"min":0,"placeholder":"0"},{"id":"floor_carpet_sqft","label":"Carpet sqft","type":"number","step":50,"min":0,"placeholder":"0"}],"prices":{"floor_lvp":{"basic":4.5,"standard":6.5,"premium":8.5},"floor_engineered":{"basic":8.5,"standard":11.0,"premium":14.0},"floor_solid":{"basic":11.0,"standard":14.5,"premium":18.0},"floor_tile":{"basic":10.5,"standard":14.0,"premium":18.0},"floor_carpet":{"basic":4.0,"standard":5.5,"premium":7.5}}},{"id":"drywall","label":"Drywall","group":"interior","icon":"drywall","desc":"Hang, tape, mud (level 4 finish), sand, prime. Per sqft of wall + ceiling surface. Excludes paint (separate). Repair work scaled higher than new construction.","tooltip":"Typical room: walls \u2248 2 \u00d7 (length+width) \u00d7 ceiling height. Add ceiling area separately.","fields":[{"id":"drywall_new_sqft","label":"New drywall (sqft of surface)","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"drywall_repair_sqft","label":"Repair patches (sqft total)","type":"number","step":50,"min":0,"placeholder":"0"}],"prices":{"drywall_new":{"basic":2.2,"standard":2.75,"premium":3.4},"drywall_repair":{"basic":4.5,"standard":5.5,"premium":7.0}}},{"id":"interior_paint","label":"Interior paint","group":"interior","icon":"paint","desc":"Two coats premium latex (Sherwin-Williams ProClassic or equivalent), trim cut-in, drop cloths, minor patching. Per sqft of wall + ceiling area.","tooltip":"Average room: ~400 sqft wall area. Whole house: ~3,000-5,000 sqft surface.","fields":[{"id":"paint_walls_sqft","label":"Walls + ceilings sqft","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"paint_trim_count","label":"Doors + trim sets to paint","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"paint_walls":{"basic":2.2,"standard":3.0,"premium":4.0},"paint_trim_set":{"basic":75,"standard":110,"premium":150}}},{"id":"interior_doors","label":"Interior doors & trim","group":"interior","icon":"interior_door","desc":"Pre-hung interior doors, hardware (hinges, knob/lever, strike). Trim packages: baseboard, casing, crown \u2014 by quality grade.","tooltip":"Basic trim = colonial-style 2.25\" base / 2.25\" casing. Standard = 4-5\" base / 3.25\" casing. Premium = 5-7\" base + crown.","fields":[{"id":"interior_door_count","label":"Interior doors (replace or new)","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"trim_room_count","label":"Rooms to re-trim (base/case/crown)","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"interior_door":{"basic":280,"standard":420,"premium":600},"trim_room":{"basic":450,"standard":700,"premium":1100}}},{"id":"electrical","label":"Electrical","group":"systems","icon":"electrical","desc":"Service panel upgrade = 200A panel + main breaker + permits. Full rewire = entire home re-wired (rare unless K&T or aluminum). Individual circuits = adding new dedicated runs. EV charger = 240V circuit + smart charger.","tooltip":"Most NEPA homes built before 1980 benefit from a panel upgrade. Full rewire only if knob-and-tube remains.","fields":[{"id":"panel_upgrade","label":"200A service panel upgrade","type":"toggle"},{"id":"rewire_sqft","label":"Full rewire (sqft of home)","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"circuit_count","label":"New dedicated circuits","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"ev_charger","label":"EV charger circuits to install","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"outlet_count","label":"New outlets / switches","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"panel_upgrade":{"basic":2800,"standard":3800,"premium":5500},"rewire_per_sqft":{"basic":4.0,"standard":6.0,"premium":8.5},"circuit":{"basic":180,"standard":280,"premium":400},"ev_charger":{"basic":950,"standard":1500,"premium":2500},"outlet":{"basic":120,"standard":175,"premium":240}}},{"id":"plumbing","label":"Plumbing","group":"systems","icon":"plumbing","desc":"Repipe = replace water lines (price per fixture served). Fixtures = new toilets, vanities, tubs, faucets. Water heater replacement.","tooltip":"Typical NEPA home has 8-12 fixture units (kitchen sink, dishwasher, washing machine, plus 2 fixtures per bath).","fields":[{"id":"repipe_fixture_count","label":"Fixtures for full repipe","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"toilet_count","label":"Toilets to replace","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"vanity_count","label":"Vanities (sink + faucet) to replace","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"tub_count","label":"Tubs / shower units to replace","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"wh_tank_count","label":"Tank water heaters (50 gal)","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"wh_tankless_count","label":"Tankless water heaters","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"repipe_fixture":{"basic":750,"standard":1100,"premium":1500},"toilet":{"basic":400,"standard":600,"premium":850},"vanity":{"basic":500,"standard":800,"premium":1200},"tub":{"basic":1800,"standard":2800,"premium":4000},"wh_tank":{"basic":1700,"standard":2300,"premium":3000},"wh_tankless":{"basic":3800,"standard":4800,"premium":6200}}},{"id":"hvac","label":"HVAC","group":"systems","icon":"hvac","desc":"New furnace, AC condenser, heat pump (replaces both), or ductless mini-split. New ductwork only if missing or undersized.","tooltip":"Heat pumps work great in NEPA down to ~10\u00b0F. Below that, hybrid systems with backup gas furnace are recommended.","fields":[{"id":"furnace_count","label":"New gas furnaces","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"ac_count","label":"New AC condensers","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"heatpump_count","label":"Air-source heat pumps","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"minisplit_zones","label":"Mini-split zones","type":"number","step":1,"min":0,"placeholder":"0"},{"id":"ductwork_sqft","label":"New ductwork (sqft of home served)","type":"number","step":100,"min":0,"placeholder":"0"}],"prices":{"furnace":{"basic":4800,"standard":6500,"premium":8500},"ac":{"basic":4000,"standard":5500,"premium":7500},"heatpump":{"basic":8000,"standard":11500,"premium":15000},"minisplit_zone":{"basic":3800,"standard":5000,"premium":6500},"ductwork_per_sqft":{"basic":4.0,"standard":6.0,"premium":8.0}}},{"id":"insulation","label":"Insulation","group":"systems","icon":"insulation","desc":"Attic = blown-in cellulose to R-49. Walls = batt or blown-in. Spray foam = closed-cell (basement rim joists, vaulted ceilings, sound dampening).","tooltip":"Most NEPA homes pre-1990 have R-19 or less in the attic \u2014 upgrading to R-49 is one of the highest-ROI improvements.","fields":[{"id":"insulation_attic_sqft","label":"Attic sqft (blown-in)","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"insulation_wall_sqft","label":"Wall sqft (batt or blown-in)","type":"number","step":100,"min":0,"placeholder":"0"},{"id":"insulation_spray_sqft","label":"Spray foam sqft","type":"number","step":50,"min":0,"placeholder":"0"}],"prices":{"insulation_attic":{"basic":1.75,"standard":2.5,"premium":3.5},"insulation_wall":{"basic":2.2,"standard":2.9,"premium":4.2},"insulation_spray":{"basic":4.5,"standard":6.0,"premium":8.0}}},{"id":"deck","label":"Deck","group":"outdoor","icon":"deck","desc":"New deck \u2014 concrete footings, PT framing, decking, railing, stairs. Per sqft.","tooltip":"Composite (Trex/TimberTech) costs more upfront but lasts 25-30+ years vs 15-20 for PT.","fields":[{"id":"deck_pt_sqft","label":"Pressure-treated lumber sqft","type":"number","step":16,"min":0,"placeholder":"0"},{"id":"deck_cedar_sqft","label":"Cedar deck sqft","type":"number","step":16,"min":0,"placeholder":"0"},{"id":"deck_composite_sqft","label":"Composite (Trex/TimberTech) sqft","type":"number","step":16,"min":0,"placeholder":"0"}],"prices":{"deck_pt":{"basic":25,"standard":32,"premium":40},"deck_cedar":{"basic":35,"standard":45,"premium":55},"deck_composite":{"basic":48,"standard":60,"premium":75}}},{"id":"driveway","label":"Driveway / paving","group":"outdoor","icon":"driveway","desc":"Per sqft installed including base prep + drainage. Asphalt = best ROI for NEPA winters. Concrete = longest-lasting if reinforced. Pavers = highest curb appeal.","tooltip":"Typical 2-car driveway: ~600-800 sqft. Long rural driveway: 1,500+ sqft.","fields":[{"id":"driveway_asphalt_sqft","label":"Asphalt sqft","type":"number","step":50,"min":0,"placeholder":"0"},{"id":"driveway_concrete_sqft","label":"Concrete sqft","type":"number","step":50,"min":0,"placeholder":"0"},{"id":"driveway_paver_sqft","label":"Paver sqft","type":"number","step":50,"min":0,"placeholder":"0"}],"prices":{"driveway_asphalt":{"basic":6,"standard":8.5,"premium":11},"driveway_concrete":{"basic":10,"standard":13,"premium":17},"driveway_paver":{"basic":18,"standard":24,"premium":32}}},{"id":"patio","label":"Patio / walkway","group":"outdoor","icon":"patio","desc":"Concrete patio, paver patio, or flagstone walkway. Per sqft installed.","tooltip":"Patios under 200 sqft tend to look cramped. Most NEPA backyards work well with 250-400 sqft.","fields":[{"id":"patio_concrete_sqft","label":"Concrete patio sqft","type":"number","step":16,"min":0,"placeholder":"0"},{"id":"patio_paver_sqft","label":"Paver patio/walkway sqft","type":"number","step":16,"min":0,"placeholder":"0"}],"prices":{"patio_concrete":{"basic":9,"standard":12,"premium":16},"patio_paver":{"basic":18,"standard":24,"premium":32}}},{"id":"fencing","label":"Fencing","group":"outdoor","icon":"fence","desc":"Per linear foot installed including posts, hardware, gates priced separately. Privacy fences are 6 ft tall.","tooltip":"Typical city/suburban yard: 100-200 lf. Larger property: 300+ lf.","fields":[{"id":"fence_pt_lf","label":"Wood (PT) privacy fence lf","type":"number","step":5,"min":0,"placeholder":"0"},{"id":"fence_vinyl_lf","label":"Vinyl privacy fence lf","type":"number","step":5,"min":0,"placeholder":"0"},{"id":"fence_chain_lf","label":"Chain-link fence lf","type":"number","step":5,"min":0,"placeholder":"0"},{"id":"fence_gates","label":"Gates","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"fence_pt":{"basic":28,"standard":38,"premium":48},"fence_vinyl":{"basic":40,"standard":55,"premium":72},"fence_chain":{"basic":18,"standard":24,"premium":32},"fence_gate":{"basic":350,"standard":550,"premium":800}}},{"id":"solar","label":"Solar PV","group":"outdoor","icon":"solar","desc":"Roof-mount or ground-mount PV system installed by Solar Mason (NEPA-PRO partner). Per watt of system size, all-in (panels, inverter, monitoring, racking, electrical, permits).","tooltip":"Average NEPA home uses 8-10 kW. The 30% federal tax credit applies \u2014 final cost is ~70% of pre-incentive total.","fields":[{"id":"solar_kw","label":"System size (kW DC)","type":"number","step":0.5,"min":0,"placeholder":"e.g. 8"},{"id":"solar_battery_kwh","label":"Battery storage (kWh)","type":"number","step":1,"min":0,"placeholder":"0"}],"prices":{"solar_per_watt":{"basic":3.0,"standard":3.4,"premium":3.8},"battery_per_kwh":{"basic":800,"standard":1100,"premium":1400}}}],"soft_costs":{"demo_disposal_pct":0.05,"permits_pct":0.015,"permits_cap":8000,"contingency_pct":0.1,"tax_pct":0.024},"groups":[{"id":"structural","icon":"\ud83c\udfd7\ufe0f","label":"Structural","desc":"Adding new square footage to your home"},{"id":"remodels","icon":"\ud83d\udee0\ufe0f","label":"Major remodels","desc":"Reworking existing space"},{"id":"envelope","icon":"\ud83c\udfe0","label":"Exterior envelope","desc":"Roof, siding, windows, doors"},{"id":"interior","icon":"\ud83c\udfa8","label":"Interior finishes","desc":"Floors, drywall, paint, trim"},{"id":"systems","icon":"\u26a1","label":"Major systems","desc":"Electrical, plumbing, HVAC, insulation"},{"id":"outdoor","icon":"\ud83c\udf33","label":"Outdoor","desc":"Decks, driveways, fencing, solar"}]};
+
+// ============================================================
+// State
+// ============================================================
+const STATE = {
+  trim: 'standard',
+  project: { name: '', client: '', address: '' },
+  // Per-category field values: { categoryId: { fieldId: value } }
+  values: {},
+  // Per-group open state
+  openGroups: new Set(),
+};
+
+// Initialize values
+DATA.categories.forEach(cat => {
+  STATE.values[cat.id] = {};
+  cat.fields.forEach(f => {
+    STATE.values[cat.id][f.id] = (f.type === 'toggle') ? false : (f.type === 'select' ? (f.options[0]?.value || '') : 0);
+  });
+});
+
+// Helpers
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const fmtFull = (n) => '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+
+function showToast(msg, type = '') {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.className = 'toast ' + type + ' show';
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ============================================================
+// Calculation
+// ============================================================
+function calcCategory(cat) {
+  const v = STATE.values[cat.id];
+  const trim = STATE.trim;
+  let total = 0;
+
+  // Each category has its own compute logic — tied to fields + prices
+  switch (cat.id) {
+    case 'addition': {
+      total += (v.addition_sqft || 0) * cat.prices.addition_per_sqft[trim];
+      if (v.addition_includes_bath) total += cat.prices.bath_addon[trim];
+      if (v.addition_includes_kitchen) total += cat.prices.kitchenette_addon[trim];
+      break;
+    }
+    case 'garage': {
+      total += (v.garage_sqft || 0) * cat.prices.garage_per_sqft[trim];
+      total += (v.garage_doors || 0) * cat.prices.garage_door_each[trim];
+      break;
+    }
+    case 'kitchen': {
+      const sz = v.kitchen_size;
+      if (sz && sz !== 'none' && cat.prices['kitchen_' + sz]) {
+        total += cat.prices['kitchen_' + sz][trim];
+      }
+      break;
+    }
+    case 'bathroom': {
+      total += (v.bath_powder_count || 0) * cat.prices.bath_powder[trim];
+      total += (v.bath_full_count || 0) * cat.prices.bath_full[trim];
+      total += (v.bath_primary_count || 0) * cat.prices.bath_primary[trim];
+      break;
+    }
+    case 'basement': {
+      total += (v.basement_sqft || 0) * cat.prices.basement_per_sqft[trim];
+      if (v.basement_includes_kitchenette) total += cat.prices.basement_kitchenette[trim];
+      total += (v.basement_egress_windows || 0) * cat.prices.basement_egress[trim];
+      break;
+    }
+    case 'porch': {
+      total += (v.porch_screened_sqft || 0) * cat.prices.porch_screened[trim];
+      total += (v.porch_sunroom_sqft || 0) * cat.prices.porch_sunroom[trim];
+      break;
+    }
+    case 'roofing': {
+      total += (v.roof_asphalt_sqft || 0) * cat.prices.roof_asphalt_per_sqft[trim];
+      total += (v.roof_metal_sqft || 0) * cat.prices.roof_metal_per_sqft[trim];
+      total += (v.roof_skylights || 0) * cat.prices.skylight_each[trim];
+      break;
+    }
+    case 'siding': {
+      total += (v.siding_vinyl_sqft || 0) * cat.prices.siding_vinyl[trim];
+      total += (v.siding_fiber_sqft || 0) * cat.prices.siding_fiber[trim];
+      total += (v.siding_wood_sqft || 0) * cat.prices.siding_wood[trim];
+      break;
+    }
+    case 'windows': {
+      total += (v.window_standard_count || 0) * cat.prices.window_standard[trim];
+      total += (v.window_large_count || 0) * cat.prices.window_large[trim];
+      total += (v.window_specialty_count || 0) * cat.prices.window_specialty[trim];
+      break;
+    }
+    case 'exterior_doors': {
+      total += (v.exterior_door_count || 0) * cat.prices.exterior_door[trim];
+      total += (v.patio_door_count || 0) * cat.prices.patio_door[trim];
+      break;
+    }
+    case 'flooring': {
+      total += (v.floor_lvp_sqft || 0) * cat.prices.floor_lvp[trim];
+      total += (v.floor_engineered_sqft || 0) * cat.prices.floor_engineered[trim];
+      total += (v.floor_solid_sqft || 0) * cat.prices.floor_solid[trim];
+      total += (v.floor_tile_sqft || 0) * cat.prices.floor_tile[trim];
+      total += (v.floor_carpet_sqft || 0) * cat.prices.floor_carpet[trim];
+      break;
+    }
+    case 'drywall': {
+      total += (v.drywall_new_sqft || 0) * cat.prices.drywall_new[trim];
+      total += (v.drywall_repair_sqft || 0) * cat.prices.drywall_repair[trim];
+      break;
+    }
+    case 'interior_paint': {
+      total += (v.paint_walls_sqft || 0) * cat.prices.paint_walls[trim];
+      total += (v.paint_trim_count || 0) * cat.prices.paint_trim_set[trim];
+      break;
+    }
+    case 'interior_doors': {
+      total += (v.interior_door_count || 0) * cat.prices.interior_door[trim];
+      total += (v.trim_room_count || 0) * cat.prices.trim_room[trim];
+      break;
+    }
+    case 'electrical': {
+      if (v.panel_upgrade) total += cat.prices.panel_upgrade[trim];
+      total += (v.rewire_sqft || 0) * cat.prices.rewire_per_sqft[trim];
+      total += (v.circuit_count || 0) * cat.prices.circuit[trim];
+      total += (v.ev_charger || 0) * cat.prices.ev_charger[trim];
+      total += (v.outlet_count || 0) * cat.prices.outlet[trim];
+      break;
+    }
+    case 'plumbing': {
+      total += (v.repipe_fixture_count || 0) * cat.prices.repipe_fixture[trim];
+      total += (v.toilet_count || 0) * cat.prices.toilet[trim];
+      total += (v.vanity_count || 0) * cat.prices.vanity[trim];
+      total += (v.tub_count || 0) * cat.prices.tub[trim];
+      total += (v.wh_tank_count || 0) * cat.prices.wh_tank[trim];
+      total += (v.wh_tankless_count || 0) * cat.prices.wh_tankless[trim];
+      break;
+    }
+    case 'hvac': {
+      total += (v.furnace_count || 0) * cat.prices.furnace[trim];
+      total += (v.ac_count || 0) * cat.prices.ac[trim];
+      total += (v.heatpump_count || 0) * cat.prices.heatpump[trim];
+      total += (v.minisplit_zones || 0) * cat.prices.minisplit_zone[trim];
+      total += (v.ductwork_sqft || 0) * cat.prices.ductwork_per_sqft[trim];
+      break;
+    }
+    case 'insulation': {
+      total += (v.insulation_attic_sqft || 0) * cat.prices.insulation_attic[trim];
+      total += (v.insulation_wall_sqft || 0) * cat.prices.insulation_wall[trim];
+      total += (v.insulation_spray_sqft || 0) * cat.prices.insulation_spray[trim];
+      break;
+    }
+    case 'deck': {
+      total += (v.deck_pt_sqft || 0) * cat.prices.deck_pt[trim];
+      total += (v.deck_cedar_sqft || 0) * cat.prices.deck_cedar[trim];
+      total += (v.deck_composite_sqft || 0) * cat.prices.deck_composite[trim];
+      break;
+    }
+    case 'driveway': {
+      total += (v.driveway_asphalt_sqft || 0) * cat.prices.driveway_asphalt[trim];
+      total += (v.driveway_concrete_sqft || 0) * cat.prices.driveway_concrete[trim];
+      total += (v.driveway_paver_sqft || 0) * cat.prices.driveway_paver[trim];
+      break;
+    }
+    case 'patio': {
+      total += (v.patio_concrete_sqft || 0) * cat.prices.patio_concrete[trim];
+      total += (v.patio_paver_sqft || 0) * cat.prices.patio_paver[trim];
+      break;
+    }
+    case 'fencing': {
+      total += (v.fence_pt_lf || 0) * cat.prices.fence_pt[trim];
+      total += (v.fence_vinyl_lf || 0) * cat.prices.fence_vinyl[trim];
+      total += (v.fence_chain_lf || 0) * cat.prices.fence_chain[trim];
+      total += (v.fence_gates || 0) * cat.prices.fence_gate[trim];
+      break;
+    }
+    case 'solar': {
+      total += (v.solar_kw || 0) * 1000 * cat.prices.solar_per_watt[trim];
+      total += (v.solar_battery_kwh || 0) * cat.prices.battery_per_kwh[trim];
+      break;
+    }
+  }
+
+  return Math.round(total);
+}
+
+function calcAll() {
+  // Per-category subtotals
+  const catTotals = {};
+  let trade = 0;
+  DATA.categories.forEach(cat => {
+    const t = calcCategory(cat);
+    catTotals[cat.id] = t;
+    trade += t;
+  });
+
+  // Soft costs
+  const sc = DATA.soft_costs;
+  const demoDisposal = trade * sc.demo_disposal_pct;
+  const permits = Math.min(trade * sc.permits_pct, sc.permits_cap);
+  const subtotal = trade + demoDisposal + permits;
+  const contingency = subtotal * sc.contingency_pct;
+  const tax = subtotal * sc.tax_pct;
+  const grand = subtotal + contingency + tax;
+
+  return {
+    catTotals,
+    trade,
+    demoDisposal,
+    permits,
+    subtotal,
+    contingency,
+    tax,
+    grand,
+  };
+}
+
+// ============================================================
+// Rendering
+// ============================================================
+function renderTrimSelector() {
+  const opts = $('#trim-options');
+  opts.innerHTML = '';
+  Object.entries(DATA.trim_levels).forEach(([key, info]) => {
+    const btn = document.createElement('button');
+    btn.className = 'trim-opt' + (key === STATE.trim ? ' active' : '');
+    btn.dataset.trim = key;
+    btn.type = 'button';
+    btn.innerHTML = `<span class="name">${info.label}</span><span class="tag">${info.tagline}</span>`;
+    btn.addEventListener('click', () => {
+      STATE.trim = key;
+      $$('#trim-options .trim-opt').forEach(b => b.classList.toggle('active', b.dataset.trim === key));
+      $('#trim-desc').textContent = DATA.trim_levels[key].desc;
+      recalculate();
+    });
+    opts.appendChild(btn);
+  });
+  $('#trim-desc').textContent = DATA.trim_levels[STATE.trim].desc;
+}
+
+function renderField(cat, field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'cat-field' + (field.type === 'toggle' ? ' toggle-wrap' : '');
+
+  if (field.type === 'toggle') {
+    const lbl = document.createElement('div');
+    lbl.className = 'cat-field-label';
+    lbl.textContent = field.label;
+    wrap.appendChild(lbl);
+
+    const tog = document.createElement('button');
+    tog.type = 'button';
+    tog.className = 'toggle' + (STATE.values[cat.id][field.id] ? ' on' : '');
+    tog.setAttribute('aria-label', field.label);
+    tog.addEventListener('click', () => {
+      STATE.values[cat.id][field.id] = !STATE.values[cat.id][field.id];
+      tog.classList.toggle('on', STATE.values[cat.id][field.id]);
+      recalculate();
+    });
+    wrap.appendChild(tog);
+  } else if (field.type === 'select') {
+    const lbl = document.createElement('label');
+    lbl.className = 'cat-field-label';
+    lbl.textContent = field.label;
+    wrap.appendChild(lbl);
+
+    const sel = document.createElement('select');
+    sel.className = 'cat-field-input';
+    field.options.forEach(opt => {
+      const o = document.createElement('option');
+      o.value = opt.value;
+      o.textContent = opt.label;
+      if (opt.value === STATE.values[cat.id][field.id]) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', () => {
+      STATE.values[cat.id][field.id] = sel.value;
+      recalculate();
+    });
+    wrap.appendChild(sel);
+  } else {
+    // number / text
+    const lbl = document.createElement('label');
+    lbl.className = 'cat-field-label';
+    lbl.textContent = field.label;
+    wrap.appendChild(lbl);
+
+    const inp = document.createElement('input');
+    inp.className = 'cat-field-input';
+    inp.type = field.type === 'number' ? 'number' : 'text';
+    if (field.step) inp.step = field.step;
+    if (field.min !== undefined) inp.min = field.min;
+    if (field.placeholder) inp.placeholder = field.placeholder;
+    if (STATE.values[cat.id][field.id]) inp.value = STATE.values[cat.id][field.id];
+    inp.addEventListener('input', () => {
+      const val = field.type === 'number' ? (parseFloat(inp.value) || 0) : inp.value;
+      STATE.values[cat.id][field.id] = val;
+      recalculate();
+    });
+    wrap.appendChild(inp);
+  }
+
+  return wrap;
+}
+
+function renderCategory(cat) {
+  const c = document.createElement('div');
+  c.className = 'category';
+  c.dataset.catId = cat.id;
+
+  const header = document.createElement('div');
+  header.className = 'cat-header';
+
+  const titleBlock = document.createElement('div');
+  titleBlock.className = 'cat-title-block';
+  titleBlock.innerHTML = `
+    <div class="cat-title">${cat.label}</div>
+    <div class="cat-desc">${cat.desc}</div>
+    ${cat.tooltip ? `<div class="cat-tooltip">${cat.tooltip}</div>` : ''}
+  `;
+  header.appendChild(titleBlock);
+
+  const sub = document.createElement('div');
+  sub.className = 'cat-subtotal zero';
+  sub.id = 'cat-subtotal-' + cat.id;
+  sub.textContent = '$0';
+  header.appendChild(sub);
+
+  c.appendChild(header);
+
+  const fieldsWrap = document.createElement('div');
+  fieldsWrap.className = 'cat-fields';
+  cat.fields.forEach(f => fieldsWrap.appendChild(renderField(cat, f)));
+  c.appendChild(fieldsWrap);
+
+  return c;
+}
+
+function renderGroups() {
+  const container = $('#groups-container');
+  container.innerHTML = '';
+  DATA.groups.forEach(group => {
+    const cats = DATA.categories.filter(c => c.group === group.id);
+    if (!cats.length) return;
+
+    const g = document.createElement('div');
+    g.className = 'group';
+    g.dataset.groupId = group.id;
+
+    const header = document.createElement('button');
+    header.type = 'button';
+    header.className = 'group-header';
+    header.innerHTML = `
+      <div class="group-header-info">
+        <div class="group-icon">${group.icon}</div>
+        <div class="group-text">
+          <div class="group-title">${group.label}</div>
+          <div class="group-desc">${group.desc}</div>
+        </div>
+      </div>
+      <div class="group-meta">
+        <div class="group-subtotal zero" id="group-subtotal-${group.id}">$0</div>
+        <svg class="group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    `;
+    header.addEventListener('click', () => {
+      g.classList.toggle('open');
+      if (g.classList.contains('open')) STATE.openGroups.add(group.id);
+      else STATE.openGroups.delete(group.id);
+    });
+    g.appendChild(header);
+
+    const body = document.createElement('div');
+    body.className = 'group-body';
+    cats.forEach(cat => body.appendChild(renderCategory(cat)));
+    g.appendChild(body);
+
+    container.appendChild(g);
+  });
+}
+
+function renderSoftCosts(calc) {
+  const sc = DATA.soft_costs;
+  const breakdown = $('#cost-breakdown');
+  breakdown.innerHTML = `
+    <div class="cost-line">
+      <span class="label">Trade subtotal<small>Labor + materials, all selected categories</small></span>
+      <span class="val">${fmt(calc.trade)}</span>
+    </div>
+    <div class="cost-line">
+      <span class="label">Demo &amp; disposal<small>${(sc.demo_disposal_pct * 100).toFixed(1)}% of trade subtotal</small></span>
+      <span class="val">${fmt(calc.demoDisposal)}</span>
+    </div>
+    <div class="cost-line">
+      <span class="label">Permits<small>${(sc.permits_pct * 100).toFixed(1)}% of trade subtotal · capped at ${fmt(sc.permits_cap)}</small></span>
+      <span class="val">${fmt(calc.permits)}</span>
+    </div>
+    <div class="cost-line subtotal">
+      <span class="label">Subtotal</span>
+      <span class="val">${fmt(calc.subtotal)}</span>
+    </div>
+    <div class="cost-line">
+      <span class="label">Contingency<small>${(sc.contingency_pct * 100).toFixed(1)}% — for the unknowns we always find</small></span>
+      <span class="val">${fmt(calc.contingency)}</span>
+    </div>
+    <div class="cost-line">
+      <span class="label">PA sales tax<small>~${(sc.tax_pct * 100).toFixed(1)}% effective on materials portion</small></span>
+      <span class="val">${fmt(calc.tax)}</span>
+    </div>
+    <div class="cost-line grand-total">
+      <span class="label">Estimated total</span>
+      <span class="val">${fmt(calc.grand)}</span>
+    </div>
+  `;
+}
+
+// ============================================================
+// Plan savings comparison
+// ============================================================
+const PLANS = [
+  { id: 'essential', name: 'Essential', monthly: 99,  discount: 0.10, url: 'https://secure.nepa-pro.com/b/4gMbJ1a8dc5R4BTgct2cg09', tagline: '10% off' },
+  { id: 'pro',       name: 'Pro',       monthly: 199, discount: 0.15, url: 'https://secure.nepa-pro.com/b/eVqbJ15RXfi32tL0dv2cg0a', tagline: '15% off' },
+  { id: 'premier',   name: 'Premier',   monthly: 349, discount: 0.20, url: 'https://secure.nepa-pro.com/b/6oUeVda8d2vh0lDbWd2cg0b', tagline: '20% off' },
+  { id: 'estate',    name: 'Estate',    monthly: 699, discount: 0.25, url: 'https://secure.nepa-pro.com/b/dRm4gz9490n9fgxf8p2cg0c', tagline: '25% off' },
+];
+
+function renderPlanSavings(grand) {
+  const tilesEl = $('#plan-tiles');
+  const headlineMaxEl = $('#max-savings');
+
+  // Empty state when estimate is $0
+  if (!grand || grand <= 0) {
+    headlineMaxEl.textContent = '$0';
+    tilesEl.innerHTML = '<div class="plan-savings-empty" style="grid-column:1/-1;">Add items to your estimate above to see how much each plan saves you.</div>';
+    return;
+  }
+
+  // Compute per-plan numbers
+  const computed = PLANS.map(p => {
+    const savings = grand * p.discount;
+    const newTotal = grand - savings;
+    const annualPlanCost = p.monthly * 12;
+    // "Net savings on this renovation" = gross savings minus one year of plan cost
+    // This is what determines best value: who saves you the most after paying for the plan
+    const netSavings = savings - annualPlanCost;
+    return { ...p, savings, newTotal, annualPlanCost, netSavings };
+  });
+
+  // Find best value: plan with highest netSavings (only if any are net-positive)
+  const bestNet = computed.reduce((best, p) => p.netSavings > best.netSavings ? p : best, computed[0]);
+  // Only mark as featured if at least one plan has positive net savings
+  const featuredId = bestNet.netSavings > 0 ? bestNet.id : null;
+
+  // Update headline with Estate's gross savings (the most exciting number)
+  const estatePlan = computed.find(p => p.id === 'estate');
+  headlineMaxEl.textContent = fmt(estatePlan.savings);
+
+  // Render tiles
+  tilesEl.innerHTML = computed.map(p => {
+    const isFeatured = p.id === featuredId;
+    return `
+      <div class="plan-tile ${isFeatured ? 'featured' : ''}">
+        ${isFeatured ? '<div class="plan-tile-badge">★ Best Value</div>' : ''}
+        <div class="plan-tile-name">${p.name}</div>
+        <div class="plan-tile-price">$${p.monthly}/mo · cancel anytime</div>
+        <div class="plan-tile-discount">${p.tagline} renovations</div>
+        <div class="plan-tile-orig">${fmt(grand)}</div>
+        <div class="plan-tile-new">${fmt(p.newTotal)}</div>
+        <div class="plan-tile-savings">Save ${fmt(p.savings)}</div>
+        <a class="plan-tile-cta" href="${p.url}" target="_blank" rel="noopener">
+          Subscribe &amp; Save
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    `;
+  }).join('');
+}
+
+function recalculate() {
+  const calc = calcAll();
+
+  // Update each category subtotal
+  DATA.categories.forEach(cat => {
+    const el = $('#cat-subtotal-' + cat.id);
+    if (el) {
+      const t = calc.catTotals[cat.id];
+      el.textContent = fmt(t);
+      el.classList.toggle('zero', t === 0);
+    }
+  });
+
+  // Update each group subtotal
+  DATA.groups.forEach(group => {
+    const cats = DATA.categories.filter(c => c.group === group.id);
+    const sum = cats.reduce((acc, c) => acc + calc.catTotals[c.id], 0);
+    const el = $('#group-subtotal-' + group.id);
+    if (el) {
+      el.textContent = fmt(sum);
+      el.classList.toggle('zero', sum === 0);
+    }
+  });
+
+  // Soft costs breakdown
+  renderSoftCosts(calc);
+
+  // Plan savings comparison
+  renderPlanSavings(calc.grand);
+
+  // Bottom action bar
+  $('#ab-amount').textContent = fmt(calc.grand);
+}
+
+// ============================================================
+// PDF generation
+// ============================================================
+function generatePDF() {
+  const calc = calcAll();
+  if (calc.trade === 0) {
+    showToast('Add at least one item to your estimate first', 'error');
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+
+  // Colors (match brand)
+  const NAVY = [11, 31, 58];
+  const NAVY_700 = [17, 48, 90];
+  const AMBER = [255, 122, 26];
+  const AMBER_DARK = [232, 101, 26];
+  const INK = [11, 31, 58];
+  const INK_2 = [42, 58, 85];
+  const INK_3 = [92, 106, 130];
+  const INK_4 = [139, 151, 172];
+  const HAIRLINE = [224, 227, 235];
+  const BG_TINT = [238, 242, 247];
+  const WHITE = [255, 255, 255];
+
+  // === HEADER (Navy band) ===
+  doc.setFillColor(...NAVY);
+  doc.rect(0, 0, pageW, 110, 'F');
+
+  // Brand mark (rounded amber square + house icon)
+  doc.setFillColor(...AMBER);
+  doc.roundedRect(36, 28, 38, 38, 8, 8, 'F');
+  doc.setDrawColor(255, 255, 255);
+  doc.setLineWidth(2);
+  doc.setLineCap('round'); doc.setLineJoin('round');
+  // House: roof, walls, door
+  const hx = 36 + 19, hy = 28 + 19, hs = 12;
+  // Roof
+  doc.line(hx - hs - 1, hy - hs / 4, hx, hy - hs);
+  doc.line(hx, hy - hs, hx + hs + 1, hy - hs / 4);
+  // Walls
+  doc.line(hx - hs, hy - hs / 4, hx - hs, hy + hs);
+  doc.line(hx + hs, hy - hs / 4, hx + hs, hy + hs);
+  // Floor
+  doc.line(hx - hs, hy + hs, hx + hs, hy + hs);
+  // Door
+  doc.line(hx - 3, hy + hs, hx - 3, hy + 3);
+  doc.line(hx + 3, hy + hs, hx + 3, hy + 3);
+  doc.line(hx - 3, hy + 3, hx + 3, hy + 3);
+
+  // Brand name (NEPA-PRO)
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(18);
+  doc.setTextColor(255, 255, 255);
+  doc.text('NEPA', 84, 50);
+  const nepaW = doc.getTextWidth('NEPA');
+  doc.setTextColor(...AMBER);
+  doc.text('-PRO', 84 + nepaW, 50);
+
+  // Tagline
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(255, 255, 255);
+  doc.text('PROPERTY CARE  ·  SINCE 1987', 84, 64);
+
+  // Right side: title + estimate ID
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(20);
+  doc.setTextColor(255, 255, 255);
+  doc.text('Renovation Estimate', pageW - 36, 52, { align: 'right' });
+
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const estId = 'EST-' + today.getFullYear() + (today.getMonth() + 1).toString().padStart(2, '0') + today.getDate().toString().padStart(2, '0') + '-' + Math.floor(Math.random() * 9000 + 1000);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(255, 255, 255);
+  doc.text(`${dateStr}  ·  ${estId}`, pageW - 36, 70, { align: 'right' });
+
+  // === Project info section ===
+  let y = 138;
+  const projName = STATE.project.name || 'Untitled Project';
+  const projClient = STATE.project.client || '—';
+  const projAddress = STATE.project.address || '—';
+  const trimInfo = DATA.trim_levels[STATE.trim];
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(7);
+  doc.setTextColor(...AMBER_DARK);
+  doc.text('PROJECT', 36, y);
+
+  // Project name - take up most of the row width, but leave room for the trim tag
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(15);
+  doc.setTextColor(...INK);
+  // Wrap project name if needed
+  const projNameLines = doc.splitTextToSize(projName, pageW - 230);
+  doc.text(projNameLines[0], 36, y + 16);
+
+  // Trim tag in the upper-right, aligned with the project name
+  const trimText = `${trimInfo.label} · ${trimInfo.tagline}`;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  const tagW = doc.getTextWidth(trimText) + 20;
+  doc.setFillColor(...AMBER);
+  doc.roundedRect(pageW - 36 - tagW, y + 4, tagW, 18, 9, 9, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.text(trimText, pageW - 36 - tagW / 2, y + 16, { align: 'center' });
+
+  // 2-column meta row: CLIENT, PROPERTY (full width split, no third column)
+  const colW = (pageW - 72) / 2;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...INK_3);
+  doc.text('CLIENT', 36, y + 40);
+  doc.text('PROPERTY', 36 + colW, y + 40);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...INK_2);
+  // Truncate client/address if exceeds column width
+  const clientLines = doc.splitTextToSize(projClient, colW - 12);
+  const addrLines = doc.splitTextToSize(projAddress, colW - 12);
+  doc.text(clientLines[0], 36, y + 54);
+  doc.text(addrLines[0], 36 + colW, y + 54);
+
+  // Hairline
+  y += 72;
+  doc.setDrawColor(...HAIRLINE);
+  doc.setLineWidth(0.5);
+  doc.line(36, y, pageW - 36, y);
+  y += 16;
+
+  // === Line items grouped by group ===
+  const itemRows = [];
+  DATA.groups.forEach(group => {
+    const cats = DATA.categories.filter(c => c.group === group.id);
+    const groupItems = [];
+    cats.forEach(cat => {
+      const lines = lineItemsForCategory(cat);
+      lines.forEach(line => {
+        if (line.amount > 0) {
+          groupItems.push(line);
+        }
+      });
+    });
+    if (groupItems.length) {
+      // Group header row — text-only (jsPDF Helvetica doesn't render emoji)
+      itemRows.push({ isHeader: true, label: group.label.toUpperCase() });
+      groupItems.forEach(it => itemRows.push(it));
+    }
+  });
+
+  // Build autoTable rows
+  const tableRows = itemRows.map(r => {
+    if (r.isHeader) {
+      return [{ content: r.label, colSpan: 4, styles: { fillColor: NAVY, textColor: WHITE, fontStyle: 'bold', fontSize: 10, cellPadding: { top: 6, bottom: 6, left: 8, right: 8 } } }];
+    }
+    return [r.name, r.qty, r.unit, fmtFull(r.amount)];
+  });
+
+  doc.autoTable({
+    startY: y,
+    head: [[
+      { content: 'ITEM', styles: { halign: 'left' } },
+      { content: 'QTY', styles: { halign: 'right' } },
+      { content: 'UNIT', styles: { halign: 'left' } },
+      { content: 'AMOUNT', styles: { halign: 'right' } },
+    ]],
+    body: tableRows,
+    margin: { left: 36, right: 36 },
+    styles: {
+      font: 'helvetica',
+      fontSize: 9,
+      cellPadding: { top: 5, bottom: 5, left: 8, right: 8 },
+      lineColor: HAIRLINE,
+      lineWidth: 0.5,
+    },
+    headStyles: {
+      fillColor: BG_TINT,
+      textColor: INK_3,
+      fontStyle: 'bold',
+      fontSize: 8,
+      cellPadding: { top: 7, bottom: 7, left: 8, right: 8 },
+    },
+    columnStyles: {
+      0: { cellWidth: 'auto' },
+      1: { cellWidth: 50, halign: 'right' },
+      2: { cellWidth: 50, halign: 'left' },
+      3: { cellWidth: 80, halign: 'right', fontStyle: 'bold' },
+    },
+    alternateRowStyles: { fillColor: [250, 251, 253] },
+    didParseCell: function(data) {
+      // Force header rows to span properly
+      if (data.row.raw && data.row.raw[0] && data.row.raw[0].colSpan) {
+        // Already styled inline
+      }
+    },
+  });
+
+  let endY = doc.lastAutoTable.finalY + 18;
+
+  // Page break check for totals
+  if (endY > pageH - 200) {
+    doc.addPage();
+    endY = 50;
+  }
+
+  // === Soft costs section ===
+  doc.setFillColor(...BG_TINT);
+  doc.roundedRect(36, endY, pageW - 72, 110, 8, 8, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(7);
+  doc.setTextColor(...AMBER_DARK);
+  doc.text('SOFT COSTS', 50, endY + 18);
+
+  const softLines = [
+    ['Trade subtotal', fmtFull(calc.trade)],
+    ['Demo & disposal', fmtFull(calc.demoDisposal)],
+    ['Permits', fmtFull(calc.permits)],
+    ['Contingency', fmtFull(calc.contingency)],
+    ['PA sales tax', fmtFull(calc.tax)],
+  ];
+
+  let sy = endY + 32;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  softLines.forEach(([label, val]) => {
+    doc.setTextColor(...INK_2);
+    doc.text(label, 50, sy);
+    doc.setTextColor(...INK);
+    doc.text(val, pageW - 50, sy, { align: 'right' });
+    sy += 14;
+  });
+
+  endY += 130;
+
+  // Page break check
+  if (endY > pageH - 100) {
+    doc.addPage();
+    endY = 50;
+  }
+
+  // === GRAND TOTAL (navy band) ===
+  doc.setFillColor(...NAVY);
+  doc.roundedRect(36, endY, pageW - 72, 70, 10, 10, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...AMBER);
+  doc.text('ESTIMATED TOTAL', 50, endY + 22);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(28);
+  doc.setTextColor(255, 255, 255);
+  doc.text(fmtFull(calc.grand), pageW - 50, endY + 44, { align: 'right' });
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(255, 255, 255);
+  doc.setTextColor(180, 195, 220);
+  doc.text(`${trimInfo.label} finish level  ·  ${itemRows.filter(r => !r.isHeader).length} line items`, 50, endY + 50);
+
+  endY += 86;
+
+  // Disclaimer
+  doc.setFont('helvetica', 'italic');
+  doc.setFontSize(8);
+  doc.setTextColor(...INK_3);
+  const discText = 'Estimate only. Final pricing depends on site conditions, material availability, permit requirements, and current market rates. ' +
+    'Numbers reflect typical NEPA installed pricing (labor + materials, standard finishes) as of Q1 2026. ' +
+    'For a binding quote, schedule a site visit at nepa-pro.com/contact or call 866-NEPA-PRO.';
+  const lines = doc.splitTextToSize(discText, pageW - 72);
+  doc.text(lines, 36, endY);
+
+  // === FOOTER on every page ===
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i);
+    doc.setDrawColor(...HAIRLINE);
+    doc.setLineWidth(0.5);
+    doc.line(36, pageH - 28, pageW - 36, pageH - 28);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.setTextColor(...INK_4);
+    doc.text('© 2026 NEPA-PRO  ·  EIN 39-2873591  ·  Licensed & Insured', 36, pageH - 16);
+    doc.text('nepa-pro.com  ·  866-NEPA-PRO', pageW / 2, pageH - 16, { align: 'center' });
+    doc.text(`Page ${i} of ${pageCount}`, pageW - 36, pageH - 16, { align: 'right' });
+  }
+
+  // Save
+  const safeProjName = (STATE.project.name || 'estimate').replace(/[^a-z0-9-_]/gi, '_').toLowerCase();
+  const filename = `nepa-pro-${safeProjName}-${today.getFullYear()}${(today.getMonth()+1).toString().padStart(2,'0')}${today.getDate().toString().padStart(2,'0')}.pdf`;
+  doc.save(filename);
+
+  showToast('PDF downloaded', 'success');
+}
+
+// ============================================================
+// Per-category line items for PDF
+// ============================================================
+function lineItemsForCategory(cat) {
+  const v = STATE.values[cat.id];
+  const trim = STATE.trim;
+  const lines = [];
+
+  // For each category, generate human-readable line items based on filled values
+  switch (cat.id) {
+    case 'addition': {
+      if (v.addition_sqft > 0) lines.push({ name: cat.label + ' — main', qty: v.addition_sqft, unit: 'sqft', amount: v.addition_sqft * cat.prices.addition_per_sqft[trim] });
+      if (v.addition_includes_bath) lines.push({ name: cat.label + ' — full bath addition', qty: 1, unit: 'each', amount: cat.prices.bath_addon[trim] });
+      if (v.addition_includes_kitchen) lines.push({ name: cat.label + ' — kitchenette', qty: 1, unit: 'each', amount: cat.prices.kitchenette_addon[trim] });
+      break;
+    }
+    case 'garage': {
+      if (v.garage_sqft > 0) lines.push({ name: 'Detached garage', qty: v.garage_sqft, unit: 'sqft', amount: v.garage_sqft * cat.prices.garage_per_sqft[trim] });
+      if (v.garage_doors > 0) lines.push({ name: 'Garage doors', qty: v.garage_doors, unit: 'each', amount: v.garage_doors * cat.prices.garage_door_each[trim] });
+      break;
+    }
+    case 'kitchen': {
+      const sz = v.kitchen_size;
+      if (sz && sz !== 'none' && cat.prices['kitchen_' + sz]) {
+        const lbl = cat.fields[0].options.find(o => o.value === sz)?.label || sz;
+        lines.push({ name: `Kitchen remodel — ${lbl}`, qty: 1, unit: 'kitchen', amount: cat.prices['kitchen_' + sz][trim] });
+      }
+      break;
+    }
+    case 'bathroom': {
+      if (v.bath_powder_count > 0) lines.push({ name: 'Powder room remodel', qty: v.bath_powder_count, unit: 'each', amount: v.bath_powder_count * cat.prices.bath_powder[trim] });
+      if (v.bath_full_count > 0) lines.push({ name: 'Full bathroom remodel', qty: v.bath_full_count, unit: 'each', amount: v.bath_full_count * cat.prices.bath_full[trim] });
+      if (v.bath_primary_count > 0) lines.push({ name: 'Primary suite bathroom remodel', qty: v.bath_primary_count, unit: 'each', amount: v.bath_primary_count * cat.prices.bath_primary[trim] });
+      break;
+    }
+    case 'basement': {
+      if (v.basement_sqft > 0) lines.push({ name: 'Basement finishing', qty: v.basement_sqft, unit: 'sqft', amount: v.basement_sqft * cat.prices.basement_per_sqft[trim] });
+      if (v.basement_includes_kitchenette) lines.push({ name: 'Basement kitchenette / wet bar', qty: 1, unit: 'each', amount: cat.prices.basement_kitchenette[trim] });
+      if (v.basement_egress_windows > 0) lines.push({ name: 'Egress window installation', qty: v.basement_egress_windows, unit: 'each', amount: v.basement_egress_windows * cat.prices.basement_egress[trim] });
+      break;
+    }
+    case 'porch': {
+      if (v.porch_screened_sqft > 0) lines.push({ name: 'Screened porch', qty: v.porch_screened_sqft, unit: 'sqft', amount: v.porch_screened_sqft * cat.prices.porch_screened[trim] });
+      if (v.porch_sunroom_sqft > 0) lines.push({ name: '3-season sunroom', qty: v.porch_sunroom_sqft, unit: 'sqft', amount: v.porch_sunroom_sqft * cat.prices.porch_sunroom[trim] });
+      break;
+    }
+    case 'roofing': {
+      if (v.roof_asphalt_sqft > 0) lines.push({ name: 'Asphalt shingle roof', qty: v.roof_asphalt_sqft, unit: 'sqft', amount: v.roof_asphalt_sqft * cat.prices.roof_asphalt_per_sqft[trim] });
+      if (v.roof_metal_sqft > 0) lines.push({ name: 'Standing-seam metal roof', qty: v.roof_metal_sqft, unit: 'sqft', amount: v.roof_metal_sqft * cat.prices.roof_metal_per_sqft[trim] });
+      if (v.roof_skylights > 0) lines.push({ name: 'Skylights', qty: v.roof_skylights, unit: 'each', amount: v.roof_skylights * cat.prices.skylight_each[trim] });
+      break;
+    }
+    case 'siding': {
+      if (v.siding_vinyl_sqft > 0) lines.push({ name: 'Vinyl siding', qty: v.siding_vinyl_sqft, unit: 'sqft', amount: v.siding_vinyl_sqft * cat.prices.siding_vinyl[trim] });
+      if (v.siding_fiber_sqft > 0) lines.push({ name: 'Fiber-cement (Hardie) siding', qty: v.siding_fiber_sqft, unit: 'sqft', amount: v.siding_fiber_sqft * cat.prices.siding_fiber[trim] });
+      if (v.siding_wood_sqft > 0) lines.push({ name: 'Wood / engineered wood siding', qty: v.siding_wood_sqft, unit: 'sqft', amount: v.siding_wood_sqft * cat.prices.siding_wood[trim] });
+      break;
+    }
+    case 'windows': {
+      if (v.window_standard_count > 0) lines.push({ name: 'Standard window replacement', qty: v.window_standard_count, unit: 'each', amount: v.window_standard_count * cat.prices.window_standard[trim] });
+      if (v.window_large_count > 0) lines.push({ name: 'Large window replacement', qty: v.window_large_count, unit: 'each', amount: v.window_large_count * cat.prices.window_large[trim] });
+      if (v.window_specialty_count > 0) lines.push({ name: 'Specialty window (bay/picture/shape)', qty: v.window_specialty_count, unit: 'each', amount: v.window_specialty_count * cat.prices.window_specialty[trim] });
+      break;
+    }
+    case 'exterior_doors': {
+      if (v.exterior_door_count > 0) lines.push({ name: 'Exterior entry door', qty: v.exterior_door_count, unit: 'each', amount: v.exterior_door_count * cat.prices.exterior_door[trim] });
+      if (v.patio_door_count > 0) lines.push({ name: 'Sliding patio door', qty: v.patio_door_count, unit: 'each', amount: v.patio_door_count * cat.prices.patio_door[trim] });
+      break;
+    }
+    case 'flooring': {
+      if (v.floor_lvp_sqft > 0) lines.push({ name: 'Luxury vinyl plank flooring', qty: v.floor_lvp_sqft, unit: 'sqft', amount: v.floor_lvp_sqft * cat.prices.floor_lvp[trim] });
+      if (v.floor_engineered_sqft > 0) lines.push({ name: 'Engineered hardwood flooring', qty: v.floor_engineered_sqft, unit: 'sqft', amount: v.floor_engineered_sqft * cat.prices.floor_engineered[trim] });
+      if (v.floor_solid_sqft > 0) lines.push({ name: 'Solid hardwood flooring', qty: v.floor_solid_sqft, unit: 'sqft', amount: v.floor_solid_sqft * cat.prices.floor_solid[trim] });
+      if (v.floor_tile_sqft > 0) lines.push({ name: 'Ceramic / porcelain tile', qty: v.floor_tile_sqft, unit: 'sqft', amount: v.floor_tile_sqft * cat.prices.floor_tile[trim] });
+      if (v.floor_carpet_sqft > 0) lines.push({ name: 'Carpet', qty: v.floor_carpet_sqft, unit: 'sqft', amount: v.floor_carpet_sqft * cat.prices.floor_carpet[trim] });
+      break;
+    }
+    case 'drywall': {
+      if (v.drywall_new_sqft > 0) lines.push({ name: 'New drywall (hang/tape/finish)', qty: v.drywall_new_sqft, unit: 'sqft', amount: v.drywall_new_sqft * cat.prices.drywall_new[trim] });
+      if (v.drywall_repair_sqft > 0) lines.push({ name: 'Drywall repair patches', qty: v.drywall_repair_sqft, unit: 'sqft', amount: v.drywall_repair_sqft * cat.prices.drywall_repair[trim] });
+      break;
+    }
+    case 'interior_paint': {
+      if (v.paint_walls_sqft > 0) lines.push({ name: 'Interior paint — walls + ceilings', qty: v.paint_walls_sqft, unit: 'sqft', amount: v.paint_walls_sqft * cat.prices.paint_walls[trim] });
+      if (v.paint_trim_count > 0) lines.push({ name: 'Trim/door paint sets', qty: v.paint_trim_count, unit: 'set', amount: v.paint_trim_count * cat.prices.paint_trim_set[trim] });
+      break;
+    }
+    case 'interior_doors': {
+      if (v.interior_door_count > 0) lines.push({ name: 'Interior door (pre-hung + hardware)', qty: v.interior_door_count, unit: 'each', amount: v.interior_door_count * cat.prices.interior_door[trim] });
+      if (v.trim_room_count > 0) lines.push({ name: 'Room re-trim (base/case/crown)', qty: v.trim_room_count, unit: 'room', amount: v.trim_room_count * cat.prices.trim_room[trim] });
+      break;
+    }
+    case 'electrical': {
+      if (v.panel_upgrade) lines.push({ name: '200A service panel upgrade', qty: 1, unit: 'each', amount: cat.prices.panel_upgrade[trim] });
+      if (v.rewire_sqft > 0) lines.push({ name: 'Full home rewire', qty: v.rewire_sqft, unit: 'sqft', amount: v.rewire_sqft * cat.prices.rewire_per_sqft[trim] });
+      if (v.circuit_count > 0) lines.push({ name: 'Dedicated circuit', qty: v.circuit_count, unit: 'each', amount: v.circuit_count * cat.prices.circuit[trim] });
+      if (v.ev_charger > 0) lines.push({ name: 'EV charger circuit', qty: v.ev_charger, unit: 'each', amount: v.ev_charger * cat.prices.ev_charger[trim] });
+      if (v.outlet_count > 0) lines.push({ name: 'Outlet / switch', qty: v.outlet_count, unit: 'each', amount: v.outlet_count * cat.prices.outlet[trim] });
+      break;
+    }
+    case 'plumbing': {
+      if (v.repipe_fixture_count > 0) lines.push({ name: 'Repipe (per fixture served)', qty: v.repipe_fixture_count, unit: 'fixture', amount: v.repipe_fixture_count * cat.prices.repipe_fixture[trim] });
+      if (v.toilet_count > 0) lines.push({ name: 'Toilet replacement', qty: v.toilet_count, unit: 'each', amount: v.toilet_count * cat.prices.toilet[trim] });
+      if (v.vanity_count > 0) lines.push({ name: 'Vanity (sink + faucet) replacement', qty: v.vanity_count, unit: 'each', amount: v.vanity_count * cat.prices.vanity[trim] });
+      if (v.tub_count > 0) lines.push({ name: 'Tub / shower unit replacement', qty: v.tub_count, unit: 'each', amount: v.tub_count * cat.prices.tub[trim] });
+      if (v.wh_tank_count > 0) lines.push({ name: 'Water heater (50 gal tank)', qty: v.wh_tank_count, unit: 'each', amount: v.wh_tank_count * cat.prices.wh_tank[trim] });
+      if (v.wh_tankless_count > 0) lines.push({ name: 'Tankless water heater', qty: v.wh_tankless_count, unit: 'each', amount: v.wh_tankless_count * cat.prices.wh_tankless[trim] });
+      break;
+    }
+    case 'hvac': {
+      if (v.furnace_count > 0) lines.push({ name: 'Gas furnace (95% efficiency)', qty: v.furnace_count, unit: 'each', amount: v.furnace_count * cat.prices.furnace[trim] });
+      if (v.ac_count > 0) lines.push({ name: 'AC condenser', qty: v.ac_count, unit: 'each', amount: v.ac_count * cat.prices.ac[trim] });
+      if (v.heatpump_count > 0) lines.push({ name: 'Air-source heat pump', qty: v.heatpump_count, unit: 'each', amount: v.heatpump_count * cat.prices.heatpump[trim] });
+      if (v.minisplit_zones > 0) lines.push({ name: 'Mini-split zone', qty: v.minisplit_zones, unit: 'zone', amount: v.minisplit_zones * cat.prices.minisplit_zone[trim] });
+      if (v.ductwork_sqft > 0) lines.push({ name: 'New ductwork', qty: v.ductwork_sqft, unit: 'sqft served', amount: v.ductwork_sqft * cat.prices.ductwork_per_sqft[trim] });
+      break;
+    }
+    case 'insulation': {
+      if (v.insulation_attic_sqft > 0) lines.push({ name: 'Attic insulation (blown-in)', qty: v.insulation_attic_sqft, unit: 'sqft', amount: v.insulation_attic_sqft * cat.prices.insulation_attic[trim] });
+      if (v.insulation_wall_sqft > 0) lines.push({ name: 'Wall insulation (batt or blown-in)', qty: v.insulation_wall_sqft, unit: 'sqft', amount: v.insulation_wall_sqft * cat.prices.insulation_wall[trim] });
+      if (v.insulation_spray_sqft > 0) lines.push({ name: 'Closed-cell spray foam insulation', qty: v.insulation_spray_sqft, unit: 'sqft', amount: v.insulation_spray_sqft * cat.prices.insulation_spray[trim] });
+      break;
+    }
+    case 'deck': {
+      if (v.deck_pt_sqft > 0) lines.push({ name: 'Pressure-treated deck', qty: v.deck_pt_sqft, unit: 'sqft', amount: v.deck_pt_sqft * cat.prices.deck_pt[trim] });
+      if (v.deck_cedar_sqft > 0) lines.push({ name: 'Cedar deck', qty: v.deck_cedar_sqft, unit: 'sqft', amount: v.deck_cedar_sqft * cat.prices.deck_cedar[trim] });
+      if (v.deck_composite_sqft > 0) lines.push({ name: 'Composite deck (Trex/TimberTech)', qty: v.deck_composite_sqft, unit: 'sqft', amount: v.deck_composite_sqft * cat.prices.deck_composite[trim] });
+      break;
+    }
+    case 'driveway': {
+      if (v.driveway_asphalt_sqft > 0) lines.push({ name: 'Asphalt driveway', qty: v.driveway_asphalt_sqft, unit: 'sqft', amount: v.driveway_asphalt_sqft * cat.prices.driveway_asphalt[trim] });
+      if (v.driveway_concrete_sqft > 0) lines.push({ name: 'Concrete driveway', qty: v.driveway_concrete_sqft, unit: 'sqft', amount: v.driveway_concrete_sqft * cat.prices.driveway_concrete[trim] });
+      if (v.driveway_paver_sqft > 0) lines.push({ name: 'Paver driveway', qty: v.driveway_paver_sqft, unit: 'sqft', amount: v.driveway_paver_sqft * cat.prices.driveway_paver[trim] });
+      break;
+    }
+    case 'patio': {
+      if (v.patio_concrete_sqft > 0) lines.push({ name: 'Concrete patio', qty: v.patio_concrete_sqft, unit: 'sqft', amount: v.patio_concrete_sqft * cat.prices.patio_concrete[trim] });
+      if (v.patio_paver_sqft > 0) lines.push({ name: 'Paver patio / walkway', qty: v.patio_paver_sqft, unit: 'sqft', amount: v.patio_paver_sqft * cat.prices.patio_paver[trim] });
+      break;
+    }
+    case 'fencing': {
+      if (v.fence_pt_lf > 0) lines.push({ name: 'Wood (PT) privacy fence', qty: v.fence_pt_lf, unit: 'lf', amount: v.fence_pt_lf * cat.prices.fence_pt[trim] });
+      if (v.fence_vinyl_lf > 0) lines.push({ name: 'Vinyl privacy fence', qty: v.fence_vinyl_lf, unit: 'lf', amount: v.fence_vinyl_lf * cat.prices.fence_vinyl[trim] });
+      if (v.fence_chain_lf > 0) lines.push({ name: 'Chain-link fence', qty: v.fence_chain_lf, unit: 'lf', amount: v.fence_chain_lf * cat.prices.fence_chain[trim] });
+      if (v.fence_gates > 0) lines.push({ name: 'Fence gate', qty: v.fence_gates, unit: 'each', amount: v.fence_gates * cat.prices.fence_gate[trim] });
+      break;
+    }
+    case 'solar': {
+      if (v.solar_kw > 0) lines.push({ name: 'Solar PV system (installed by Solar Mason)', qty: v.solar_kw, unit: 'kW DC', amount: v.solar_kw * 1000 * cat.prices.solar_per_watt[trim] });
+      if (v.solar_battery_kwh > 0) lines.push({ name: 'Battery storage', qty: v.solar_battery_kwh, unit: 'kWh', amount: v.solar_battery_kwh * cat.prices.battery_per_kwh[trim] });
+      break;
+    }
+  }
+
+  return lines;
+}
+
+// ============================================================
+// Save / Load / Email / Print / Reset
+// ============================================================
+const STORAGE_KEY = 'nepa-pro-renovation-estimate-v1';
+
+function saveProgress() {
+  try {
+    const data = {
+      trim: STATE.trim,
+      project: STATE.project,
+      values: STATE.values,
+      ts: Date.now(),
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    showToast('Progress saved', 'success');
+  } catch (e) {
+    showToast('Could not save (browser limit)', 'error');
+  }
+}
+
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      showToast('No saved estimate found', 'error');
+      return;
+    }
+    const data = JSON.parse(raw);
+    STATE.trim = data.trim || 'standard';
+    STATE.project = data.project || { name: '', client: '', address: '' };
+    STATE.values = data.values || STATE.values;
+
+    // Re-render everything
+    initialRender();
+    showToast('Saved estimate loaded', 'success');
+  } catch (e) {
+    showToast('Could not load saved estimate', 'error');
+  }
+}
+
+function emailEstimate() {
+  const calc = calcAll();
+  if (calc.trade === 0) {
+    showToast('Add at least one item first', 'error');
+    return;
+  }
+
+  // Build a text summary
+  const projName = STATE.project.name || 'Renovation Project';
+  const trimInfo = DATA.trim_levels[STATE.trim];
+
+  let body = `NEPA-PRO Renovation Estimate\n`;
+  body += `============================\n\n`;
+  body += `Project: ${projName}\n`;
+  if (STATE.project.client) body += `Client: ${STATE.project.client}\n`;
+  if (STATE.project.address) body += `Address: ${STATE.project.address}\n`;
+  body += `Finish level: ${trimInfo.label} (${trimInfo.tagline})\n`;
+  body += `Date: ${new Date().toLocaleDateString()}\n\n`;
+
+  body += `LINE ITEMS\n`;
+  body += `----------\n`;
+  DATA.groups.forEach(group => {
+    const cats = DATA.categories.filter(c => c.group === group.id);
+    const groupItems = [];
+    cats.forEach(cat => {
+      lineItemsForCategory(cat).forEach(line => {
+        if (line.amount > 0) groupItems.push(line);
+      });
+    });
+    if (groupItems.length) {
+      body += `\n${group.label.toUpperCase()}\n`;
+      groupItems.forEach(it => {
+        body += `  ${it.name}: ${it.qty} ${it.unit} = ${fmtFull(it.amount)}\n`;
+      });
+    }
+  });
+
+  body += `\nTOTALS\n`;
+  body += `------\n`;
+  body += `Trade subtotal:     ${fmtFull(calc.trade)}\n`;
+  body += `Demo & disposal:    ${fmtFull(calc.demoDisposal)}\n`;
+  body += `Permits:            ${fmtFull(calc.permits)}\n`;
+  body += `Contingency:        ${fmtFull(calc.contingency)}\n`;
+  body += `PA sales tax:       ${fmtFull(calc.tax)}\n`;
+  body += `\nESTIMATED TOTAL:    ${fmtFull(calc.grand)}\n\n`;
+
+  body += `---\n`;
+  body += `Estimate only. Final pricing requires a site visit.\n`;
+  body += `Schedule: nepa-pro.com/contact or call 866-NEPA-PRO\n`;
+
+  const subject = `NEPA-PRO Renovation Estimate — ${projName}`;
+  const mailto = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function printEstimate() {
+  generatePDF();
+  showToast('PDF generated — open it to print', 'success');
+}
+
+function resetEstimate() {
+  if (!confirm('Clear all entries and reset the estimate?')) return;
+  STATE.trim = 'standard';
+  STATE.project = { name: '', client: '', address: '' };
+  DATA.categories.forEach(cat => {
+    STATE.values[cat.id] = {};
+    cat.fields.forEach(f => {
+      STATE.values[cat.id][f.id] = (f.type === 'toggle') ? false : (f.type === 'select' ? (f.options[0]?.value || '') : 0);
+    });
+  });
+  initialRender();
+  showToast('Reset complete', '');
+}
+
+// ============================================================
+// Initialize
+// ============================================================
+function initialRender() {
+  // Project info inputs
+  $('#proj-name').value = STATE.project.name || '';
+  $('#proj-client').value = STATE.project.client || '';
+  $('#proj-address').value = STATE.project.address || '';
+
+  // Re-render trim selector
+  renderTrimSelector();
+
+  // Re-render groups
+  renderGroups();
+
+  // Re-open any saved-open groups
+  STATE.openGroups.forEach(gid => {
+    const g = $(`.group[data-group-id="${gid}"]`);
+    if (g) g.classList.add('open');
+  });
+
+  // Calculate
+  recalculate();
+}
+
+function init() {
+  initialRender();
+
+  // Project info bindings
+  $('#proj-name').addEventListener('input', e => { STATE.project.name = e.target.value; });
+  $('#proj-client').addEventListener('input', e => { STATE.project.client = e.target.value; });
+  $('#proj-address').addEventListener('input', e => { STATE.project.address = e.target.value; });
+
+  // Action buttons
+  $('#btn-pdf').addEventListener('click', generatePDF);
+  $('#btn-save').addEventListener('click', saveProgress);
+  $('#btn-load').addEventListener('click', loadProgress);
+  $('#btn-email').addEventListener('click', emailEstimate);
+  $('#btn-print').addEventListener('click', printEstimate);
+  $('#btn-reset').addEventListener('click', resetEstimate);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

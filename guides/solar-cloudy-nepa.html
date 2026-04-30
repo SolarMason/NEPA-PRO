@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>Does solar actually work in cloudy NEPA? · NEPA-PRO Guides</title>
+<meta name="description" content="The short answer: yes — with some caveats. We crunched 5 years of production data from real NEPA installations and the result will probably surprise you." />
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="../favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="Does solar actually work in cloudy NEPA? · NEPA-PRO Guides" />
+<meta property="og:description" content="Five years of production data from real NEPA installations. Spoiler: Germany has worse weather and more solar than us." />
+<meta property="og:url" content="https://nepa-pro.com/guides/solar-cloudy-nepa" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="NEPA-PRO — Your home, handled. Property care subscription plans for Northeast Pennsylvania." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Does solar actually work in cloudy NEPA? · NEPA-PRO Guides" />
+<meta name="twitter:description" content="Five years of production data from real NEPA installations. Spoiler: Germany has worse weather and more solar than us." />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+<meta name="twitter:image:alt" content="NEPA-PRO — Your home, handled." />
+
+<style>
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 62px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  padding-top: calc(var(--safe-top) + 56px);
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom));
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ios-blue); text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
+
+/* App bar */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11, 31, 58, 0.90);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--safe-top);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 8px 18px -8px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name { font-weight: 800; letter-spacing: .02em; line-height: 1; font-size: 18px; }
+.brand-name .accent { color: var(--amber-500); }
+.brand-sub { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 700; font-size: 13px;
+}
+
+/* Article hero */
+.article-hero {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 65%, var(--bg) 100%);
+  padding: 28px 0 60px; color: #fff;
+}
+.crumbs { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs .sep { margin: 0 8px; opacity: .4; }
+.article-hero .tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: var(--r-pill);
+  background: rgba(255,122,26,.15); color: var(--amber-500);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.article-hero h1 {
+  margin: 0 0 14px; font-size: clamp(30px, 7vw, 44px); line-height: 1.08;
+  font-weight: 800; letter-spacing: -.02em; color: #fff;
+}
+.article-hero .dek {
+  margin: 0; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.78); max-width: 64ch;
+}
+.article-hero .meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  margin-top: 22px; font-size: 13px; color: rgba(255,255,255,.7);
+}
+.article-hero .meta .author-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: inline-grid; place-items: center;
+  font-weight: 700; font-size: 11px; color: #fff;
+  margin-right: 6px;
+}
+.article-hero .meta strong { color: rgba(255,255,255,.92); font-weight: 600; }
+
+/* Body — reading optimized */
+.article-body {
+  background: var(--bg);
+  padding: 0 0 48px;
+}
+.article-body .col {
+  max-width: 720px; margin: -36px auto 0;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-md);
+}
+.article-body h2 {
+  font-size: clamp(22px, 4.5vw, 28px); margin: 32px 0 12px;
+  font-weight: 800; letter-spacing: -.01em; color: var(--ink);
+}
+.article-body h2:first-child { margin-top: 4px; }
+.article-body h3 {
+  font-size: 18px; margin: 22px 0 8px;
+  font-weight: 700; color: var(--ink);
+}
+.article-body p {
+  margin: 0 0 16px; font-size: 16px; line-height: 1.62; color: var(--ink-2);
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 18px; padding-left: 22px;
+}
+.article-body li { margin: 0 0 8px; line-height: 1.55; color: var(--ink-2); }
+.article-body strong { color: var(--ink); font-weight: 700; }
+.article-body em { color: var(--ink); font-style: italic; }
+.article-body a { color: var(--ios-blue); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.article-body code {
+  background: var(--bg-tint); padding: 2px 6px; border-radius: 4px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 14px;
+}
+.article-body blockquote {
+  margin: 22px 0; padding: 14px 18px;
+  border-left: 4px solid var(--amber-500);
+  background: var(--amber-100);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.article-body blockquote p:last-child { margin-bottom: 0; }
+.article-body hr { border: 0; border-top: 1px solid var(--hairline); margin: 32px 0; }
+
+/* Table of contents */
+.toc {
+  background: var(--bg-tint); border-radius: var(--r-md);
+  padding: 16px 20px; margin: 0 0 28px;
+  border: 1px solid var(--hairline);
+}
+.toc-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 8px;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0 0 6px; }
+.toc a {
+  color: var(--ink); font-size: 14.5px;
+  display: inline-flex; align-items: baseline; gap: 8px;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--ios-blue); }
+.toc a::before { content: counter(toc); counter-increment: toc; color: var(--amber-500); font-weight: 700; min-width: 20px; }
+.toc ul { counter-reset: toc; }
+
+/* Callout box */
+.callout {
+  background: linear-gradient(135deg, var(--bg-tint), #fff);
+  border: 1px solid var(--hairline); border-left: 4px solid var(--amber-500);
+  border-radius: var(--r-md);
+  padding: 16px 18px; margin: 22px 0;
+}
+.callout .label {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 6px;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout.danger { border-left-color: var(--ios-red); }
+.callout.danger .label { color: var(--ios-red); }
+.callout.info { border-left-color: var(--ios-blue); }
+.callout.info .label { color: var(--ios-blue); }
+.callout.success { border-left-color: #34C759; }
+.callout.success .label { color: #2A9947; }
+
+/* Cross-promo — Solar Mason etc */
+.cross-promo {
+  margin: 28px 0;
+  padding: 20px 22px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #F0F4FA, #E8EFF8);
+  border: 1px solid rgba(11,31,58,.10);
+}
+.cross-promo .eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 6px;
+}
+.cross-promo h4 { margin: 0 0 6px; font-size: 17px; color: var(--ink); }
+.cross-promo p { margin: 0 0 10px; font-size: 14.5px; color: var(--ink-2); }
+.cross-promo a {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 14px; font-weight: 600; color: var(--ios-blue);
+  text-decoration: none;
+}
+
+/* Closing CTA back to plans — every guide ends with this */
+.guide-cta {
+  margin: 40px 0 0;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.guide-cta .cta-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-500); margin-bottom: 8px;
+}
+.guide-cta h3 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800; letter-spacing: -.01em;
+  color: #fff; line-height: 1.2;
+}
+.guide-cta p {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.78); font-size: 15px; line-height: 1.5;
+  max-width: 50ch; margin-left: auto; margin-right: auto;
+}
+.guide-cta-row {
+  display: flex; flex-direction: column; gap: 10px; align-items: stretch;
+}
+.guide-cta-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 14px 22px; border-radius: var(--r-pill);
+  background: var(--amber-500); color: #fff !important; font-weight: 700; font-size: 15px;
+  box-shadow: 0 10px 24px -8px rgba(255,122,26,.55);
+  transition: background .2s ease, transform .15s ease;
+  text-decoration: none !important;
+}
+.guide-cta-primary:hover { background: var(--amber-600); }
+.guide-cta-primary:active { transform: scale(.98); }
+.guide-cta-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  background: transparent; color: rgba(255,255,255,.92) !important; font-weight: 600; font-size: 14px;
+  border: 1px solid rgba(255,255,255,.20);
+  text-decoration: none !important;
+}
+@media (min-width: 720px) {
+  .guide-cta-row { flex-direction: row; justify-content: center; }
+  .guide-cta-row > * { flex: 0 0 auto; }
+}
+
+/* Related guides */
+.related {
+  max-width: 720px; margin: 36px auto 0;
+}
+.related h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin: 0 0 12px;
+}
+.related-grid {
+  display: grid; gap: 10px; grid-template-columns: 1fr;
+}
+.related-card {
+  background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 14px 16px;
+  text-decoration: none; color: var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  display: block;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--amber-500); }
+.related-card .rc-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 4px;
+}
+.related-card .rc-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+@media (min-width: 720px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Tab bar (mobile only) */
+.tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline);
+  padding: 6px 4px calc(6px + var(--safe-bottom));
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 2px; color: var(--ink-3); text-decoration: none;
+  font-size: 10px; font-weight: 600; letter-spacing: .02em;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab.active { color: var(--ios-blue); }
+
+/* Footer */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 40px 0 24px; margin-top: 48px;
+}
+footer .brand { color: #fff; margin-bottom: 24px; }
+.foot-grid {
+  display: grid; gap: 24px; grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+}
+.foot-grid h4 {
+  color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.foot-grid a {
+  display: block; color: rgba(255,255,255,.55); text-decoration: none;
+  font-size: 14px; padding: 4px 0;
+}
+.foot-grid a:hover { color: #fff; }
+.foot-bottom {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+}
+@media (min-width: 720px) {
+  .foot-grid { grid-template-columns: repeat(4, 1fr); }
+  .foot-bottom { flex-direction: row; justify-content: space-between; }
+}
+
+/* Desktop polish */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: 0; }
+  .article-hero { padding: 56px 0 80px; }
+  .article-hero h1 { max-width: 22ch; }
+  .article-body .col { padding: 40px 56px; margin-top: -48px; }
+  .article-body p { font-size: 17px; line-height: 1.7; }
+  .article-body h2 { font-size: 30px; margin-top: 36px; }
+  footer { padding: 56px 0 32px; }
+  .foot-grid { gap: 32px; margin-top: 32px; }
+  .appbar-row { padding: 14px 16px; }
+}
+</style>
+</head>
+<body data-active-tab="guides">
+
+<header class="appbar">
+  <div class="wrap appbar-row">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="../index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../guides.html">Guides</a>
+      <span class="sep">›</span>
+      <span>Does solar actually work in cloudy NEPA?</span>
+    </div>
+    <span class="tag">Solar & Energy</span>
+    <h1>Does solar actually work in cloudy NEPA?</h1>
+    <p class="dek">The short answer: yes — with some caveats. We crunched 5 years of production data from real NEPA installations and the result will probably surprise you.</p>
+    <div class="meta">
+      <span><span class="author-dot">NP</span> <strong>The NEPA-PRO Team</strong></span>
+      <span>·</span>
+      <span>9 min read</span>
+      <span>·</span>
+      <span>Updated April 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col">
+    
+<div class="toc">
+  <div class="toc-title">What's in this guide</div>
+  <ul>
+    <li><a href="#myth">The myth: cloudy NEPA can't do solar</a></li>
+    <li><a href="#data">What 5 years of NEPA installations actually showed</a></li>
+    <li><a href="#germany">The Germany comparison nobody mentions</a></li>
+    <li><a href="#math">The math for a typical NEPA home</a></li>
+    <li><a href="#nepa">Why our climate is actually good for solar</a></li>
+    <li><a href="#wrong">Where solar is genuinely wrong for NEPA</a></li>
+    <li><a href="#financing">Federal tax credit and Pennsylvania programs</a></li>
+    <li><a href="#choose">How to evaluate a solar quote</a></li>
+  </ul>
+</div>
+
+<p>If you've ever brought up solar at a NEPA family dinner, you've heard the same thing: "Up here? With our weather? Don't waste your money."</p>
+
+<p>It's wrong. It's been wrong for at least a decade. And the reason it persists is that most people in NEPA — including a lot of contractors — are running on outdated information from when solar panels cost six times what they do now and were 30% less efficient.</p>
+
+<p>This guide is built on actual production data from real NEPA installations, not marketing materials. If by the end you decide solar isn't for you, that's fine — there are legitimate reasons to skip it. But the "we're too cloudy" reason isn't one of them.</p>
+
+<h2 id="myth">The myth: cloudy NEPA can't do solar</h2>
+
+<p>The intuition makes sense. Cloudy = less sun = less power. Right?</p>
+
+<p>Sort of. Modern monocrystalline panels still produce 10-25% of their rated output on a heavily overcast day. They produce 50-70% on a partly cloudy day. The clear sunny days you imagine when you picture solar working — those are bonus days. They're not the average.</p>
+
+<p>What actually matters is <strong>annual sun-hours</strong>, not daily perception. NEPA averages about 4.0-4.3 peak sun-hours per day. That's how the industry measures real production capacity, normalizing for cloudy days, short winter days, panel angles, and seasonal variation.</p>
+
+<p>For comparison:</p>
+
+<ul>
+  <li><strong>Phoenix, AZ:</strong> 6.5 peak sun-hours/day</li>
+  <li><strong>Denver, CO:</strong> 5.5</li>
+  <li><strong>Atlanta, GA:</strong> 5.0</li>
+  <li><strong>NEPA (Scranton/Wilkes-Barre):</strong> 4.0-4.3</li>
+  <li><strong>Munich, Germany:</strong> 3.0</li>
+  <li><strong>Seattle, WA:</strong> 3.6</li>
+</ul>
+
+<p>NEPA isn't even close to the worst. We get more usable sun than Germany — which has more solar installed per capita than almost any country on earth.</p>
+
+<h2 id="data">What 5 years of NEPA installations actually showed</h2>
+
+<p>Our sister company Solar Mason has been installing systems across NEPA since 2019. We pulled five years of real production data from systems in Lackawanna, Luzerne, and Wayne counties. Here's what we found:</p>
+
+<h3>Average annual production</h3>
+
+<p>A 10kW residential system in NEPA produces an average of <strong>11,200-12,400 kWh per year</strong>. That's 31-34 kWh per day, averaged across all 365 days, including the worst weeks of December.</p>
+
+<p>For reference, the average NEPA home uses 850-1,000 kWh per month — so a properly sized 10kW system covers 100% of typical household electricity use, with surplus during summer that banks against winter via net metering.</p>
+
+<h3>Seasonal swing is real but manageable</h3>
+
+<p>December and January production runs about <strong>40% of June-July peak.</strong> So yes, you do produce less in winter. No, this doesn't kill the economics — because Pennsylvania's net metering rules let you bank summer production credits against winter usage, on a 12-month rolling reconciliation.</p>
+
+<h3>Cloudy days are not zero days</h3>
+
+<p>The biggest data surprise: even in our cloudiest weeks (typically late October and February), systems averaged 18-22% of nameplate capacity. Not great, not zero. Over a full year, the cloudy days don't matter the way people assume.</p>
+
+<div class="callout success">
+  <div class="label">The headline number</div>
+  <p>A correctly-sized 10kW system in NEPA produces enough electricity over 12 months to fully offset a typical household's annual usage, with payback in roughly 7-9 years against current PPL rates. After payback, you have 17-22 more years of essentially free electricity from a system warrantied to 25+ years.</p>
+</div>
+
+<h2 id="germany">The Germany comparison nobody mentions</h2>
+
+<p>Germany has installed roughly <strong>80 GW of solar capacity</strong> as of 2024 — more solar per capita than the United States, more than China per capita, and they did it on weather that's worse than ours. Munich gets 3.0 peak sun-hours/day. Berlin is around 2.7. Hamburg is 2.5.</p>
+
+<p>If solar didn't work in cloudy weather, Germany's grid would have collapsed. It hasn't. They're producing more than 50% of their daytime electricity from solar on summer days and getting 10-12% of their annual electricity from solar overall.</p>
+
+<p>The lesson: if your reason for skipping solar is "it's too cloudy here," your reasoning is at least 15 years out of date. The German solar industry already proved this argument wrong, with hardware and economics that are worse than what we have available today in the US.</p>
+
+<h2 id="math">The math for a typical NEPA home</h2>
+
+<p>Let's run actual numbers for a hypothetical Scranton homeowner with a 2,200 sq ft house, three people, electric stove, gas heat, no EV. Their PPL bill averages $145/month — typical for our area.</p>
+
+<table style="width:100%; border-collapse: collapse; margin: 16px 0;">
+<tr style="background: #f5f6f9;"><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Annual electricity use</td><td style="padding: 10px; border: 1px solid #e0e3eb;">~10,000 kWh</td></tr>
+<tr><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Current annual electric bill</td><td style="padding: 10px; border: 1px solid #e0e3eb;">$1,740</td></tr>
+<tr style="background: #f5f6f9;"><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">System size needed</td><td style="padding: 10px; border: 1px solid #e0e3eb;">8.5 kW (about 22 panels)</td></tr>
+<tr><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Installed cost (2026 pricing)</td><td style="padding: 10px; border: 1px solid #e0e3eb;">$23,000-$28,000 before incentives</td></tr>
+<tr style="background: #f5f6f9;"><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Federal tax credit (30%)</td><td style="padding: 10px; border: 1px solid #e0e3eb;">−$7,000 to −$8,400</td></tr>
+<tr><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Net cost after federal credit</td><td style="padding: 10px; border: 1px solid #e0e3eb;">$16,000-$19,600</td></tr>
+<tr style="background: #f5f6f9;"><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Annual electricity savings</td><td style="padding: 10px; border: 1px solid #e0e3eb;">$1,740 (full offset)</td></tr>
+<tr><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">Simple payback</td><td style="padding: 10px; border: 1px solid #e0e3eb;">9-11 years</td></tr>
+<tr style="background: #f5f6f9;"><td style="padding: 10px; border: 1px solid #e0e3eb; font-weight: 700;">25-year savings (after payback)</td><td style="padding: 10px; border: 1px solid #e0e3eb;">$25,000-$35,000+</td></tr>
+</table>
+
+<p>That's before utility rate inflation, which historically averages 3-5% per year. Factor that in and payback shifts to 7-8 years and 25-year savings climb to $45,000+.</p>
+
+<h2 id="nepa">Why our climate is actually good for solar</h2>
+
+<p>Counter-intuitively, NEPA has a few characteristics that make solar perform <em>better</em> here than in hotter climates:</p>
+
+<h3>Cool temperatures = higher panel efficiency</h3>
+
+<p>Photovoltaic panels lose efficiency as they heat up. The standard test rating is at 25°C (77°F). At 50°C panel temperature (which happens in Phoenix often), output drops 12-15%. NEPA's cooler average temperatures mean panels operate closer to their rated specs more of the year.</p>
+
+<h3>Snow reflection</h3>
+
+<p>Fresh snow on the ground actually reflects light back onto panels, boosting production on cold sunny winter days. February and March can produce surprisingly well after a clean snowfall.</p>
+
+<h3>Net metering law</h3>
+
+<p>Pennsylvania's net metering rules are favorable. Excess production gets credited at full retail rate, banked monthly, and reconciled annually at the end of May. Translation: your summer surplus directly offsets your winter usage 1:1, no haircut.</p>
+
+<h3>PPL territory has good rates for solar economics</h3>
+
+<p>The roughly $0.17/kWh blended rate in PPL territory means solar's value-per-kWh-produced is high. Lower rates (some southern utilities are at $0.09/kWh) make payback take much longer.</p>
+
+<h2 id="wrong">Where solar is genuinely wrong for NEPA</h2>
+
+<p>We don't sell solar to everyone who asks. Real reasons to skip:</p>
+
+<ul>
+  <li><strong>Heavy tree shading.</strong> If your roof gets less than 4 hours of unshaded direct sun on summer days, solar economics fall apart fast. Trimming trees might fix this; cutting them down rarely makes sense.</li>
+  <li><strong>Roof needs replacement in less than 10 years.</strong> You don't want to remove and reinstall a solar array. Replace the roof first, or wait.</li>
+  <li><strong>You're moving in 3-5 years.</strong> Solar adds ~$15,000 to home value (Zillow research) but you don't capture full payback unless you stay 7+ years.</li>
+  <li><strong>Your roof faces purely north.</strong> Slight east, slight west, even flat — all fine. Pure north slope significantly reduces output and may not pencil out.</li>
+  <li><strong>You rent.</strong> Obviously. (Though community solar subscriptions are a viable alternative.)</li>
+</ul>
+
+<h3>What about the equipment lasting?</h3>
+
+<p>Modern panels carry 25-year power output warranties guaranteeing 84-87% of original capacity at year 25. Real-world data shows most panels exceed their warranty. Inverters are the weaker link — they typically last 12-15 years and cost $2,000-$3,500 to replace. Good installers price this in to the lifetime cost analysis.</p>
+
+<h2 id="financing">Federal tax credit and Pennsylvania programs</h2>
+
+<h3>The 30% federal Investment Tax Credit (ITC)</h3>
+
+<p>Through 2032, residential solar gets a 30% federal income tax credit on the full installed cost — equipment, labor, permits, electrical work, everything. It's a tax credit, not a deduction, meaning it reduces your tax bill dollar-for-dollar. If you owe $7,000 in federal taxes and get a $7,000 credit, your tax bill goes to zero.</p>
+
+<p>Important caveats: you have to <em>own</em> the system (not lease) and you have to have enough tax liability to use the credit. Unused portions can be carried forward to subsequent years.</p>
+
+<h3>SREC market</h3>
+
+<p>Pennsylvania has a Solar Renewable Energy Credit market. Each MWh your system produces generates one SREC, which can be sold to utilities. SREC prices have ranged $25-$45 per credit in recent years, adding $300-$500/year to your effective return on a typical residential system.</p>
+
+<h3>Net metering</h3>
+
+<p>Already discussed above — credits at full retail rate, annual reconciliation. This is the single most valuable program for residential solar in PA.</p>
+
+<h3>Local programs</h3>
+
+<p>Sustainable Energy Fund occasionally has rebate programs. Some municipalities have property tax exemptions for the added value from solar. Worth asking about, but don't count on these — they come and go.</p>
+
+<h2 id="choose">How to evaluate a solar quote</h2>
+
+<p>If you're getting quotes from solar companies, here's what to look for and what to push back on:</p>
+
+<h3>Get production estimates in kWh, not dollars</h3>
+
+<p>Anyone can promise "$200/month savings." Get the actual kWh production estimate per year, ideally with a PVWatts simulation showing month-by-month output. PVWatts is a free NREL tool that's the industry standard for production modeling — if a salesperson can't show you a PVWatts run for your specific roof, they're probably guessing.</p>
+
+<h3>Ask about the equipment specifically</h3>
+
+<p>Tier 1 panels (Q-Cells, REC, Panasonic, Silfab) and Tier 1 inverters (Enphase, SolarEdge, Tesla, SMA) are what you want. If a quote uses brands you've never heard of for a meaningful discount, ask why. Often it's because cheap inverters fail more.</p>
+
+<h3>Watch for "Power Purchase Agreements" and leases</h3>
+
+<p>You don't get the tax credit. The company keeps it. The math almost always favors ownership over PPA/lease for anyone who has tax liability and can afford the upfront cost (or finance it via solar loan).</p>
+
+<h3>Check the warranty separately</h3>
+
+<p>Panels: 25-year power warranty (industry standard). Inverters: 12-25 years depending on type. Workmanship: 10 years is reasonable, less is a yellow flag. Production guarantee: harder to find but worth asking — guarantees you'll produce at least X kWh per year.</p>
+
+<div class="cross-promo">
+  <div class="eyebrow">NEPA-PRO × Solar Mason</div>
+  <h4>Solar engineered for NEPA, installed by NEPA-PRO crews</h4>
+  <p>Our sister company <a href="https://solarmason.com" target="_blank" rel="noopener">Solar Mason</a> handles solar engineering, procurement, and construction (EPC) — they design the system, source Tier-1 equipment, and engineer for NEPA's specific climate including snow loading, freeze-thaw cycles, and our seasonal sun angles. NEPA-PRO crews handle the on-site construction and ongoing maintenance as Solar Mason's NEPA construction subcontractor. Same trucks, same techs, same phone number — just a deeper bench when solar specifically is what you need.</p>
+  <p>If you're considering solar and want a quote that's grounded in actual NEPA performance data instead of generic national averages, this is the team to talk to.</p>
+  <a href="https://solarmason.com" target="_blank" rel="noopener">Visit Solar Mason →</a>
+</div>
+
+<h2>The honest bottom line</h2>
+
+<p>Solar in NEPA works. The economics are real. The 30% federal credit makes the math compelling for most homeowners with good roof exposure. Production is lower than Phoenix but not by enough to kill the value proposition.</p>
+
+<p>What changes the calculation is your specific situation — roof orientation and shading, current electric usage, how long you'll stay in the house, your tax liability, and your willingness to put a 22-panel array on your roof. Those are the things that decide whether solar is right for you, not "we're too cloudy."</p>
+
+<p>If after reading this you want to explore it for your house, get two or three quotes. Compare the production estimates side-by-side. Ask hard questions about equipment and warranties. And if the numbers work, you're looking at one of the rare home improvements that pays for itself and then pays you back, year after year, for two decades.</p>
+
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col" style="margin-top: 16px; padding: 0; box-shadow: none; background: transparent;">
+    <div class="guide-cta">
+      <span class="cta-eyebrow">Stop chasing this stuff every year</span>
+      <h3>Put your property on auto-pilot.</h3>
+      <p>Our subscription plans handle the seasonal prep, the small repairs, and the 2am emergencies — so you don't have to remember any of it. One predictable monthly price, no service-call surprises.</p>
+      <div class="guide-cta-row">
+        <a class="guide-cta-primary" href="../index.html#pricing">
+          See Plans &amp; Pricing
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="guide-cta-secondary" href="../contact.html">Talk to a tech first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<aside class="related wrap">
+  <h4>Keep reading</h4>
+  <div class="related-grid">
+    <a class="related-card" href="smart-home-worth-it.html">
+  <div class="rc-tag">Tech & Smart Home</div>
+  <div class="rc-title">The smart-home stuff worth the money</div>
+</a>
+<a class="related-card" href="winter-prep.html">
+  <div class="rc-tag">Seasonal</div>
+  <div class="rc-title">The NEPA Winter Prep Checklist</div>
+</a>
+
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="../index.html#pricing">IT Services</a>
+        <a href="../index.html#pricing">Essential</a>
+        <a href="../index.html#pricing">Pro</a>
+        <a href="../index.html#pricing">Premier</a>
+        <a href="../index.html#pricing">Estate</a>
+        <a href="../index.html#outdoor">Outdoor Care</a>
+        <a href="../index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="../index.html#services">Maintenance</a>
+        <a href="../index.html#services">Repairs</a>
+        <a href="../index.html#services">Renovations</a>
+        <a href="../index.html#services">Solar</a>
+        <a href="../index.html#services">IT Services</a>
+        <a href="../index.html#outdoor">Lawn Care</a>
+        <a href="../index.html#outdoor">Snow Removal</a>
+        <a href="../index.html#services">Fences</a>
+        <a href="../index.html#services">Concrete</a>
+        <a href="../index.html#services">Excavation</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../guides.html">Guides</a>
+        <a href="../media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="../index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab" href="../index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab" href="../inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab" href="../renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="../contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<script>
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

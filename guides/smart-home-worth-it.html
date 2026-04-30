@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>The smart-home stuff worth the money (and the stuff that's expensive landfill) · NEPA-PRO Guides</title>
+<meta name="description" content="We install a lot of smart locks, thermostats, cameras, and "smart" everything. After a decade of installs, we have strong opinions on what's a genuine upgrade vs. expensive landfill. Here's the unfiltered list." />
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="../favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="The smart-home stuff worth the money · NEPA-PRO Guides" />
+<meta property="og:description" content="After a decade of installs, our unfiltered list of what's a real upgrade vs. expensive landfill." />
+<meta property="og:url" content="https://nepa-pro.com/guides/smart-home-worth-it" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="NEPA-PRO — Your home, handled. Property care subscription plans for Northeast Pennsylvania." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The smart-home stuff worth the money · NEPA-PRO Guides" />
+<meta name="twitter:description" content="After a decade of installs, our unfiltered list of what's a real upgrade vs. expensive landfill." />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+<meta name="twitter:image:alt" content="NEPA-PRO — Your home, handled." />
+
+<style>
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 62px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  padding-top: calc(var(--safe-top) + 56px);
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom));
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ios-blue); text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
+
+/* App bar */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11, 31, 58, 0.90);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--safe-top);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 8px 18px -8px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name { font-weight: 800; letter-spacing: .02em; line-height: 1; font-size: 18px; }
+.brand-name .accent { color: var(--amber-500); }
+.brand-sub { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 700; font-size: 13px;
+}
+
+/* Article hero */
+.article-hero {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 65%, var(--bg) 100%);
+  padding: 28px 0 60px; color: #fff;
+}
+.crumbs { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs .sep { margin: 0 8px; opacity: .4; }
+.article-hero .tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: var(--r-pill);
+  background: rgba(255,122,26,.15); color: var(--amber-500);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.article-hero h1 {
+  margin: 0 0 14px; font-size: clamp(30px, 7vw, 44px); line-height: 1.08;
+  font-weight: 800; letter-spacing: -.02em; color: #fff;
+}
+.article-hero .dek {
+  margin: 0; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.78); max-width: 64ch;
+}
+.article-hero .meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  margin-top: 22px; font-size: 13px; color: rgba(255,255,255,.7);
+}
+.article-hero .meta .author-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: inline-grid; place-items: center;
+  font-weight: 700; font-size: 11px; color: #fff;
+  margin-right: 6px;
+}
+.article-hero .meta strong { color: rgba(255,255,255,.92); font-weight: 600; }
+
+/* Body — reading optimized */
+.article-body {
+  background: var(--bg);
+  padding: 0 0 48px;
+}
+.article-body .col {
+  max-width: 720px; margin: -36px auto 0;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-md);
+}
+.article-body h2 {
+  font-size: clamp(22px, 4.5vw, 28px); margin: 32px 0 12px;
+  font-weight: 800; letter-spacing: -.01em; color: var(--ink);
+}
+.article-body h2:first-child { margin-top: 4px; }
+.article-body h3 {
+  font-size: 18px; margin: 22px 0 8px;
+  font-weight: 700; color: var(--ink);
+}
+.article-body p {
+  margin: 0 0 16px; font-size: 16px; line-height: 1.62; color: var(--ink-2);
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 18px; padding-left: 22px;
+}
+.article-body li { margin: 0 0 8px; line-height: 1.55; color: var(--ink-2); }
+.article-body strong { color: var(--ink); font-weight: 700; }
+.article-body em { color: var(--ink); font-style: italic; }
+.article-body a { color: var(--ios-blue); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.article-body code {
+  background: var(--bg-tint); padding: 2px 6px; border-radius: 4px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 14px;
+}
+.article-body blockquote {
+  margin: 22px 0; padding: 14px 18px;
+  border-left: 4px solid var(--amber-500);
+  background: var(--amber-100);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.article-body blockquote p:last-child { margin-bottom: 0; }
+.article-body hr { border: 0; border-top: 1px solid var(--hairline); margin: 32px 0; }
+
+/* Table of contents */
+.toc {
+  background: var(--bg-tint); border-radius: var(--r-md);
+  padding: 16px 20px; margin: 0 0 28px;
+  border: 1px solid var(--hairline);
+}
+.toc-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 8px;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0 0 6px; }
+.toc a {
+  color: var(--ink); font-size: 14.5px;
+  display: inline-flex; align-items: baseline; gap: 8px;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--ios-blue); }
+.toc a::before { content: counter(toc); counter-increment: toc; color: var(--amber-500); font-weight: 700; min-width: 20px; }
+.toc ul { counter-reset: toc; }
+
+/* Callout box */
+.callout {
+  background: linear-gradient(135deg, var(--bg-tint), #fff);
+  border: 1px solid var(--hairline); border-left: 4px solid var(--amber-500);
+  border-radius: var(--r-md);
+  padding: 16px 18px; margin: 22px 0;
+}
+.callout .label {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 6px;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout.danger { border-left-color: var(--ios-red); }
+.callout.danger .label { color: var(--ios-red); }
+.callout.info { border-left-color: var(--ios-blue); }
+.callout.info .label { color: var(--ios-blue); }
+.callout.success { border-left-color: #34C759; }
+.callout.success .label { color: #2A9947; }
+
+/* Cross-promo — Solar Mason etc */
+.cross-promo {
+  margin: 28px 0;
+  padding: 20px 22px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #F0F4FA, #E8EFF8);
+  border: 1px solid rgba(11,31,58,.10);
+}
+.cross-promo .eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 6px;
+}
+.cross-promo h4 { margin: 0 0 6px; font-size: 17px; color: var(--ink); }
+.cross-promo p { margin: 0 0 10px; font-size: 14.5px; color: var(--ink-2); }
+.cross-promo a {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 14px; font-weight: 600; color: var(--ios-blue);
+  text-decoration: none;
+}
+
+/* Closing CTA back to plans — every guide ends with this */
+.guide-cta {
+  margin: 40px 0 0;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.guide-cta .cta-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-500); margin-bottom: 8px;
+}
+.guide-cta h3 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800; letter-spacing: -.01em;
+  color: #fff; line-height: 1.2;
+}
+.guide-cta p {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.78); font-size: 15px; line-height: 1.5;
+  max-width: 50ch; margin-left: auto; margin-right: auto;
+}
+.guide-cta-row {
+  display: flex; flex-direction: column; gap: 10px; align-items: stretch;
+}
+.guide-cta-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 14px 22px; border-radius: var(--r-pill);
+  background: var(--amber-500); color: #fff !important; font-weight: 700; font-size: 15px;
+  box-shadow: 0 10px 24px -8px rgba(255,122,26,.55);
+  transition: background .2s ease, transform .15s ease;
+  text-decoration: none !important;
+}
+.guide-cta-primary:hover { background: var(--amber-600); }
+.guide-cta-primary:active { transform: scale(.98); }
+.guide-cta-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  background: transparent; color: rgba(255,255,255,.92) !important; font-weight: 600; font-size: 14px;
+  border: 1px solid rgba(255,255,255,.20);
+  text-decoration: none !important;
+}
+@media (min-width: 720px) {
+  .guide-cta-row { flex-direction: row; justify-content: center; }
+  .guide-cta-row > * { flex: 0 0 auto; }
+}
+
+/* Related guides */
+.related {
+  max-width: 720px; margin: 36px auto 0;
+}
+.related h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin: 0 0 12px;
+}
+.related-grid {
+  display: grid; gap: 10px; grid-template-columns: 1fr;
+}
+.related-card {
+  background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 14px 16px;
+  text-decoration: none; color: var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  display: block;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--amber-500); }
+.related-card .rc-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 4px;
+}
+.related-card .rc-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+@media (min-width: 720px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Tab bar (mobile only) */
+.tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline);
+  padding: 6px 4px calc(6px + var(--safe-bottom));
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 2px; color: var(--ink-3); text-decoration: none;
+  font-size: 10px; font-weight: 600; letter-spacing: .02em;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab.active { color: var(--ios-blue); }
+
+/* Footer */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 40px 0 24px; margin-top: 48px;
+}
+footer .brand { color: #fff; margin-bottom: 24px; }
+.foot-grid {
+  display: grid; gap: 24px; grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+}
+.foot-grid h4 {
+  color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.foot-grid a {
+  display: block; color: rgba(255,255,255,.55); text-decoration: none;
+  font-size: 14px; padding: 4px 0;
+}
+.foot-grid a:hover { color: #fff; }
+.foot-bottom {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+}
+@media (min-width: 720px) {
+  .foot-grid { grid-template-columns: repeat(4, 1fr); }
+  .foot-bottom { flex-direction: row; justify-content: space-between; }
+}
+
+/* Desktop polish */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: 0; }
+  .article-hero { padding: 56px 0 80px; }
+  .article-hero h1 { max-width: 22ch; }
+  .article-body .col { padding: 40px 56px; margin-top: -48px; }
+  .article-body p { font-size: 17px; line-height: 1.7; }
+  .article-body h2 { font-size: 30px; margin-top: 36px; }
+  footer { padding: 56px 0 32px; }
+  .foot-grid { gap: 32px; margin-top: 32px; }
+  .appbar-row { padding: 14px 16px; }
+}
+</style>
+</head>
+<body data-active-tab="guides">
+
+<header class="appbar">
+  <div class="wrap appbar-row">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="../index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../guides.html">Guides</a>
+      <span class="sep">›</span>
+      <span>The smart-home stuff worth the money (and the stuff that's expensive landfill)</span>
+    </div>
+    <span class="tag">Tech & Smart Home</span>
+    <h1>The smart-home stuff worth the money (and the stuff that's expensive landfill)</h1>
+    <p class="dek">We install a lot of smart locks, thermostats, cameras, and "smart" everything. After a decade of installs, we have strong opinions on what's a genuine upgrade vs. expensive landfill. Here's the unfiltered list.</p>
+    <div class="meta">
+      <span><span class="author-dot">NP</span> <strong>The NEPA-PRO Team</strong></span>
+      <span>·</span>
+      <span>9 min read</span>
+      <span>·</span>
+      <span>Updated April 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col">
+    
+<div class="toc">
+  <div class="toc-title">What's in this guide</div>
+  <ul>
+    <li><a href="#worth">The worth-the-money list</a></li>
+    <li><a href="#meh">The "depends on you" middle tier</a></li>
+    <li><a href="#landfill">The expensive landfill list</a></li>
+    <li><a href="#privacy">The privacy stuff that matters</a></li>
+    <li><a href="#install">DIY vs. hiring it out</a></li>
+    <li><a href="#future">What we're watching for the next few years</a></li>
+  </ul>
+</div>
+
+<p>We've installed thousands of smart-home devices in NEPA homes over the past decade. We've also been called to remove a lot of them — when the previous owner gave up, when the app stopped working, when the cloud service shut down, when the household just couldn't make sense of why the porch light wouldn't turn off.</p>
+
+<p>This guide is the unfiltered list. What's actually worth installing, what's a waste of money, and what's the in-between stuff that depends on whether you'll actually use it. Brand-specific where it matters. NEPA-specific where our climate or our utilities affect the answer.</p>
+
+<div class="callout info">
+  <div class="label">No affiliate links</div>
+  <p>We don't make money on any of the products mentioned in this guide. These are just our actual opinions from working with this stuff every week. Brand mentions are based on what's worked reliably in NEPA homes — we have no commercial relationship with any of these companies.</p>
+</div>
+
+<h2 id="worth">The worth-the-money list</h2>
+
+<p>If you only do five smart-home upgrades, do these.</p>
+
+<h3>1. Smart thermostat</h3>
+
+<p><strong>Worth it: yes, almost universally.</strong> The Ecobee or Nest pays for itself in 12-18 months in NEPA through better scheduling alone. The remote sensors (Ecobee specifically) are the killer feature — they let you target temperature in the room you're actually in, not just where the thermostat is mounted in the hallway.</p>
+
+<p><strong>Pick:</strong> Ecobee Premium ($250) for most homes. Nest Learning Thermostat ($280) if you're already in Google's ecosystem. Avoid the no-name brands — the cloud services for cheap smart thermostats die after a few years and you're left with an expensive paperweight.</p>
+
+<p><strong>Heat pump caveat:</strong> if you have a heat pump (becoming more common in NEPA), make sure the thermostat supports it correctly. Setbacks that work for gas furnaces can hurt heat pump efficiency. Ecobee handles this well; check the spec sheet for any other model.</p>
+
+<h3>2. Smart smoke and CO detectors</h3>
+
+<p><strong>Worth it: yes.</strong> Specifically the kind that interconnect (one alarm goes off, all alarms go off) and notify your phone. If a smoke alarm goes off in your basement at 2pm while you're at work, you want to know about it.</p>
+
+<p><strong>Pick:</strong> First Alert Onelink (the Apple HomeKit version) or Google Nest Protect. Both reliable, both replaceable as standalone units when needed (battery life on the sensor is ~10 years).</p>
+
+<p><strong>NEPA bonus:</strong> some homeowner insurance carriers give 2-5% discounts for monitored smoke alarms. Ask yours.</p>
+
+<h3>3. Water leak sensors</h3>
+
+<p><strong>Worth it: yes, dramatically.</strong> A $25 water sensor in your basement, under your kitchen sink, behind the washer, and near the water heater catches problems hours before they become disasters. NEPA homes leak from old plumbing and from frozen pipes — these sensors notify you immediately.</p>
+
+<p><strong>Pick:</strong> Govee leak sensors ($25 each, WiFi, work standalone). YoLink hub-based sensors ($60 with hub) if you want longer range and multi-sensor mesh. Aqara if you're already in HomeKit.</p>
+
+<p><strong>Don't skip the sump pump sensor.</strong> Pump fails, basement floods. A $30 sensor in the sump pit catches this before the basement is underwater.</p>
+
+<h3>4. Smart doorbell with battery backup</h3>
+
+<p><strong>Worth it: yes, for most homes.</strong> Package theft, unwanted visitors, knowing when your kid got home, two-way audio when you're traveling. Genuinely useful daily-use device.</p>
+
+<p><strong>Pick:</strong> Ring Pro 2 or Nest Doorbell (battery). Skip the wired-only versions — when your power blips, you lose the doorbell exactly when you'd want it. Both have monthly subscription fees for cloud recording ($4-$8/month). The free tiers without recording are still useful for live notifications.</p>
+
+<p><strong>Privacy note:</strong> Ring shares with police; Nest doesn't (at the moment). If you have strong feelings about this, factor it in.</p>
+
+<h3>5. Smart garage door opener</h3>
+
+<p><strong>Worth it: yes, especially in NEPA.</strong> Nothing worse than driving down 81 South toward Philly and wondering if you closed the garage. A smart opener tells you and lets you close it from anywhere.</p>
+
+<p><strong>Pick:</strong> myQ from Chamberlain (works with most existing openers, ~$30) or a full smart-opener replacement if yours is failing anyway.</p>
+
+<h2 id="meh">The "depends on you" middle tier</h2>
+
+<p>These work, but only if you'll actually use them.</p>
+
+<h3>Smart locks</h3>
+
+<p>Useful if: you have housekeepers, dog walkers, family who visits, kids who lose keys. Not useful if: you live alone and never let anyone else in.</p>
+
+<p><strong>Pick:</strong> Yale Assure SL or Schlage Encode for keypad-only. Aqara U200 if you want HomeKit and key sharing. Avoid the cheap brands ($60-80 range) — the mechanism quality is poor and they fail in NEPA winters when the metal contracts.</p>
+
+<p><strong>NEPA winter caveat:</strong> exterior smart locks need batteries that work in cold weather. Lithium AA batteries handle this; alkaline batteries die fast in February. Most quality smart locks now ship with lithium recommendations.</p>
+
+<h3>Smart lighting (bulbs vs. switches)</h3>
+
+<p>Worth it if you'll actually use it. The trap is buying a $50 smart bulb and then using it like a regular bulb (turn it on at the wall switch).</p>
+
+<p><strong>Better approach for most people:</strong> smart switches in the wall replace the regular switch. Then any dumb bulb works. Lutron Caseta is the gold standard ($60/switch but lasts forever). Kasa or TP-Link cheaper alternatives.</p>
+
+<p><strong>Smart bulbs make sense for:</strong> lamps without wall switches, color-changing fun (Philips Hue), specific spots where you want different scenes.</p>
+
+<h3>Robot vacuums</h3>
+
+<p>Worth it if: you have hard floors, simple layouts, no clutter. Not worth it if: shag carpet, lots of cords on the floor, dogs who shed in volumes that overwhelm the small bins.</p>
+
+<p><strong>Pick:</strong> Roborock S8 or higher for serious cleaning. Eufy or iRobot Roomba i3 for budget. Skip the under-$200 brands.</p>
+
+<h3>Smart blinds</h3>
+
+<p>Genuinely nice if you have south-facing windows and want them to close in summer afternoons (saves cooling costs). Significant install effort and cost.</p>
+
+<p><strong>Pick:</strong> SwitchBot retrofit motors ($100/window) for existing blinds. Hunter Douglas PowerView for premium new motorized blinds. Soma Smart Shades for budget retrofits.</p>
+
+<h3>Smart sprinkler controller</h3>
+
+<p>Worth it if you have an in-ground sprinkler system. Saves real water by skipping watering when rain is forecast.</p>
+
+<p><strong>Pick:</strong> Rachio 3 ($230). Hunter Hydrawise if you have a Hunter system already. Pays for itself in water savings in 2-3 NEPA summers.</p>
+
+<h2 id="landfill">The expensive landfill list</h2>
+
+<p>Skip these. We've installed too many of them only to remove them later.</p>
+
+<h3>Smart fridges</h3>
+
+<p>The screen on the door becomes obsolete in 5 years while the fridge has 15 years of useful life left. The cameras inside don't actually help you. The streaming apps on the door are worse than your phone. Pay for a great fridge with no screen and use the savings for a tablet on the counter.</p>
+
+<h3>Smart toilets</h3>
+
+<p>Heated seats and bidet attachments are fine — those are mechanical features, not smart features. The actual "smart" toilets with apps and screens have terrible reliability and the customer service is atrocious when they fail. We've replaced more smart toilets after warranty expiration than we've installed.</p>
+
+<h3>Smart microwaves and ovens</h3>
+
+<p>"Tells you when food is done" is a worse user experience than the timer that's been on microwaves since 1985. Skip.</p>
+
+<h3>"Smart" plugs that you'll forget about</h3>
+
+<p>The first 10 smart plugs you buy will be useful. The next 10 will sit in drawers. Be honest about how many you'll actually use, then buy that number plus two.</p>
+
+<h3>Whole-home audio systems with proprietary speakers</h3>
+
+<p>Sonos is the exception (works, lasts, decent ecosystem). Everything else — proprietary in-ceiling systems, "wireless" multi-room platforms from random brands — they fail or get abandoned by the manufacturer and you have $4,000 in unusable speakers.</p>
+
+<h3>Smart faucets</h3>
+
+<p>Touch-activation is fine. Voice activation is solving a problem that didn't exist. The premium for "smart" faucets goes to the wrong place — get a high-quality regular faucet and put the savings into a good filtration system.</p>
+
+<h3>Connected appliances that need apps</h3>
+
+<p>Washers, dryers, dishwashers that "connect to your phone." The notification "your laundry is done" is the only real feature. The notification eventually breaks because the cloud service updates and the app doesn't keep up. The dumb version of the same appliance lasts 15 years. The smart version's "smart" features last 5.</p>
+
+<h2 id="privacy">The privacy stuff that matters</h2>
+
+<p>We're not paranoid, but it's worth thinking about what data leaves your house and where it goes.</p>
+
+<h3>Cloud vs. local processing</h3>
+
+<p>Some smart devices process everything locally (Apple HomeKit, Home Assistant, Hubitat). Others ship audio or video to the cloud constantly (most major brands' cameras and voice assistants). For most people this isn't a problem; for some it's a dealbreaker.</p>
+
+<p>If privacy matters to you, look specifically for Matter-certified devices (newer industry standard with stronger local-control story) and HomeKit-compatible devices (Apple's privacy model is genuinely better than Amazon's or Google's).</p>
+
+<h3>Voice assistant tradeoff</h3>
+
+<p>Alexa and Google Assistant always listen for the wake word. They claim they don't process audio until they hear it; trust this or don't, it's a personal call. If you don't trust it, don't put a smart speaker in the bedroom.</p>
+
+<p>HomePod and HomePod Mini's audio processing is more local than competitors and more privacy-respecting. They're the best choice if you want voice control but want the privacy story.</p>
+
+<h3>Camera footage</h3>
+
+<p>Indoor cameras: think about whether you want camera footage of your home life on someone else's servers. Same question for nanny cams and pet cams.</p>
+
+<p>If you want cameras but want to keep footage local, look at Reolink (records to local NVR or SD card) or Aqara (HomeKit-secure). Avoid Wyze — the company has had repeated security incidents.</p>
+
+<h3>Default passwords</h3>
+
+<p>Every smart device that came with a default password should have it changed immediately. The vast majority of smart-home hacks happen because someone never changed the password from "admin/admin."</p>
+
+<h2 id="install">DIY vs. hiring it out</h2>
+
+<p>Honest assessment of what's reasonable to install yourself:</p>
+
+<h3>Easy DIY (any homeowner)</h3>
+
+<ul>
+  <li>Smart bulbs (screw in)</li>
+  <li>Smart plugs</li>
+  <li>Smart speakers</li>
+  <li>Doorbell cameras (existing wiring)</li>
+  <li>Battery-powered sensors</li>
+  <li>Smart thermostats (most homes)</li>
+</ul>
+
+<h3>Reasonable DIY (handy homeowner)</h3>
+
+<ul>
+  <li>Smart switches (replacing existing switches with similar wiring)</li>
+  <li>Smart locks (most are screwdriver-only)</li>
+  <li>Smart blinds (depending on existing setup)</li>
+  <li>Hub setup and integration</li>
+</ul>
+
+<h3>Hire it out</h3>
+
+<ul>
+  <li>Smart switches in old NEPA homes with no neutral wire (90% of homes built before 1985 — needs an electrician to verify)</li>
+  <li>Whole-home wired sensor systems</li>
+  <li>Network infrastructure upgrades (mesh WiFi, ethernet runs, network closet)</li>
+  <li>Anything that involves running new wire</li>
+  <li>Smart panel upgrades (Span, Lumin) — full electrical work</li>
+</ul>
+
+<div class="callout info">
+  <div class="label">A note on NEPA's electrical reality</div>
+  <p>A lot of NEPA homes have older wiring that complicates smart switch installation. Specifically: many older homes have switch boxes with only hot and load wires (no neutral), which most smart switches require. If you've ever opened a switch box and only seen two black wires plus a ground, you have this issue. Lutron Caseta works without a neutral; many other brands don't. Worth checking before you order.</p>
+</div>
+
+<h3>Our IT Services subscription covers most of this</h3>
+
+<p>Honest plug: the <a href="../index.html#pricing">NEPA-PRO IT Services plan</a> ($49.99/mo) was designed for exactly this kind of work. Wi-Fi setup, smart-home integration, ongoing support when something stops working, one onsite tech visit per month. Most of our IT customers had a drawer full of smart devices they'd given up on getting to work — we get them all running and keep them running.</p>
+
+<h2 id="future">What we're watching for the next few years</h2>
+
+<h3>Matter standard maturing</h3>
+
+<p>Matter is the new industry-wide protocol that's supposed to make all smart devices work with all platforms. It's slowly happening. By 2027 most new devices will be Matter-compatible, which fixes the current "this only works with Alexa" problem. If you're buying new devices today, prefer Matter-certified.</p>
+
+<h3>Local AI processing</h3>
+
+<p>Voice assistants currently send audio to the cloud. Apple, Amazon, and Google are all working toward more on-device processing for privacy reasons. Expect this to be common by 2027.</p>
+
+<h3>Energy management</h3>
+
+<p>As more NEPA homes get heat pumps, EVs, and solar, the smart panel category (Span, Lumin, Schneider) becomes more relevant. Right now they're $4,000-$5,000 installed. Expect this to come down significantly as competition increases.</p>
+
+<h3>Smart insulation and windows</h3>
+
+<p>Already exists in commercial; coming to residential. Expect electrochromic windows (tint on demand) to start appearing in residential projects in the next 3-5 years. Worth nothing for NEPA homes today; worth watching.</p>
+
+<h2>The honest summary</h2>
+
+<p>Most smart home tech is genuinely useful and worth installing. The exceptions are mostly things where the "smart" feature is bolted onto an appliance whose useful life is much longer than the smart feature's support window.</p>
+
+<p>If you're starting from zero, do the five from the worth-it list — that's $700-$900 in equipment, mostly DIY-installable, and will give you 90% of the practical value of a fully smart home. Add to it as you find friction in your daily life that a specific device would solve.</p>
+
+<p>And don't get suckered by the showroom demo. The smart fridge with the giant screen looks amazing in the appliance store. Twelve months later, you'll wish you'd bought the regular fridge and put a $99 tablet on the kitchen counter.</p>
+
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col" style="margin-top: 16px; padding: 0; box-shadow: none; background: transparent;">
+    <div class="guide-cta">
+      <span class="cta-eyebrow">Stop chasing this stuff every year</span>
+      <h3>Put your property on auto-pilot.</h3>
+      <p>Our subscription plans handle the seasonal prep, the small repairs, and the 2am emergencies — so you don't have to remember any of it. One predictable monthly price, no service-call surprises.</p>
+      <div class="guide-cta-row">
+        <a class="guide-cta-primary" href="../index.html#pricing">
+          See Plans &amp; Pricing
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="guide-cta-secondary" href="../contact.html">Talk to a tech first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<aside class="related wrap">
+  <h4>Keep reading</h4>
+  <div class="related-grid">
+    <a class="related-card" href="solar-cloudy-nepa.html">
+  <div class="rc-tag">Solar & Energy</div>
+  <div class="rc-title">Does solar actually work in cloudy NEPA?</div>
+</a>
+<a class="related-card" href="two-quotes.html">
+  <div class="rc-tag">Money</div>
+  <div class="rc-title">How to read two contractor quotes</div>
+</a>
+
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="../index.html#pricing">IT Services</a>
+        <a href="../index.html#pricing">Essential</a>
+        <a href="../index.html#pricing">Pro</a>
+        <a href="../index.html#pricing">Premier</a>
+        <a href="../index.html#pricing">Estate</a>
+        <a href="../index.html#outdoor">Outdoor Care</a>
+        <a href="../index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="../index.html#services">Maintenance</a>
+        <a href="../index.html#services">Repairs</a>
+        <a href="../index.html#services">Renovations</a>
+        <a href="../index.html#services">Solar</a>
+        <a href="../index.html#services">IT Services</a>
+        <a href="../index.html#outdoor">Lawn Care</a>
+        <a href="../index.html#outdoor">Snow Removal</a>
+        <a href="../index.html#services">Fences</a>
+        <a href="../index.html#services">Concrete</a>
+        <a href="../index.html#services">Excavation</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../guides.html">Guides</a>
+        <a href="../media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="../index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab" href="../index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab" href="../inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab" href="../renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="../contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<script>
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

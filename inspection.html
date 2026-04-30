@@ -1,0 +1,2152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>Home Inspection Report · NEPA-PRO</title>
+<meta name="description" content="Comprehensive 371-point home inspection tool. Industry-standard rating system, photo documentation, branded PDF report. ASHI / InterNACHI Standards of Practice aligned." />
+
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="Comprehensive Home Inspection · NEPA-PRO" />
+<meta property="og:description" content="371-point home inspection tool with rating system, photo documentation, and professional PDF report." />
+<meta property="og:url" content="https://nepa-pro.com/inspection" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Comprehensive Home Inspection · NEPA-PRO" />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+
+<style>
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --ios-blue-pressed: #0066CC;
+  --ios-green: #34C759;
+  --ios-yellow: #FFCC00;
+  --ios-orange: #FF9500;
+  --ios-red: #FF3B30;
+  --ios-cyan: #5AC8FA;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --bg-tint-2: #E5EAF2;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 62px;
+  --actionbar-h: 84px;
+  --rate-A: #34C759;
+  --rate-M: #FFCC00;
+  --rate-D: #FF9500;
+  --rate-S: #FF3B30;
+  --rate-NA: #8B97AC;
+  --rate-NI: #5C6A82;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  padding-top: calc(var(--safe-top) + 56px);
+  padding-bottom: calc(var(--actionbar-h) + var(--tabbar-h) + var(--safe-bottom));
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ios-blue); text-decoration: none; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+button { font: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; }
+
+/* App bar */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11, 31, 58, 0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--safe-top);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; max-width: 1100px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 8px 18px -8px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name { font-weight: 800; letter-spacing: .02em; line-height: 1; font-size: 18px; }
+.brand-name .accent { color: var(--amber-500); }
+.brand-sub { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 700; font-size: 13px; text-decoration: none;
+}
+
+/* Hero */
+.page-hero {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 70%, var(--bg) 100%);
+  padding: 28px 0 64px; color: #fff;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; right: -100px; top: -50px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,122,26,.18) 0%, transparent 70%);
+  filter: blur(40px);
+}
+.crumbs { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 14px; position: relative; z-index: 1; }
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs .sep { margin: 0 8px; opacity: .4; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.08); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 14px; position: relative; z-index: 1;
+  border: 1px solid rgba(255,255,255,.10);
+}
+.page-eyebrow .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-500); box-shadow: 0 0 8px var(--amber-500); }
+.page-hero h1 {
+  margin: 0 0 14px; font-size: clamp(36px, 8vw, 56px); line-height: 1.05;
+  font-weight: 800; letter-spacing: -.025em; color: #fff;
+  position: relative; z-index: 1;
+}
+.page-hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #ffd1a8, var(--amber-500));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.page-hero .lede {
+  margin: 0; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.78); max-width: 60ch;
+  position: relative; z-index: 1;
+}
+
+/* Score Card — pulled out of hero */
+.score-card {
+  margin-top: -32px; position: relative; z-index: 2;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-md);
+  display: grid; gap: 14px;
+}
+@media (min-width: 720px) {
+  .score-card { grid-template-columns: 1fr 1fr; gap: 18px; align-items: center; }
+}
+.score-display {
+  display: flex; align-items: center; gap: 16px;
+}
+.score-circle {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  background: conic-gradient(var(--rate-NA) 0% 100%);
+  position: relative;
+}
+.score-circle::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.score-num {
+  position: relative;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.score-num small { display: block; font-size: 10px; font-weight: 600; color: var(--ink-3); margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
+.score-info { flex: 1; min-width: 0; }
+.score-info .grade-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.score-info .grade-letter {
+  font-size: 36px; font-weight: 900; line-height: 1; letter-spacing: -.02em;
+  margin: 4px 0;
+}
+.score-info .grade-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.score-info .grade-desc { font-size: 12.5px; color: var(--ink-3); margin-top: 6px; line-height: 1.45; }
+
+.score-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+}
+.score-stat {
+  background: var(--bg-tint); border-radius: 10px;
+  padding: 10px 12px;
+}
+.score-stat .num { font-size: 20px; font-weight: 800; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.score-stat .label { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); margin-top: 4px; }
+.score-stat.danger .num { color: var(--ios-red); }
+.score-stat.warn .num { color: var(--ios-orange); }
+.score-stat.caution .num { color: var(--ios-yellow); }
+.score-stat.ok .num { color: var(--ios-green); }
+
+/* Property info card */
+.section-card {
+  margin-top: 16px;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--hairline);
+}
+.section-card h3 {
+  margin: 0 0 14px; font-size: 15px; font-weight: 700;
+}
+.field-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .field-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .field-grid { grid-template-columns: repeat(3, 1fr); } }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.field-input {
+  padding: 11px 13px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-sm);
+  background: #fff;
+  font-size: 14.5px;
+  width: 100%;
+  outline: none;
+  transition: border-color .15s ease;
+}
+.field-input:focus {
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(10,132,255,.15);
+}
+
+/* Section accordion */
+.sections { padding: 22px 0 0; }
+.insp-section {
+  margin-bottom: 14px;
+  background: #fff; border-radius: var(--r-lg);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.section-header {
+  width: 100%;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff; border: none; text-align: left;
+  cursor: pointer;
+}
+.section-header-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+.section-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--bg-tint);
+  display: grid; place-items: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.section-text { flex: 1; min-width: 0; }
+.section-title {
+  font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 2px;
+}
+.section-intro {
+  font-size: 12.5px; color: var(--ink-3); line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+}
+.section-meta {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.section-progress {
+  font-size: 12px; font-weight: 700; color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  display: flex; align-items: center; gap: 6px;
+}
+.section-progress .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rate-NA);
+}
+.section-progress .dot.complete { background: var(--ios-green); }
+.section-chevron {
+  width: 22px; height: 22px; color: var(--ink-3);
+  transition: transform .25s ease;
+}
+.insp-section.open .section-chevron { transform: rotate(180deg); }
+
+.section-body {
+  border-top: 1px solid var(--hairline);
+  display: none;
+}
+.insp-section.open .section-body { display: block; }
+
+.section-quick-actions {
+  padding: 12px 20px;
+  background: var(--bg-tint);
+  border-bottom: 1px solid var(--hairline);
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.quick-action {
+  padding: 7px 12px;
+  background: #fff;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 600;
+  color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: all .15s ease;
+}
+.quick-action:hover { border-color: var(--ios-blue); background: rgba(10,132,255,.05); }
+.quick-action.danger:hover { border-color: var(--ios-red); background: rgba(255,59,48,.05); color: var(--ios-red); }
+.quick-action svg { width: 12px; height: 12px; }
+
+/* Item row */
+.insp-item {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+.insp-item:last-child { border-bottom: none; }
+.item-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 10px;
+  margin-bottom: 10px;
+}
+.item-title {
+  font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.35;
+  flex: 1; min-width: 0;
+}
+.item-hint {
+  font-size: 12px; color: var(--ink-3); line-height: 1.45;
+  margin-top: 4px;
+}
+.rating-row {
+  display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px;
+}
+.rate-btn {
+  flex: 1; min-width: 56px;
+  padding: 8px 4px;
+  border: 1.5px solid var(--hairline-strong);
+  background: #fff;
+  border-radius: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .02em;
+  color: var(--ink-3);
+  text-align: center;
+  transition: all .12s ease;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.rate-btn:hover { border-color: var(--ink-3); }
+.rate-btn .glyph {
+  font-size: 14px; font-weight: 900; line-height: 1;
+}
+.rate-btn[data-rating="A"]:hover { border-color: var(--rate-A); color: var(--rate-A); }
+.rate-btn[data-rating="M"]:hover { border-color: var(--rate-M); color: #B8860B; }
+.rate-btn[data-rating="D"]:hover { border-color: var(--rate-D); color: var(--rate-D); }
+.rate-btn[data-rating="S"]:hover { border-color: var(--rate-S); color: var(--rate-S); }
+.rate-btn.active[data-rating="A"] { background: var(--rate-A); border-color: var(--rate-A); color: #fff; }
+.rate-btn.active[data-rating="M"] { background: var(--rate-M); border-color: var(--rate-M); color: var(--ink); }
+.rate-btn.active[data-rating="D"] { background: var(--rate-D); border-color: var(--rate-D); color: #fff; }
+.rate-btn.active[data-rating="S"] { background: var(--rate-S); border-color: var(--rate-S); color: #fff; }
+.rate-btn.active[data-rating="NA"] { background: var(--rate-NA); border-color: var(--rate-NA); color: #fff; }
+.rate-btn.active[data-rating="NI"] { background: var(--rate-NI); border-color: var(--rate-NI); color: #fff; }
+
+.item-extra {
+  display: grid; gap: 8px;
+}
+.notes-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-sm);
+  background: #fff;
+  font-size: 13.5px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 40px;
+  outline: none;
+  transition: border-color .15s ease;
+}
+.notes-input:focus { border-color: var(--ios-blue); box-shadow: 0 0 0 3px rgba(10,132,255,.15); }
+.notes-input::placeholder { color: var(--ink-4); }
+
+.photo-row {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.photo-thumb {
+  position: relative;
+  width: 64px; height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--hairline-strong);
+  flex-shrink: 0;
+}
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.photo-thumb .remove {
+  position: absolute;
+  top: 2px; right: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(0,0,0,.7);
+  color: #fff;
+  border: none;
+  font-size: 11px; font-weight: 800; line-height: 1;
+  display: grid; place-items: center;
+  cursor: pointer;
+}
+.photo-add {
+  width: 64px; height: 64px;
+  border: 1.5px dashed var(--hairline-strong);
+  border-radius: 8px;
+  background: var(--bg-tint);
+  display: grid; place-items: center;
+  cursor: pointer;
+  color: var(--ink-3);
+  font-size: 20px;
+  transition: all .15s ease;
+}
+.photo-add:hover { border-color: var(--ios-blue); color: var(--ios-blue); background: rgba(10,132,255,.05); }
+.photo-add input[type=file] { display: none; }
+
+.item-rated-status {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.item-rated-status.A { background: rgba(52,199,89,.10); color: #1a8c3a; }
+.item-rated-status.M { background: rgba(255,204,0,.20); color: #6b5400; }
+.item-rated-status.D { background: rgba(255,149,0,.15); color: #9c4a00; }
+.item-rated-status.S { background: rgba(255,59,48,.12); color: #b3251c; }
+.item-rated-status.NA, .item-rated-status.NI { background: var(--bg-tint); color: var(--ink-3); }
+
+/* Master action bar */
+.master-actions {
+  margin: 16px 0 0;
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.master-action {
+  padding: 12px 16px;
+  border: 1px solid var(--hairline-strong);
+  background: #fff;
+  border-radius: var(--r-md);
+  color: var(--ink-2); font-size: 13px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all .15s ease;
+  flex: 1; min-width: 140px;
+  justify-content: center;
+}
+.master-action:hover { border-color: var(--amber-500); background: var(--bg-tint); }
+.master-action.primary { background: var(--ios-green); color: #fff; border-color: var(--ios-green); }
+.master-action.primary:hover { background: #2ba84a; border-color: #2ba84a; }
+.master-action svg { width: 16px; height: 16px; }
+
+/* Action bar */
+.action-bar {
+  position: fixed;
+  bottom: var(--tabbar-h); left: 0; right: 0; z-index: 55;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline-strong);
+  padding: 10px 16px;
+  box-shadow: 0 -4px 20px -8px rgba(7,23,46,.20);
+}
+.action-bar-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px;
+}
+.ab-score-mini {
+  flex: 1; display: flex; align-items: center; gap: 12px; min-width: 0;
+}
+.ab-score-circle {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.ab-score-circle::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #fff;
+}
+.ab-score-text {
+  position: relative;
+  font-size: 17px; font-weight: 800; line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.ab-score-info {
+  flex: 1; min-width: 0;
+}
+.ab-score-info .label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.ab-score-info .progress { font-size: 14px; font-weight: 700; color: var(--ink); margin-top: 2px; line-height: 1.2; }
+.ab-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.ab-action {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 16px;
+  border-radius: var(--r-pill);
+  font-size: 14px; font-weight: 700;
+  border: none; text-decoration: none;
+  white-space: nowrap;
+  transition: transform .15s ease, background .15s ease;
+}
+.ab-action:active { transform: scale(.97); }
+.ab-action.primary { background: var(--ios-blue); color: #fff; }
+.ab-action.primary:hover { background: var(--ios-blue-pressed); }
+.ab-action svg { width: 16px; height: 16px; }
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 12px; color: var(--ink-4); line-height: 1.55;
+  padding: 16px 4px;
+  text-align: center;
+}
+.disclaimer strong { color: var(--ink-3); }
+
+/* Tab bar */
+.tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline);
+  padding: 6px 4px calc(6px + var(--safe-bottom));
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 2px; color: var(--ink-3); text-decoration: none;
+  font-size: 10px; font-weight: 600; letter-spacing: .02em;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab.active { color: var(--ios-blue); }
+
+/* Footer */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 32px 0 24px; margin-top: 32px;
+}
+footer .brand { color: #fff; margin-bottom: 24px; }
+.foot-grid { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; margin-top: 16px; }
+.foot-grid h4 { color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 10px; }
+.foot-grid a { display: block; color: rgba(255,255,255,.55); text-decoration: none; font-size: 14px; padding: 4px 0; }
+.foot-grid a:hover { color: #fff; }
+.foot-bottom {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+}
+
+/* Toast */
+.toast {
+  position: fixed; bottom: calc(var(--tabbar-h) + var(--actionbar-h) + 16px);
+  left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--navy-800); color: #fff;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 100; opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 90vw;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast.error { background: var(--ios-red); }
+.toast.success { background: var(--ios-green); }
+
+/* Tablet */
+@media (min-width: 720px) {
+  .foot-grid { grid-template-columns: repeat(4, 1fr); }
+  .foot-bottom { flex-direction: row; justify-content: space-between; }
+  .item-extra { grid-template-columns: 1fr auto; align-items: start; }
+  .rate-btn { padding: 10px 6px; }
+}
+
+/* Desktop */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: var(--actionbar-h); }
+  .action-bar { bottom: 0; padding-bottom: calc(10px + var(--safe-bottom)); }
+  .page-hero { padding: 48px 0 80px; }
+  .page-hero h1 { max-width: 22ch; }
+  .section-intro { -webkit-line-clamp: unset; }
+}
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="appbar-row">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span>Home Inspection</span>
+    </div>
+    <span class="page-eyebrow">
+      <span class="badge-dot"></span> 371-point inspection · ASHI / InterNACHI aligned
+    </span>
+    <h1>Comprehensive home <em>inspection.</em></h1>
+    <p class="lede">Industry-standard 371-point inspection covering 21 sections. Rate every component, document with photos and notes, generate a professional PDF report with property health score and prioritized findings.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- HEALTH SCORE CARD -->
+  <div class="score-card">
+    <div class="score-display">
+      <div class="score-circle" id="score-circle">
+        <div class="score-num" id="score-num">—<small>HEALTH</small></div>
+      </div>
+      <div class="score-info">
+        <div class="grade-label">Property Grade</div>
+        <div class="grade-letter" id="grade-letter" style="color: var(--rate-NA);">—</div>
+        <div class="grade-name" id="grade-name">No items rated yet</div>
+        <div class="grade-desc" id="grade-desc">Begin rating items below to see your property health score.</div>
+      </div>
+    </div>
+    <div class="score-stats">
+      <div class="score-stat ok"><div class="num" id="stat-acceptable">0</div><div class="label">Acceptable</div></div>
+      <div class="score-stat caution"><div class="num" id="stat-monitor">0</div><div class="label">Monitor</div></div>
+      <div class="score-stat warn"><div class="num" id="stat-repair">0</div><div class="label">Repair</div></div>
+      <div class="score-stat danger"><div class="num" id="stat-safety">0</div><div class="label">Safety</div></div>
+    </div>
+  </div>
+
+  <!-- PROPERTY INFO -->
+  <div class="section-card">
+    <h3>Property &amp; inspection details</h3>
+    <div class="field-grid" id="property-fields"></div>
+  </div>
+
+  <!-- MASTER ACTIONS -->
+  <div class="master-actions">
+    <button class="master-action" id="btn-save" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      Save Progress
+    </button>
+    <button class="master-action" id="btn-load" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Load Saved
+    </button>
+    <button class="master-action" id="btn-email" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email Summary
+    </button>
+    <button class="master-action" id="btn-reset" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9c-2.5 0-4.8 1-6.5 2.7L3 8"/><path d="M3 3v5h5"/></svg>
+      Reset Report
+    </button>
+  </div>
+
+  <!-- SECTIONS (rendered by JS) -->
+  <div class="sections" id="sections-container"></div>
+
+  <!-- DISCLAIMER -->
+  <p class="disclaimer">
+    <strong>Inspection scope:</strong> This is a non-invasive, visual inspection of the readily accessible installed systems and components of the home as they exist at the time of the inspection. Aligned with ASHI and InterNACHI Standards of Practice.
+    <br><br>
+    <strong>Limitations:</strong> Areas not accessible (covered by stored items, finished walls, locked rooms, etc.), latent or concealed defects, and conditions that may change between the inspection and possession are excluded.
+    For binding evaluations, engage licensed specialists (electricians, plumbers, structural engineers, etc.).
+  </p>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="index.html#pricing">All Plans</a>
+        <a href="index.html#outdoor">Outdoor Care</a>
+        <a href="index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="renovate.html">Renovation Estimator</a>
+        <a href="inspection.html">Home Inspection</a>
+        <a href="qualify.html">Discount Qualify</a>
+        <a href="guides.html">Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ACTION BAR -->
+<div class="action-bar">
+  <div class="action-bar-inner">
+    <div class="ab-score-mini">
+      <div class="ab-score-circle" id="ab-score-circle">
+        <div class="ab-score-text" id="ab-score-text">—</div>
+      </div>
+      <div class="ab-score-info">
+        <div class="label">Items Rated</div>
+        <div class="progress" id="ab-progress">0 of 371</div>
+      </div>
+    </div>
+    <div class="ab-actions">
+      <button class="ab-action primary" id="btn-pdf" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Generate Report
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab" href="index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab active" href="inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab" href="renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<!-- jsPDF -->
+<script src="js/jspdf.umd.min.js"></script>
+<script src="js/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+// ============================================================
+// NEPA-PRO Home Inspection Tool
+// ============================================================
+const DATA = {"sections":[{"id":"site","label":"Site & Grounds","icon":"\ud83c\udf33","intro":"Lot, drainage, walkways, vegetation, exterior structures.","items":[{"id":"site_grading","label":"Lot grading toward structure","hint":"Slope should fall AWAY from foundation. Min 6\" drop in first 10 ft."},{"id":"site_drainage","label":"Surface drainage","hint":"Standing water, ponding, evidence of erosion or pooling."},{"id":"site_swale","label":"Swales / drainage routes","hint":"Functional drainage paths, no blockages."},{"id":"site_driveway_mat","label":"Driveway material","hint":"Asphalt, concrete, paver, gravel."},{"id":"site_driveway_cond","label":"Driveway condition","hint":"Cracking, settling, heaving, lifted edges."},{"id":"site_walkway","label":"Walkways","hint":"Trip hazards, settling, cracks, missing slabs."},{"id":"site_steps","label":"Exterior steps & stoops","hint":"Riser uniformity, handrails, structural integrity."},{"id":"site_retaining","label":"Retaining walls","hint":"Bowing, leaning, cracks, weep holes functional."},{"id":"site_vegetation","label":"Vegetation contact with structure","hint":"Vines, branches, shrubs touching siding/roof."},{"id":"site_trees","label":"Trees overhanging roof","hint":"Limbs over roof, dead branches, root concerns."},{"id":"site_fencing","label":"Fencing & gates","hint":"Posts plumb, panels, gate operation, latches."},{"id":"site_outbuildings","label":"Outbuildings / sheds","hint":"Structural condition (excludes detailed inspection)."},{"id":"site_outdoor_light","label":"Exterior site lighting","hint":"Functional fixtures, GFCI protection where required."},{"id":"site_hose_bibs","label":"Hose bibs / sillcocks","hint":"Operation, anti-siphon devices, frost-free type."},{"id":"site_pool_equip","label":"Pool / spa equipment area (if present)","hint":"Limited inspection \u2014 equipment access only."}]},{"id":"exterior","label":"Exterior Walls & Trim","icon":"\ud83c\udfe0","intro":"Siding, trim, fascia, soffits, exterior doors, windows, foundation visible.","items":[{"id":"ext_siding_type","label":"Siding type identification","hint":"Vinyl, wood, fiber-cement, brick, stucco, masonry, EIFS, T-111, log."},{"id":"ext_siding_cond","label":"Siding condition","hint":"Cracking, warping, gaps, loose panels, visible damage."},{"id":"ext_siding_caulk","label":"Siding caulking & sealants","hint":"At penetrations, transitions, J-channels."},{"id":"ext_siding_paint","label":"Exterior paint / finish","hint":"Chalking, peeling, fading, exposed substrate."},{"id":"ext_trim","label":"Trim materials & condition","hint":"Wood, PVC, composite. Rot, separation, paint failure."},{"id":"ext_fascia","label":"Fascia boards","hint":"Rot, separation, paint failure, fastener withdrawal."},{"id":"ext_soffit","label":"Soffit panels","hint":"Damage, ventilation perforations, animal entry."},{"id":"ext_eaves","label":"Eaves & overhangs","hint":"Structural, water staining, visible damage."},{"id":"ext_window_frames","label":"Window frames (exterior)","hint":"Condition, glazing, putty, caulking around units."},{"id":"ext_window_screens","label":"Window screens","hint":"Tears, frame damage, missing."},{"id":"ext_window_flash","label":"Window flashing & head trim","hint":"Drip edge, kick-out flashing where required."},{"id":"ext_doors","label":"Exterior doors","hint":"Operation, weatherstripping, threshold, locks."},{"id":"ext_storm_doors","label":"Storm / screen doors","hint":"Operation, closer, glass condition."},{"id":"ext_lighting","label":"Exterior light fixtures","hint":"Sockets, GFCI on switched outlets, functional."},{"id":"ext_gfci","label":"Exterior GFCI receptacles","hint":"Required at all exterior outlets per current code."},{"id":"ext_dryer_term","label":"Dryer vent termination","hint":"Exterior hood, damper, lint accumulation, screen removal."},{"id":"ext_bath_term","label":"Bath fan terminations","hint":"Exterior hood, not into attic/soffit."},{"id":"ext_kitchen_term","label":"Kitchen exhaust termination","hint":"Exterior hood (if vented out)."},{"id":"ext_foundation_view","label":"Foundation (visible exterior portion)","hint":"Cracks, parging, efflorescence, settlement."},{"id":"ext_pest_evidence","label":"Pest / insect damage visible","hint":"Mud tubes (termites), boring holes (carpenter bees), nests."},{"id":"ext_wood_rot","label":"Wood rot / decay (exterior)","hint":"Trim, fascia, deck framing, sill plates visible."}]},{"id":"roof","label":"Roof System","icon":"\ud83c\udfdb\ufe0f","intro":"Covering, flashing, penetrations, drainage. Method of inspection noted.","items":[{"id":"roof_method","label":"Method of roof inspection","hint":"Walked, ladder at eaves, binoculars from ground, drone, attic only."},{"id":"roof_covering_type","label":"Roof covering type","hint":"Asphalt 3-tab, architectural, wood shake, slate, clay tile, concrete tile, metal, EPDM, TPO, PVC, modified bitumen."},{"id":"roof_age_estimate","label":"Estimated age of covering","hint":"Based on observed wear; verify with seller documentation."},{"id":"roof_layers","label":"Number of visible layers","hint":"Code typically max 2 layers asphalt."},{"id":"roof_general_cond","label":"General roof covering condition","hint":"Granule loss, blistering, curling, cracking, missing tabs."},{"id":"roof_damaged_areas","label":"Damaged / missing materials","hint":"Wind damage, hail, impact, animal damage."},{"id":"roof_nail_pops","label":"Exposed nails / nail pops","hint":"Sealant present, lifted shingles around fasteners."},{"id":"roof_valleys","label":"Valley flashing & condition","hint":"Open vs. closed valleys, granule loss, debris."},{"id":"roof_pen_pipe","label":"Plumbing vent boots & flashing","hint":"Cracked rubber boots common \u2014 replace every 10-15 yrs."},{"id":"roof_pen_other","label":"Other roof penetrations","hint":"Furnace flues, exhaust fans, satellite mounts."},{"id":"roof_skylights","label":"Skylights","hint":"Glazing, frames, flashing, condensation between panes."},{"id":"roof_chimney_ext","label":"Chimney exterior (above roof)","hint":"Mortar joints, brick, flue tile, leaning."},{"id":"roof_chimney_cap","label":"Chimney cap / spark arrestor","hint":"Present, secure, screen condition."},{"id":"roof_chimney_crown","label":"Chimney crown","hint":"Concrete crown sealing, cracks, water entry path."},{"id":"roof_chimney_flash","label":"Chimney flashing","hint":"Step flashing, counter-flashing, sealant condition."},{"id":"roof_drip_edge","label":"Drip edge","hint":"Present at eaves and rakes; condition."},{"id":"roof_ridge_vent","label":"Ridge vent / ridge cap","hint":"Condition, seal, blockages."},{"id":"roof_gutters_type","label":"Gutter type","hint":"K-style 5\"/6\", half-round, integrated."},{"id":"roof_gutters_cond","label":"Gutter condition","hint":"Pitch, fasteners, debris, leaks, rust."},{"id":"roof_downspouts","label":"Downspouts","hint":"Connections, secure, count appropriate."},{"id":"roof_downspout_disch","label":"Downspout discharge","hint":"Min 6 ft from foundation, splash blocks, extensions, underground drains."},{"id":"roof_gutter_guards","label":"Gutter guards (if installed)","hint":"Type, condition; note potential for ice dam if poorly installed."},{"id":"roof_ice_water","label":"Ice & water shield (where visible)","hint":"At eaves and valleys for cold climates."},{"id":"roof_moss_lichen","label":"Moss / lichen / algae growth","hint":"Common in shaded areas; promotes deterioration."}]},{"id":"garage","label":"Garage","icon":"\ud83d\ude97","intro":"Doors, openers, firewall, electrical, structural elements visible from inside.","items":[{"id":"gar_type","label":"Garage type","hint":"Attached, detached, built-in, carport."},{"id":"gar_size","label":"Garage capacity","hint":"1-car, 2-car, 3-car, oversized."},{"id":"gar_overhead_doors","label":"Overhead garage doors \u2014 operation","hint":"Smooth operation, balanced, springs, cables, rollers."},{"id":"gar_door_panels","label":"Garage door panels","hint":"Damage, dents, rust, weatherstripping."},{"id":"gar_opener","label":"Automatic opener \u2014 operation","hint":"Functional, motor, drive type (chain/belt/screw)."},{"id":"gar_opener_reverse","label":"Auto-reverse safety function","hint":"Tested with 2x4 \u2014 must reverse on contact. Code req'd since 1993."},{"id":"gar_opener_sensors","label":"Photo-eye safety sensors","hint":"Present, aligned, functional. Code req'd since 1993."},{"id":"gar_emergency_release","label":"Emergency release cord","hint":"Present and functional."},{"id":"gar_pedestrian_door","label":"Pedestrian door (house to garage)","hint":"Self-closing, fire-rated (20-min min), tight seal."},{"id":"gar_firewall","label":"Firewall \u2014 wall between garage & living","hint":"5/8\" Type-X drywall typical; no penetrations / unsealed openings."},{"id":"gar_ceiling","label":"Garage ceiling","hint":"Drywall integrity if living space above (5/8\" typical)."},{"id":"gar_floor","label":"Garage floor condition","hint":"Cracks, settling, oil staining, slope to door/drain."},{"id":"gar_walls","label":"Garage walls","hint":"Damage, cracks, water staining."},{"id":"gar_outlets","label":"Garage receptacles","hint":"GFCI required since 1978. Tamper-resistant since 2008."},{"id":"gar_lighting","label":"Garage lighting","hint":"Functional, adequate coverage."},{"id":"gar_windows","label":"Garage windows","hint":"Operation, glazing, locks if present."},{"id":"gar_water_heater","label":"Water heater in garage (if applicable)","hint":"Must be elevated 18\" if gas (pre-2002 homes)."}]},{"id":"structure","label":"Structure & Foundation","icon":"\ud83c\udfd7\ufe0f","intro":"Foundation, framing, structural elements visible. Most evaluations made from inside.","items":[{"id":"str_foundation_type","label":"Foundation type","hint":"Slab, crawl space, basement (full/partial), pier & beam."},{"id":"str_foundation_mat","label":"Foundation material","hint":"Poured concrete, CMU block, stone, brick."},{"id":"str_found_cracks","label":"Foundation cracks (interior view)","hint":"Hairline (typical), step-cracking, horizontal (concerning), differential settlement."},{"id":"str_found_efflor","label":"Foundation efflorescence","hint":"White mineral deposits indicating moisture."},{"id":"str_settlement","label":"Settlement indicators","hint":"Sloping floors, sticking doors, drywall cracks at corners."},{"id":"str_floor_framing","label":"Floor framing (joists)","hint":"Sized appropriately, span direction, notches/holes."},{"id":"str_subfloor","label":"Subfloor","hint":"Material, water staining from below, sagging."},{"id":"str_beams_girders","label":"Beams / girders","hint":"Steel, wood (LVL, dimensional, glulam). Bearing, deflection."},{"id":"str_posts","label":"Posts / columns","hint":"Steel adjustable, wood, concrete. Plumb, bearing on adequate footings."},{"id":"str_bearing_walls","label":"Bearing walls","hint":"Identified, no unsupported alterations visible."},{"id":"str_wall_framing","label":"Wall framing (where visible)","hint":"Studs, plates, headers visible in unfinished spaces."},{"id":"str_roof_framing","label":"Roof framing from interior","hint":"Rafters, trusses, ridge beam, collar ties, sheathing."},{"id":"str_basement_walls","label":"Basement walls","hint":"Bowing, cracks, moisture intrusion, repaired cracks."},{"id":"str_basement_floor","label":"Basement floor","hint":"Cracks (typical hairline), sweating, expansion joints."},{"id":"str_basement_water","label":"Evidence of past water intrusion","hint":"Staining, efflorescence, rust, mineral deposits, repaired areas."},{"id":"str_sump_pump","label":"Sump pump (if present)","hint":"Operation, discharge route, battery backup, age."},{"id":"str_drain_system","label":"Interior perimeter drains (if present)","hint":"Visible drain tile or French drain at perimeter."},{"id":"str_crawl_access","label":"Crawl space access","hint":"Adequate size, hatch condition, location."},{"id":"str_crawl_moisture","label":"Crawl space moisture / vapor","hint":"Vapor barrier, standing water, condensation."},{"id":"str_crawl_insulation","label":"Crawl space insulation","hint":"Floor or wall insulation, vapor retarder orientation."},{"id":"str_crawl_vent","label":"Crawl space ventilation","hint":"Vented vs. encapsulated. Vents per IRC."},{"id":"str_termite_evidence","label":"Termite / WDI evidence (visible)","hint":"Mud tubes, damaged wood, swarmers. WDI inspection separate."}]},{"id":"attic","label":"Attic","icon":"\ud83d\udd3a","intro":"Insulation, ventilation, structure visible, electrical/plumbing/HVAC penetrations.","items":[{"id":"att_access_type","label":"Attic access type","hint":"Pull-down stair, scuttle hatch, walk-up stair, none."},{"id":"att_access_loc","label":"Attic access location","hint":"Hallway, closet, garage."},{"id":"att_method","label":"Method of inspection","hint":"Walked, partial entry, viewed from access only, not entered."},{"id":"att_ins_type","label":"Insulation type","hint":"Fiberglass batts, blown cellulose, blown fiberglass, spray foam (open/closed cell), vermiculite."},{"id":"att_ins_depth","label":"Insulation depth","hint":"Inches measured at multiple points; equates to R-value."},{"id":"att_ins_coverage","label":"Insulation coverage","hint":"Even, voids, compressed, displaced."},{"id":"att_vapor_barrier","label":"Vapor retarder","hint":"On warm side of insulation (faces living space in heating climate)."},{"id":"att_ventilation_type","label":"Attic ventilation strategy","hint":"Soffit + ridge, soffit + gable, mechanical, mixed."},{"id":"att_ventilation_adequate","label":"Ventilation adequacy","hint":"1:300 ratio with vapor retarder, 1:150 without."},{"id":"att_baffles","label":"Insulation baffles at eaves","hint":"Maintain airflow from soffit vents."},{"id":"att_roof_struct","label":"Roof structure visible","hint":"Rafters, trusses, sheathing condition."},{"id":"att_sheathing_stains","label":"Sheathing stains / discoloration","hint":"Water staining (indicates roof leak), mold (concerning)."},{"id":"att_truss_alterations","label":"Truss alterations","hint":"Cut or modified trusses are a major concern."},{"id":"att_electric_wiring","label":"Electrical wiring in attic","hint":"Junction boxes accessible, no exposed splices, K&T concerning."},{"id":"att_plumbing_pen","label":"Plumbing penetrations / venting","hint":"Gaps sealed, vent stack continuous."},{"id":"att_hvac_attic","label":"HVAC ductwork in attic (if any)","hint":"Insulated, sealed, supports, condensation."},{"id":"att_bath_term","label":"Bath fan termination (in attic)","hint":"Must terminate to exterior, NOT into attic space."},{"id":"att_dryer_term_attic","label":"Dryer vent (if routed through attic)","hint":"Solid metal, supported, terminates exterior."},{"id":"att_pest_animal","label":"Pest / animal evidence","hint":"Droppings, nesting material, chewed wires, insulation displacement."},{"id":"att_chimney_attic","label":"Chimney in attic (clearance)","hint":"1\" clearance from combustibles per code."},{"id":"att_storage_floor","label":"Storage flooring","hint":"Decking that compresses insulation reduces R-value."}]},{"id":"electrical","label":"Electrical System","icon":"\u26a1","intro":"Service, panel(s), branch wiring, devices, safety equipment.","items":[{"id":"el_service_type","label":"Service entrance type","hint":"Overhead drop or underground (lateral)."},{"id":"el_service_drop","label":"Service drop conductors (overhead)","hint":"Min clearance: 10' over walks, 12' over driveways, 18' over streets."},{"id":"el_mast","label":"Service mast / weatherhead","hint":"Plumb, secured, drip loop, sealed entry."},{"id":"el_meter_base","label":"Meter base condition","hint":"Secure, sealed, no damage, no tampering."},{"id":"el_service_capacity","label":"Service capacity (amperage)","hint":"60A (very old, undersized), 100A (older), 150-200A (typical), 320-400A (large home)."},{"id":"el_voltage","label":"Voltage","hint":"120/240V split-phase typical; 120V only is concerning (very old)."},{"id":"el_grounding","label":"Service grounding","hint":"Ground rod(s), water pipe bond, supplemental electrode."},{"id":"el_main_panel_mfg","label":"Main panel manufacturer","hint":"Note brand. Federal Pacific Stab-Lok, Zinsco, Challenger flagged as defective."},{"id":"el_main_panel_loc","label":"Main panel location","hint":"Accessibility, working clearance (30\" wide \u00d7 36\" deep \u00d7 78\" tall)."},{"id":"el_main_disconnect","label":"Main disconnect","hint":"Single throw, labeled, accessible."},{"id":"el_panel_bonding","label":"Panel bonding & grounding","hint":"Neutral & ground bonded ONLY at main service. Sub-panels: separated."},{"id":"el_panel_breakers","label":"Breakers / fuses condition","hint":"Double-tapped, mismatched brand, signs of overheating, missing fillers."},{"id":"el_panel_torque","label":"Visible loose connections","hint":"Discoloration, melted insulation."},{"id":"el_subpanels","label":"Sub-panels","hint":"Properly fed (4-wire), separated grounds/neutrals, labeled."},{"id":"el_branch_wiring","label":"Branch circuit wiring type","hint":"Copper Romex/NM (most common), aluminum branch (concerning, pre-1972), knob-and-tube (very old, concerning), conduit, BX/AC."},{"id":"el_aluminum_branch","label":"Aluminum branch wiring (15/20A) \u2014 if present","hint":"Pre-1972 homes. Requires CO/ALR devices or pigtailing with CO/ALR connectors."},{"id":"el_knob_tube","label":"Knob-and-tube (if present)","hint":"Pre-1950 homes. Cannot be buried in insulation. Often grandfathered but concerning."},{"id":"el_afci","label":"AFCI breakers","hint":"Required in bedrooms (2002), expanded to most living spaces (2014)."},{"id":"el_gfci_kitchen","label":"GFCI \u2014 kitchen counter receptacles","hint":"Required since 1987 for receptacles serving counters."},{"id":"el_gfci_bath","label":"GFCI \u2014 bathroom receptacles","hint":"Required since 1975."},{"id":"el_gfci_laundry","label":"GFCI \u2014 laundry / utility","hint":"Required since 2005 in laundry, 2014 in utility."},{"id":"el_gfci_garage","label":"GFCI \u2014 garage","hint":"Required since 1978."},{"id":"el_gfci_outdoor","label":"GFCI \u2014 outdoor receptacles","hint":"Required since 1973."},{"id":"el_gfci_basement","label":"GFCI \u2014 unfinished basement","hint":"Required since 1990."},{"id":"el_smoke_det","label":"Smoke detectors \u2014 operation & location","hint":"Each bedroom, outside sleeping areas, each level. Hard-wired interconnect required since ~1992."},{"id":"el_co_det","label":"CO detectors","hint":"Required where fuel-burning appliances or attached garage. PA: required since 2013."},{"id":"el_devices_sample","label":"Switches & receptacles (sampled)","hint":"Function, ground (3-prong), polarity, secure mounting."},{"id":"el_three_prong_no_ground","label":"Three-prong receptacles without ground (if present)","hint":"Must be GFCI-protected and labeled 'No Equipment Ground'."},{"id":"el_fixtures_sample","label":"Light fixtures (sampled)","hint":"Function, secure mounting, no exposed wiring."},{"id":"el_doorbell","label":"Doorbell","hint":"Operation."},{"id":"el_open_splices","label":"Open / exposed splices","hint":"All splices must be in junction boxes with covers."},{"id":"el_extension_cords","label":"Extension cords as permanent wiring","hint":"Major safety concern."}]},{"id":"plumbing","label":"Plumbing System","icon":"\ud83d\udebf","intro":"Supply, drain/waste/vent, fixtures, water heating.","items":[{"id":"pl_water_source","label":"Water source","hint":"Public water, private well, shared well, cistern."},{"id":"pl_main_supply_mat","label":"Main supply pipe material","hint":"Copper, lead (concerning), galvanized (older), plastic (PE/PEX/CPVC)."},{"id":"pl_main_shutoff","label":"Main shutoff valve location","hint":"Identified, accessible, operable. Whole-house valve."},{"id":"pl_pressure","label":"Static water pressure","hint":"40-80 psi normal. >80 psi requires PRV."},{"id":"pl_prv","label":"Pressure reducing valve (where applicable)","hint":"If pressure > 80 psi from street."},{"id":"pl_func_flow","label":"Functional water flow","hint":"Multiple fixtures running simultaneously."},{"id":"pl_func_drain","label":"Functional drainage","hint":"All sinks, tubs, showers, toilets drain freely."},{"id":"pl_supply_visible","label":"Visible supply piping material","hint":"Inspect in basement, mechanical rooms, accessible chases."},{"id":"pl_drain_visible","label":"Visible DWV piping material","hint":"Cast iron (older), galvanized (older), ABS, PVC, copper, lead bends."},{"id":"pl_vent_pipe","label":"Vent pipes (visible portions)","hint":"Roof-terminated stacks, AAVs, sizing."},{"id":"pl_polybutylene","label":"Polybutylene piping (if present)","hint":"Gray/blue plastic. Subject to failure. Class action settlement expired 2009."},{"id":"pl_kitchen_sink","label":"Kitchen sink & faucet","hint":"Operation, leaks at supply/drain, secure mounting, sprayer."},{"id":"pl_disposal","label":"Garbage disposal","hint":"Operation, leaks, mounting."},{"id":"pl_dishwasher_air_gap","label":"Dishwasher air gap / high loop","hint":"Required to prevent backflow. Air gap on counter or high loop in cabinet."},{"id":"pl_bath_sinks","label":"Bathroom sinks & faucets","hint":"All baths \u2014 operation, leaks, drain function."},{"id":"pl_toilets","label":"Toilets \u2014 flush function","hint":"All toilets \u2014 flushes, refills, no constant running."},{"id":"pl_toilets_base","label":"Toilet base seal","hint":"Wax ring leaks, loose toilets, water staining at floor."},{"id":"pl_tubs","label":"Tubs \u2014 fill, drain, surround","hint":"Drain function, faucet, surround condition, caulking."},{"id":"pl_showers","label":"Showers \u2014 fill, drain, surround","hint":"Drain function, faucet, head, surround, caulking."},{"id":"pl_shower_pan","label":"Shower pan / floor","hint":"Slope to drain, no soft spots, grout/tile condition."},{"id":"pl_diverter","label":"Tub/shower diverters","hint":"Functional switching from tub spout to showerhead."},{"id":"pl_anti_scald","label":"Anti-scald valves at showers","hint":"Pressure-balanced or thermostatic. Required since 1990s."},{"id":"pl_water_hammer","label":"Water hammer","hint":"Banging when valves close. Air chambers may need recharging."},{"id":"pl_cross_connection","label":"Cross-connection / backflow risks","hint":"Hose bibs without anti-siphon, submerged inlets."},{"id":"pl_filter_softener","label":"Water filter / softener (if present)","hint":"Limited inspection. Operation, bypass valve."},{"id":"pl_well_note","label":"Well system (if applicable)","hint":"Limited inspection. Recommend separate well-water test and equipment evaluation."},{"id":"pl_septic_note","label":"Septic system (if applicable)","hint":"Limited inspection. Recommend separate septic inspection by licensed pumper."},{"id":"pl_sewage_ejector","label":"Sewage ejector / lift pump (if present)","hint":"Operation, sealed pit, vent."},{"id":"pl_floor_drains","label":"Floor drains","hint":"Visible, primed (water in trap), no backups."},{"id":"pl_laundry_hookup","label":"Laundry hookups","hint":"Hot/cold supply, drain (standpipe), no leaks."}]},{"id":"water_heater","label":"Water Heater","icon":"\ud83d\udd25","intro":"Type, capacity, age, safety devices, venting.","items":[{"id":"wh_type","label":"Water heater type","hint":"Tank (gas/electric), tankless (on-demand), heat pump, indirect from boiler, solar."},{"id":"wh_fuel","label":"Fuel type","hint":"Natural gas, propane, electric, oil, solar, geothermal."},{"id":"wh_capacity","label":"Capacity (gallons / GPM)","hint":"Tank: 30/40/50/75/80 gal common. Tankless: GPM rating."},{"id":"wh_mfg_model","label":"Manufacturer / model","hint":"Recorded for reference."},{"id":"wh_age","label":"Approximate age","hint":"Decode from serial number. Typical lifespan: 8-12 years tank, 20+ tankless."},{"id":"wh_temp_setting","label":"Temperature setting","hint":"Recommended max 120\u00b0F to prevent scalding."},{"id":"wh_tpr_valve","label":"TPR valve (Temperature & Pressure Relief)","hint":"Required safety device. Test annually."},{"id":"wh_tpr_discharge","label":"TPR discharge pipe","hint":"Material (copper or CPVC), full size, no traps, terminate 6\" above floor or to drain."},{"id":"wh_drip_pan","label":"Drip pan with drain","hint":"Required where leak would damage. Drain to exterior or floor drain."},{"id":"wh_combustion_air","label":"Combustion air supply","hint":"Adequate for fuel-burning units. 50 cu ft per 1000 BTU."},{"id":"wh_vent_type","label":"Venting type","hint":"B-vent (atmospheric), direct-vent, power-vent, condensing PVC."},{"id":"wh_vent_clearance","label":"Vent clearances","hint":"From combustibles per manufacturer. B-vent: 1\" min."},{"id":"wh_vent_termination","label":"Vent termination","hint":"Roof or sidewall. Min clearances from windows, doors, soffits."},{"id":"wh_seismic_strap","label":"Seismic strapping (where required)","hint":"Two straps required in seismic zones."},{"id":"wh_drain_valve","label":"Drain valve","hint":"At bottom of tank for periodic flushing."},{"id":"wh_visible_leaks","label":"Visible leaks / corrosion","hint":"Around fittings, base of tank (concerning)."},{"id":"wh_expansion_tank","label":"Thermal expansion tank (where required)","hint":"Required on closed systems (with PRV or check valve)."},{"id":"wh_anode_rod","label":"Anode rod (note only)","hint":"Sacrificial anode protects tank. Replace every 5-7 yrs in tank units."},{"id":"wh_recirc_pump","label":"Recirculation pump (if any)","hint":"Operation, controls."}]},{"id":"heating","label":"HVAC \u2014 Heating","icon":"\u2668\ufe0f","intro":"Heating system type, distribution, controls, safety.","items":[{"id":"ht_system_type","label":"Heating system type","hint":"Gas/oil furnace, boiler, electric furnace, heat pump, electric baseboard, ductless mini-split, radiant, geothermal."},{"id":"ht_fuel","label":"Fuel type","hint":"Natural gas, propane, oil, electric, geothermal."},{"id":"ht_mfg_model","label":"Manufacturer / model","hint":"Recorded for reference."},{"id":"ht_age","label":"Approximate age","hint":"Typical lifespan: 15-25 yrs furnace, 20-30 boiler, 12-15 heat pump."},{"id":"ht_capacity_btu","label":"Capacity (BTU input)","hint":"Typical home: 60K-120K BTU."},{"id":"ht_efficiency","label":"Efficiency rating (AFUE %)","hint":"Old: 65-80%. Standard new: 80%. High-eff: 90-98%. Condensing PVC venting."},{"id":"ht_distribution","label":"Heat distribution","hint":"Forced air ducts, hydronic baseboard, radiator, radiant floor, electric resistance."},{"id":"ht_filter_type","label":"Filter type & condition","hint":"MERV rating, dirty/clean, location accessible."},{"id":"ht_blower","label":"Blower / circulator condition","hint":"Operation, noise, belt (if applicable)."},{"id":"ht_combustion_air","label":"Combustion air supply","hint":"Adequate space or dedicated combustion air."},{"id":"ht_vent_connector","label":"Vent connector / flue","hint":"Pitch (1/4\" per foot up), supports, no rust holes, sealed connections."},{"id":"ht_vent_termination","label":"Vent termination","hint":"Above roof, clearances, no obstructions."},{"id":"ht_heat_exchanger","label":"Heat exchanger (visible portions)","hint":"Cracks, rust, soot. Full inspection requires disassembly (beyond scope)."},{"id":"ht_burner_cond","label":"Burner / flame condition","hint":"Even blue flame (gas) or correct nozzle (oil). Soot, lazy flame concerning."},{"id":"ht_oil_tank","label":"Oil tank (if present)","hint":"Above-ground (preferred), buried (concerning, leak liability). Age, gauge."},{"id":"ht_thermostat_op","label":"Thermostat \u2014 operation","hint":"Tested at every system zone. Calls for heat function."},{"id":"ht_thermostat_type","label":"Thermostat type","hint":"Mechanical, programmable, smart (Wi-Fi)."},{"id":"ht_zoning","label":"Zoning","hint":"Single zone, multi-zone with dampers, multi-system."},{"id":"ht_room_distribution","label":"Heat in every habitable room","hint":"Required by code. No room without registered/baseboard heat."},{"id":"ht_supply_returns","label":"Supply registers / return grilles","hint":"Present in each room, unobstructed, balanced."},{"id":"ht_boiler_pressure","label":"Boiler pressure (if applicable)","hint":"12-15 psi typical for residential hydronic."},{"id":"ht_boiler_relief","label":"Boiler relief valve","hint":"30 psi typical. Discharge piped to safe location."},{"id":"ht_boiler_expansion","label":"Boiler expansion tank","hint":"Diaphragm or compression. Pressurized correctly."},{"id":"ht_humidifier","label":"Humidifier (if installed)","hint":"Bypass or fan-powered. Operation, maintenance."}]},{"id":"cooling","label":"HVAC \u2014 Cooling","icon":"\u2744\ufe0f","intro":"Cooling system type, capacity, performance, condensate management.","items":[{"id":"cl_system_type","label":"Cooling system type","hint":"Central AC, heat pump, ductless mini-split, window/wall, evaporative."},{"id":"cl_mfg_model","label":"Outdoor unit manufacturer / model","hint":"Recorded for reference."},{"id":"cl_age","label":"Approximate age","hint":"Typical lifespan: 12-15 yrs central, 15-20 heat pump, 20+ mini-split."},{"id":"cl_capacity_tons","label":"Capacity (tons / BTU)","hint":"1 ton = 12,000 BTU. Sized at 400-600 sqft per ton typical."},{"id":"cl_seer","label":"SEER rating","hint":"Older: 8-10. Standard new: 14-16. High-efficiency: 18+."},{"id":"cl_refrigerant","label":"Refrigerant type","hint":"R-22 (phased out 2020, expensive), R-410A (current standard), R-454B (newer)."},{"id":"cl_outdoor_clearance","label":"Outdoor unit clearance","hint":"Min 12\" all sides, 60\" above. No vegetation contact."},{"id":"cl_outdoor_level","label":"Outdoor unit on level pad","hint":"Concrete pad, composite pad, mounting feet. Settling concerning."},{"id":"cl_outdoor_cond","label":"Outdoor unit condition","hint":"Coil fins (combed), debris, damage, fan operation."},{"id":"cl_indoor_coil","label":"Indoor evaporator coil","hint":"Access panel removed if accessible. Cleanliness, ice/frost."},{"id":"cl_condensate_primary","label":"Primary condensate drain","hint":"PVC trap, slope to drain, clear of clogs."},{"id":"cl_condensate_secondary","label":"Secondary condensate drain / pan","hint":"Required when primary failure would cause damage. Float switch alternate."},{"id":"cl_condensate_pump","label":"Condensate pump (if used)","hint":"Operation, discharge route, safety switch."},{"id":"cl_temp_diff","label":"Cooling temperature differential","hint":"15-20\u00b0F drop from return to supply (target). Outside conditions affect."},{"id":"cl_disconnect","label":"Outdoor disconnect","hint":"Within sight of unit. Functional pull or breaker."},{"id":"cl_lineset","label":"Refrigerant line set","hint":"Insulation on suction line, supports, no kinks."},{"id":"cl_mini_split_count","label":"Mini-split heads (if applicable)","hint":"Count, location, operation each."},{"id":"cl_window_units","label":"Window/wall AC units (if applicable)","hint":"Operation, mounting, GFCI on cord-connected."}]},{"id":"ductwork","label":"Ductwork & Distribution","icon":"\ud83c\udf2c\ufe0f","intro":"Forced air distribution system inspection.","items":[{"id":"dt_supply_material","label":"Supply duct material","hint":"Sheet metal, flex duct, fiberboard. Lined sheet metal."},{"id":"dt_return_material","label":"Return duct material","hint":"Sheet metal, framing cavity (panned joists), flex duct."},{"id":"dt_insulation","label":"Duct insulation (where in unconditioned space)","hint":"Min R-6 for unconditioned attic/crawl. R-8 in extreme climates."},{"id":"dt_sealing","label":"Visible duct sealing","hint":"Mastic, foil tape (UL 181), no cloth duct tape."},{"id":"dt_supports","label":"Duct supports & sags","hint":"Flex duct min support every 4', no sags below 1.5x diameter."},{"id":"dt_disconnects","label":"Visible disconnections","hint":"Falling-off boots, separated sections, holes."},{"id":"dt_dampers","label":"Dampers (zoned systems)","hint":"Operation visible, manual or motorized."},{"id":"dt_returns_per_room","label":"Returns in each major room","hint":"Best practice; absent returns cause pressure imbalances."},{"id":"dt_filter_grilles","label":"Filter grilles (return-side filters)","hint":"Sized to filter MERV, accessible."}]},{"id":"insulation_vent","label":"Insulation & Ventilation","icon":"\ud83c\udfe0","intro":"Whole-house thermal envelope and exhaust ventilation systems.","items":[{"id":"iv_attic_total","label":"Attic insulation R-value (overall)","hint":"DOE recommends R-49 for NEPA climate (zone 5). Older homes often R-19 or less."},{"id":"iv_walls","label":"Wall insulation (visible at outlets/access)","hint":"Cavity insulation in walls. Modern: R-13 to R-21."},{"id":"iv_basement_walls","label":"Basement wall insulation","hint":"Foam board or batts on framed wall."},{"id":"iv_rim_joist","label":"Rim joist insulation","hint":"Major heat loss point. Foam board with sealant best."},{"id":"iv_crawl","label":"Crawl space insulation","hint":"Floor (vented) or wall (encapsulated)."},{"id":"iv_vapor_retarder","label":"Vapor retarder placement","hint":"Warm side in heating climate. Wrong-side vapor retarder traps moisture."},{"id":"iv_air_sealing","label":"Air sealing visible","hint":"Top plate penetrations, can lights, ducts in attic."},{"id":"iv_bath_fan_present","label":"Bath exhaust fans \u2014 presence","hint":"Required in bathrooms without operable window."},{"id":"iv_bath_fan_op","label":"Bath exhaust fans \u2014 operation & flow","hint":"Should pull tissue against grille; CFM rated for room size."},{"id":"iv_kitchen_hood_op","label":"Kitchen range hood \u2014 operation","hint":"Vented exterior or recirculating. Match cooktop CFM."},{"id":"iv_dryer_vent_mat","label":"Dryer vent \u2014 material & routing","hint":"Solid metal preferred; flexible vinyl prohibited (fire hazard)."},{"id":"iv_dryer_vent_length","label":"Dryer vent \u2014 length & turns","hint":"Max 25 ft (deduct 5 ft per 90\u00b0 turn). Long runs reduce performance."},{"id":"iv_whole_house_fan","label":"Whole-house fan (if installed)","hint":"Attic-mounted exhaust. Operation, condition."},{"id":"iv_hrv_erv","label":"HRV / ERV (if installed)","hint":"Heat or energy recovery ventilator. Modern tight homes."}]},{"id":"interior","label":"Interior \u2014 Living Spaces","icon":"\ud83d\udecb\ufe0f","intro":"Walls, ceilings, floors, stairs, windows, doors throughout living areas.","items":[{"id":"in_walls_general","label":"Walls (general condition)","hint":"Drywall/plaster. Cracks, water staining, holes, finish."},{"id":"in_ceilings_general","label":"Ceilings (general condition)","hint":"Cracks, water staining, sagging, popcorn texture (asbestos pre-1978)."},{"id":"in_floor_hardwood","label":"Floors \u2014 hardwood (where present)","hint":"Finish, gaps, cupping, crowning, water damage."},{"id":"in_floor_lvp_lam","label":"Floors \u2014 LVP / laminate / vinyl","hint":"Seams, gapping, water damage, lifting."},{"id":"in_floor_tile","label":"Floors \u2014 tile / stone","hint":"Loose tiles, grout, cracks."},{"id":"in_floor_carpet","label":"Floors \u2014 carpet","hint":"Wear, stains, pad, transitions."},{"id":"in_floor_slope","label":"Floor slope / sponginess","hint":"Indication of structural settlement or moisture damage."},{"id":"in_stairs_treads","label":"Stairs \u2014 treads & risers","hint":"Uniform rise/run (max 7-3/4\" rise variance, 3/8\"). Solid, no squeaking."},{"id":"in_stairs_handrails","label":"Stairs \u2014 handrails","hint":"Min 34-38\" height, graspable (1.25-2\" diameter), continuous."},{"id":"in_stairs_guardrails","label":"Stairs \u2014 guardrails / open sides","hint":"Min 36\" height, balusters max 4\" spacing."},{"id":"in_windows_op","label":"Windows \u2014 operation","hint":"Open, close, lock. Sample throughout."},{"id":"in_windows_glazing","label":"Window glazing (single/double/triple)","hint":"Insulated glass typical post-1980. Single pane in older homes."},{"id":"in_windows_failed","label":"Failed insulated glass units","hint":"Fogging, condensation between panes (lost seal)."},{"id":"in_egress_bedrooms","label":"Egress windows in bedrooms","hint":"Min 5.7 sq ft openable, 24\" height, 20\" width, 44\" sill height."},{"id":"in_doors_int_op","label":"Interior doors \u2014 operation","hint":"Open, close, latch, alignment."},{"id":"in_doors_int_hardware","label":"Door hardware","hint":"Knobs, locks, hinges, secure."},{"id":"in_closets","label":"Closet doors & shelving","hint":"Bifold, sliding, swinging. Operation."},{"id":"in_cabinets_kitchen","label":"Kitchen cabinets \u2014 boxes & doors","hint":"Secure, doors aligned, hinges, drawer slides."},{"id":"in_counters_kitchen","label":"Kitchen counters","hint":"Material, condition, edge profile, mounting."},{"id":"in_cabinets_bath","label":"Bathroom vanities","hint":"Secure, water damage, doors aligned."},{"id":"in_built_ins","label":"Built-ins (shelves, benches, etc.)","hint":"Installed millwork. Note for reference."},{"id":"in_trim_baseboard","label":"Baseboards & trim","hint":"Secure, water damage at floor, paint."},{"id":"in_paint_finishes","label":"Paint & wall finishes","hint":"General condition, peeling, water staining."}]},{"id":"kitchen","label":"Kitchen Appliances","icon":"\ud83c\udf73","intro":"Built-in appliances and kitchen-specific items.","items":[{"id":"kt_range_op","label":"Range / cooktop \u2014 operation","hint":"All burners, oven heat, indicator lights."},{"id":"kt_range_anti_tip","label":"Range anti-tip bracket","hint":"Required since 1991. Prevents tipping when door used as step."},{"id":"kt_oven","label":"Oven \u2014 heating, door seal","hint":"Temperature accuracy, door gasket."},{"id":"kt_microwave","label":"Built-in microwave","hint":"Operation, mounting, vent (if hood combo)."},{"id":"kt_dishwasher","label":"Dishwasher \u2014 fill, drain, cycle","hint":"Run a cycle; check fill, drain, leaks."},{"id":"kt_dishwasher_secure","label":"Dishwasher mounting","hint":"Secured to counter or cabinet, anti-tip."},{"id":"kt_disposal_op","label":"Garbage disposal \u2014 operation","hint":"Function, leaks, mounting."},{"id":"kt_refrigerator","label":"Refrigerator (if included with sale)","hint":"Cooling, freezer, water/ice dispenser, leaks."},{"id":"kt_range_hood","label":"Range hood / OTR microwave hood","hint":"Light, fan operation, filter, venting (recirc or exterior)."},{"id":"kt_pantry","label":"Pantry condition","hint":"Shelving, walls, ventilation."},{"id":"kt_kitchen_floor","label":"Kitchen floor (water-resistance)","hint":"Around dishwasher, sink, refrigerator. Soft spots indicate water damage."}]},{"id":"bath_primary","label":"Primary / Master Bathroom","icon":"\ud83d\udec1","intro":"Primary suite bathroom (rate NA if no primary suite).","items":[{"id":"bp_toilet_func","label":"Toilet \u2014 flush & refill","hint":"Complete cycle, no continuous running."},{"id":"bp_toilet_base","label":"Toilet base seal","hint":"Secure, no movement, no water staining at floor."},{"id":"bp_sink_drain","label":"Sink & drain","hint":"Fill, drain, supply leaks."},{"id":"bp_faucet","label":"Faucet operation","hint":"Hot/cold function, aerator, leaks at base."},{"id":"bp_tub","label":"Tub \u2014 fill, drain, surround","hint":"Soaking tub, jetted, freestanding. Surround condition."},{"id":"bp_shower_sep","label":"Separate shower (if present)","hint":"Door, walls, drain, faucet."},{"id":"bp_shower_glass","label":"Shower door / glass","hint":"Tempered (label), seals, hardware."},{"id":"bp_diverter","label":"Tub/shower diverter","hint":"Functional switching."},{"id":"bp_tile_grout","label":"Tile & grout condition","hint":"Cracks, missing grout, mildew at corners."},{"id":"bp_caulking","label":"Caulking at fixtures","hint":"Tub/wall, shower base, vanity backsplash, toilet base."},{"id":"bp_vent_fan","label":"Exhaust fan","hint":"Operation, sound rating, termination."},{"id":"bp_gfci","label":"GFCI receptacles","hint":"All bathroom outlets must be GFCI protected."},{"id":"bp_floor_water","label":"Floor \u2014 water damage indicators","hint":"Soft spots, staining at toilet, tub, vanity."},{"id":"bp_walls_water","label":"Walls \u2014 water damage","hint":"Behind toilet, surround, ceiling."},{"id":"bp_lighting","label":"Lighting & switches","hint":"Vanity light, ceiling light, fan controls."}]},{"id":"bath_hall","label":"Hall / Secondary Bathroom","icon":"\ud83d\udebf","intro":"Hall bath or secondary full bath. Add additional notes if multiple full baths.","items":[{"id":"bh_toilet_func","label":"Toilet \u2014 flush & refill","hint":"Complete cycle, no leaks."},{"id":"bh_toilet_base","label":"Toilet base seal","hint":"Secure, no movement."},{"id":"bh_sink_drain","label":"Sink & drain","hint":"Fill, drain, supply."},{"id":"bh_faucet","label":"Faucet operation","hint":"Hot/cold, aerator."},{"id":"bh_tub_shower","label":"Tub / shower","hint":"Combined tub/shower typical. Function, surround."},{"id":"bh_diverter","label":"Tub/shower diverter","hint":"Functional switching."},{"id":"bh_anti_scald","label":"Anti-scald valve","hint":"Pressure-balanced or thermostatic. Required since ~1995."},{"id":"bh_tile_grout","label":"Tile & grout","hint":"Surround, floor."},{"id":"bh_caulking","label":"Caulking","hint":"All fixture-to-surface joints."},{"id":"bh_vent_fan","label":"Exhaust fan","hint":"Operation, vented to exterior."},{"id":"bh_gfci","label":"GFCI receptacles","hint":"Required."},{"id":"bh_floor_walls","label":"Floor & walls","hint":"Water damage indicators."}]},{"id":"bath_powder","label":"Powder Room / Half Bath","icon":"\ud83d\udebd","intro":"Half bath (toilet + sink, no shower/tub). Rate NA if not present.","items":[{"id":"pw_toilet_func","label":"Toilet \u2014 flush & refill","hint":"Complete cycle."},{"id":"pw_toilet_base","label":"Toilet base","hint":"Secure, sealed."},{"id":"pw_sink_drain","label":"Sink & drain","hint":"Function, leaks."},{"id":"pw_faucet","label":"Faucet","hint":"Operation."},{"id":"pw_vent_fan","label":"Exhaust fan or window","hint":"Required ventilation."},{"id":"pw_gfci","label":"GFCI receptacle","hint":"Required."},{"id":"pw_floor_walls","label":"Floor & walls","hint":"Water damage."}]},{"id":"laundry","label":"Laundry Room","icon":"\ud83e\uddfa","intro":"Laundry hookups and room conditions.","items":[{"id":"lndry_washer_supply","label":"Washer supply hookups","hint":"Hot/cold valves, condition, anti-burst hoses recommended."},{"id":"lndry_washer_drain","label":"Washer drain (standpipe)","hint":"Min 30\" standpipe, P-trap, vented."},{"id":"lndry_dryer_outlet","label":"Dryer electrical (if electric)","hint":"240V, 4-prong receptacle (post-1996), 3-prong grandfathered."},{"id":"lndry_dryer_gas","label":"Dryer gas connection (if gas)","hint":"Shutoff, flex connector, leak test."},{"id":"lndry_dryer_vent","label":"Dryer vent (room side)","hint":"Solid metal preferred; transition flex limited."},{"id":"lndry_floor_drain","label":"Floor drain (where present)","hint":"Primed, functional."},{"id":"lndry_utility_sink","label":"Utility sink (if present)","hint":"Faucet, drain, condition."},{"id":"lndry_drain_pan","label":"Washer drain pan (if 2nd floor)","hint":"Recommended where leak would damage."},{"id":"lndry_gfci","label":"GFCI on laundry receptacles","hint":"Required since 2005."},{"id":"lndry_ventilation","label":"Laundry room ventilation","hint":"Helps with humidity from dryer."},{"id":"lndry_lint_buildup","label":"Visible lint accumulation","hint":"Around dryer, in vent connector. Fire hazard."}]},{"id":"fireplace","label":"Fireplace & Solid-Fuel Appliances","icon":"\ud83d\udd25","intro":"Fireplaces and solid-fuel appliances. Inspect from accessible areas only.","items":[{"id":"fp_present","label":"Fireplace present","hint":"Yes/No. If no, mark all NA."},{"id":"fp_type","label":"Fireplace type","hint":"Masonry wood-burning, factory-built (zero clearance), gas log, gas fireplace, pellet stove, wood stove, electric."},{"id":"fp_hearth","label":"Hearth material & extension","hint":"Non-combustible material. Min 16\" front, 8\" sides for openings \u22656 sq ft."},{"id":"fp_firebox","label":"Firebox condition","hint":"Refractory brick, cracks, separation, gaps."},{"id":"fp_damper","label":"Damper operation","hint":"Open/close functional, securely mounted."},{"id":"fp_smoke_shelf","label":"Smoke shelf (where visible)","hint":"Free of debris, intact."},{"id":"fp_flue_type","label":"Flue / chimney liner","hint":"Clay tile, metal liner, masonry. Inspection beyond scope \u2014 recommend Level 2 chimney inspection."},{"id":"fp_clean_out","label":"Chimney clean-out / ash dump","hint":"Door condition, accessible."},{"id":"fp_mantel_clearance","label":"Mantel clearances to opening","hint":"Combustibles min 6\" from opening; 12\" if projecting > 1.5\"."},{"id":"fp_gas_log_valve","label":"Gas log shutoff valve","hint":"Within 6 ft of appliance, accessible."},{"id":"fp_glass_doors","label":"Glass doors / screen","hint":"Tempered glass, hardware."},{"id":"fp_stove_clearance","label":"Wood/pellet stove clearances","hint":"Per manufacturer (typical 36\" to combustibles unsh./as published)."},{"id":"fp_combustion_air","label":"Combustion air supply","hint":"Outside air kit on factory units in tight homes."},{"id":"fp_pro_eval","label":"Recommend professional Level 2 inspection","hint":"Always recommended before use, especially after sale."}]},{"id":"limitations","label":"Inspection Limitations & Notes","icon":"\ud83d\udcdd","intro":"Areas not inspected, conditions limiting inspection, recommendations for further evaluation.","items":[{"id":"lim_areas_not_inspected","label":"Areas inaccessible during inspection","hint":"Locked rooms, blocked storage, occupied spaces, finished spaces over crawl/attic."},{"id":"lim_weather_limit","label":"Weather conditions affecting inspection","hint":"Snow on roof, frozen ground, heavy rain limiting roof inspection."},{"id":"lim_systems_off","label":"Systems shut down at time of inspection","hint":"Cannot test winterized plumbing, pool equipment in winter, AC below 60\u00b0F."},{"id":"lim_recommend_specialist","label":"Recommend specialist evaluation","hint":"List items requiring further evaluation: roofing, structural engineer, HVAC, electrical, etc."},{"id":"lim_recommend_wdi","label":"Recommend WDI (termite) inspection","hint":"Separate inspection by licensed pest control. Required for many mortgages."},{"id":"lim_recommend_radon","label":"Recommend radon test","hint":"PA is high-radon zone. EPA recommends mitigation if \u22654 pCi/L."},{"id":"lim_recommend_well","label":"Recommend well water test (if applicable)","hint":"Bacteria, nitrates, lead, hardness, pH."},{"id":"lim_recommend_septic","label":"Recommend septic inspection (if applicable)","hint":"Tank pumping, drainfield, percolation."},{"id":"lim_recommend_chimney","label":"Recommend Level 2 chimney inspection","hint":"If fireplace will be used. Inspector cannot evaluate flue interior."},{"id":"lim_recommend_oil_tank","label":"Recommend oil tank evaluation (if applicable)","hint":"Buried tanks: leak liability, sweep test recommended."},{"id":"lim_age_disclosure","label":"Property age disclosure considerations","hint":"Pre-1978: lead paint. Pre-1980: asbestos common. Pre-1972: aluminum branch wiring possible."},{"id":"lim_general_maintenance","label":"General maintenance recommendations","hint":"Annual: HVAC service, gutter cleaning, smoke/CO test, dryer vent. Periodic: caulking, paint, water heater flush."}]}],"ratings":{"A":{"label":"Acceptable","short":"A","score":0,"color":"#34C759","desc":"Functioning as intended; no concerns at time of inspection."},"M":{"label":"Monitor","short":"M","score":2,"color":"#FFCC00","desc":"Minor issue or wear; monitor and address as part of routine maintenance."},"D":{"label":"Repair","short":"D","score":5,"color":"#FF9500","desc":"Defective; repair recommended within 30-90 days."},"S":{"label":"Safety","short":"S","score":10,"color":"#FF3B30","desc":"Safety concern; immediate attention recommended."},"NA":{"label":"Not Applicable","short":"NA","score":0,"color":"#8B97AC","desc":"Component not present or not applicable to this property."},"NI":{"label":"Not Inspected","short":"NI","score":0,"color":"#5C6A82","desc":"Component not inspected (reason should be noted)."}},"grades":[{"min":90,"letter":"A","label":"Excellent","desc":"Property is in outstanding condition with minimal concerns. Routine maintenance sufficient.","color":"#34C759"},{"min":80,"letter":"B","label":"Good","desc":"Property is in good overall condition with a few items needing attention.","color":"#5AC8FA"},{"min":70,"letter":"C","label":"Fair","desc":"Property has multiple items needing attention; budget for repairs.","color":"#FFCC00"},{"min":60,"letter":"D","label":"Below Average","desc":"Significant repairs needed; factor into purchase decision and negotiations.","color":"#FF9500"},{"min":0,"letter":"F","label":"Significant Concerns","desc":"Major issues identified; full evaluation by licensed professionals strongly recommended.","color":"#FF3B30"}],"property_fields":[{"id":"prop_address","label":"Property address","type":"text","placeholder":"123 Main St, Scranton PA 18503"},{"id":"prop_year_built","label":"Year built (estimated)","type":"number","placeholder":"e.g. 1962"},{"id":"prop_sqft","label":"Approximate square footage","type":"number","placeholder":"e.g. 2400"},{"id":"prop_stories","label":"Number of stories","type":"select","options":["1","1.5","2","2.5","3","Split-level"]},{"id":"prop_bedrooms","label":"Bedrooms","type":"number","placeholder":"e.g. 3"},{"id":"prop_bathrooms","label":"Bathrooms (full + half)","type":"text","placeholder":"e.g. 2.5"},{"id":"prop_foundation","label":"Foundation type","type":"select","options":["Slab","Crawl space","Basement (full)","Basement (partial)","Pier & beam","Mixed"]},{"id":"prop_garage","label":"Garage","type":"select","options":["None","Attached 1-car","Attached 2-car","Attached 3-car","Detached 1-car","Detached 2-car","Detached 3-car","Carport"]},{"id":"prop_inspect_date","label":"Inspection date","type":"date"},{"id":"prop_weather","label":"Weather at inspection","type":"select","options":["Clear","Partly cloudy","Overcast","Light rain","Heavy rain","Snow","Frozen/icy"]},{"id":"prop_temp_f","label":"Temperature (\u00b0F)","type":"number","placeholder":"e.g. 58"},{"id":"prop_occupancy","label":"Occupancy at inspection","type":"select","options":["Owner-occupied","Tenant-occupied","Vacant","Staged","Under construction"]},{"id":"prop_utilities","label":"Utilities active","type":"select","options":["All on (water/gas/electric)","Water + electric only","Electric only","Limited / off"]},{"id":"prop_client_name","label":"Client name","type":"text","placeholder":"Property buyer or owner"},{"id":"prop_client_present","label":"Client present at inspection","type":"select","options":["Yes","No","Partial"]},{"id":"prop_inspector","label":"Inspector name","type":"text","placeholder":"e.g. NEPA-PRO Inspection Team"},{"id":"prop_inspector_lic","label":"Inspector license / cert #","type":"text","placeholder":"e.g. PA-1234"}]};
+
+// State
+const STATE = {
+  property: {},     // { fieldId: value }
+  ratings: {},      // { itemId: 'A'|'M'|'D'|'S'|'NA'|'NI' }
+  notes: {},        // { itemId: 'note text' }
+  photos: {},       // { itemId: [base64dataUrl, ...] }
+  openSections: new Set(),
+};
+
+// Total item count for progress
+const TOTAL_ITEMS = DATA.sections.reduce((acc, s) => acc + s.items.length, 0);
+
+// Helpers
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+function showToast(msg, type = '') {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.className = 'toast ' + type + ' show';
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+function escapeHTML(s) {
+  if (!s) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ============================================================
+// Calculation
+// ============================================================
+function calcStats() {
+  const counts = { A: 0, M: 0, D: 0, S: 0, NA: 0, NI: 0 };
+  let rated = 0;
+  let scoredCount = 0;  // items contributing to score (excludes NA/NI)
+  let totalPenalty = 0;
+
+  Object.values(STATE.ratings).forEach(r => {
+    if (!r) return;
+    rated++;
+    counts[r] = (counts[r] || 0) + 1;
+    if (r !== 'NA' && r !== 'NI') {
+      scoredCount++;
+      totalPenalty += DATA.ratings[r].score;
+    }
+  });
+
+  // Health score: 100 - (avg penalty * 10), where penalty per item is 0/2/5/10
+  let healthScore = null;
+  if (scoredCount > 0) {
+    const avgPenalty = totalPenalty / scoredCount;
+    healthScore = Math.max(0, Math.round(100 - avgPenalty * 10));
+  }
+
+  // Letter grade
+  let grade = null;
+  if (healthScore !== null) {
+    grade = DATA.grades.find(g => healthScore >= g.min);
+  }
+
+  return { counts, rated, scoredCount, healthScore, grade };
+}
+
+function calcSectionStats(sectionId) {
+  const section = DATA.sections.find(s => s.id === sectionId);
+  let rated = 0;
+  let scoredCount = 0;
+  let totalPenalty = 0;
+  section.items.forEach(item => {
+    const r = STATE.ratings[item.id];
+    if (!r) return;
+    rated++;
+    if (r !== 'NA' && r !== 'NI') {
+      scoredCount++;
+      totalPenalty += DATA.ratings[r].score;
+    }
+  });
+  let healthScore = null;
+  if (scoredCount > 0) {
+    healthScore = Math.max(0, Math.round(100 - (totalPenalty / scoredCount) * 10));
+  }
+  return { rated, total: section.items.length, healthScore };
+}
+
+// ============================================================
+// Rendering
+// ============================================================
+function renderPropertyFields() {
+  const container = $('#property-fields');
+  container.innerHTML = '';
+  DATA.property_fields.forEach(f => {
+    const wrap = document.createElement('div');
+    wrap.className = 'field';
+    const label = document.createElement('label');
+    label.className = 'field-label';
+    label.textContent = f.label;
+    label.htmlFor = f.id;
+    wrap.appendChild(label);
+
+    let input;
+    if (f.type === 'select') {
+      input = document.createElement('select');
+      const empty = document.createElement('option');
+      empty.value = '';
+      empty.textContent = '— Select —';
+      input.appendChild(empty);
+      f.options.forEach(opt => {
+        const o = document.createElement('option');
+        o.value = opt;
+        o.textContent = opt;
+        if (STATE.property[f.id] === opt) o.selected = true;
+        input.appendChild(o);
+      });
+    } else if (f.type === 'date') {
+      input = document.createElement('input');
+      input.type = 'date';
+    } else if (f.type === 'number') {
+      input = document.createElement('input');
+      input.type = 'number';
+      if (f.placeholder) input.placeholder = f.placeholder;
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+      if (f.placeholder) input.placeholder = f.placeholder;
+    }
+    input.className = 'field-input';
+    input.id = f.id;
+    if (STATE.property[f.id] && f.type !== 'select') input.value = STATE.property[f.id];
+    input.addEventListener('input', () => { STATE.property[f.id] = input.value; });
+    input.addEventListener('change', () => { STATE.property[f.id] = input.value; });
+    wrap.appendChild(input);
+    container.appendChild(wrap);
+  });
+}
+
+function renderItem(section, item) {
+  const row = document.createElement('div');
+  row.className = 'insp-item';
+  row.dataset.itemId = item.id;
+
+  const header = document.createElement('div');
+  header.className = 'item-header';
+  const title = document.createElement('div');
+  title.style.flex = '1';
+  title.innerHTML = `<div class="item-title">${escapeHTML(item.label)}</div>${item.hint ? `<div class="item-hint">${escapeHTML(item.hint)}</div>` : ''}`;
+  header.appendChild(title);
+
+  // Status pill
+  const statusPill = document.createElement('span');
+  statusPill.className = 'item-rated-status';
+  statusPill.id = 'status-' + item.id;
+  statusPill.style.display = 'none';
+  header.appendChild(statusPill);
+
+  row.appendChild(header);
+
+  // Rating buttons
+  const ratingRow = document.createElement('div');
+  ratingRow.className = 'rating-row';
+  Object.entries(DATA.ratings).forEach(([key, info]) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rate-btn';
+    btn.dataset.rating = key;
+    btn.title = info.desc;
+    btn.innerHTML = `<span class="glyph">${info.short}</span><span>${info.label}</span>`;
+    if (STATE.ratings[item.id] === key) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      // Toggle: if already active, clear; else set
+      if (STATE.ratings[item.id] === key) {
+        delete STATE.ratings[item.id];
+      } else {
+        STATE.ratings[item.id] = key;
+      }
+      updateItemUI(item.id);
+      updateSectionUI(section.id);
+      updateGlobalScore();
+    });
+    ratingRow.appendChild(btn);
+  });
+  row.appendChild(ratingRow);
+
+  // Notes + Photos
+  const extra = document.createElement('div');
+  extra.className = 'item-extra';
+
+  const notes = document.createElement('textarea');
+  notes.className = 'notes-input';
+  notes.placeholder = 'Notes (optional)…';
+  notes.rows = 1;
+  notes.value = STATE.notes[item.id] || '';
+  notes.addEventListener('input', () => {
+    STATE.notes[item.id] = notes.value;
+    notes.style.height = 'auto';
+    notes.style.height = Math.min(notes.scrollHeight, 200) + 'px';
+  });
+  extra.appendChild(notes);
+
+  const photoRow = document.createElement('div');
+  photoRow.className = 'photo-row';
+  photoRow.id = 'photos-' + item.id;
+  renderPhotos(photoRow, item.id);
+  extra.appendChild(photoRow);
+
+  row.appendChild(extra);
+
+  return row;
+}
+
+function renderPhotos(container, itemId) {
+  container.innerHTML = '';
+  const photos = STATE.photos[itemId] || [];
+  photos.forEach((photo, idx) => {
+    const thumb = document.createElement('div');
+    thumb.className = 'photo-thumb';
+    thumb.innerHTML = `<img src="${photo}" alt="Photo ${idx + 1}" />`;
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'remove';
+    remove.textContent = '×';
+    remove.title = 'Remove photo';
+    remove.addEventListener('click', () => {
+      STATE.photos[itemId].splice(idx, 1);
+      if (STATE.photos[itemId].length === 0) delete STATE.photos[itemId];
+      renderPhotos(container, itemId);
+    });
+    thumb.appendChild(remove);
+    container.appendChild(thumb);
+  });
+
+  if (photos.length < 2) {
+    const addLabel = document.createElement('label');
+    addLabel.className = 'photo-add';
+    addLabel.title = 'Add a photo (max 2 per item)';
+    addLabel.innerHTML = '+';
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      try {
+        const compressed = await compressImage(file, 800, 0.78);
+        if (!STATE.photos[itemId]) STATE.photos[itemId] = [];
+        STATE.photos[itemId].push(compressed);
+        renderPhotos(container, itemId);
+      } catch (err) {
+        showToast('Could not load photo', 'error');
+      }
+    });
+    addLabel.appendChild(fileInput);
+    container.appendChild(addLabel);
+  }
+}
+
+function compressImage(file, maxWidth = 800, quality = 0.8) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const ratio = Math.min(1, maxWidth / img.width);
+        const w = Math.round(img.width * ratio);
+        const h = Math.round(img.height * ratio);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = () => reject(new Error('image load failed'));
+      img.src = reader.result;
+    };
+    reader.onerror = () => reject(new Error('file read failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderSection(section) {
+  const sec = document.createElement('div');
+  sec.className = 'insp-section';
+  sec.dataset.sectionId = section.id;
+
+  const header = document.createElement('button');
+  header.type = 'button';
+  header.className = 'section-header';
+  header.innerHTML = `
+    <div class="section-header-info">
+      <div class="section-icon">${section.icon || '·'}</div>
+      <div class="section-text">
+        <div class="section-title">${escapeHTML(section.label)}</div>
+        <div class="section-intro">${escapeHTML(section.intro || '')}</div>
+      </div>
+    </div>
+    <div class="section-meta">
+      <div class="section-progress" id="progress-${section.id}">
+        <span class="dot"></span>
+        <span class="text">0 / ${section.items.length}</span>
+      </div>
+      <svg class="section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  `;
+  header.addEventListener('click', () => {
+    sec.classList.toggle('open');
+    if (sec.classList.contains('open')) STATE.openSections.add(section.id);
+    else STATE.openSections.delete(section.id);
+  });
+  sec.appendChild(header);
+
+  const body = document.createElement('div');
+  body.className = 'section-body';
+
+  // Quick actions
+  const quickActions = document.createElement('div');
+  quickActions.className = 'section-quick-actions';
+  quickActions.innerHTML = `
+    <button type="button" class="quick-action" data-action="all-acceptable" data-section="${section.id}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Mark all Acceptable
+    </button>
+    <button type="button" class="quick-action" data-action="all-na" data-section="${section.id}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Mark all N/A
+    </button>
+    <button type="button" class="quick-action danger" data-action="clear" data-section="${section.id}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6m5 0V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"/></svg>
+      Clear section
+    </button>
+  `;
+  body.appendChild(quickActions);
+
+  // Items
+  section.items.forEach(item => body.appendChild(renderItem(section, item)));
+  sec.appendChild(body);
+
+  return sec;
+}
+
+function renderSections() {
+  const container = $('#sections-container');
+  container.innerHTML = '';
+  DATA.sections.forEach(section => container.appendChild(renderSection(section)));
+
+  // Wire up quick action delegation
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('.quick-action');
+    if (!btn) return;
+    e.preventDefault();
+    const action = btn.dataset.action;
+    const sectionId = btn.dataset.section;
+    const section = DATA.sections.find(s => s.id === sectionId);
+    if (!section) return;
+
+    if (action === 'all-acceptable') {
+      section.items.forEach(item => {
+        if (!STATE.ratings[item.id]) STATE.ratings[item.id] = 'A';
+      });
+      showToast(`${section.label}: unset items marked Acceptable`, 'success');
+    } else if (action === 'all-na') {
+      section.items.forEach(item => {
+        if (!STATE.ratings[item.id]) STATE.ratings[item.id] = 'NA';
+      });
+      showToast(`${section.label}: unset items marked N/A`, 'success');
+    } else if (action === 'clear') {
+      if (!confirm(`Clear all ratings in ${section.label}?`)) return;
+      section.items.forEach(item => {
+        delete STATE.ratings[item.id];
+        delete STATE.notes[item.id];
+        delete STATE.photos[item.id];
+      });
+      // Re-render this section to update UI
+      const sec = container.querySelector(`.insp-section[data-section-id="${sectionId}"]`);
+      const wasOpen = sec.classList.contains('open');
+      const newSec = renderSection(section);
+      if (wasOpen) newSec.classList.add('open');
+      sec.replaceWith(newSec);
+      showToast(`${section.label}: cleared`, '');
+    }
+
+    if (action !== 'clear') {
+      // Re-render to update active states
+      const sec = container.querySelector(`.insp-section[data-section-id="${sectionId}"]`);
+      const wasOpen = sec.classList.contains('open');
+      const newSec = renderSection(section);
+      if (wasOpen) newSec.classList.add('open');
+      sec.replaceWith(newSec);
+    }
+    updateSectionUI(sectionId);
+    updateGlobalScore();
+  });
+}
+
+function updateItemUI(itemId) {
+  const rating = STATE.ratings[itemId];
+  const itemRow = document.querySelector(`.insp-item[data-item-id="${itemId}"]`);
+  if (!itemRow) return;
+  itemRow.querySelectorAll('.rate-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.rating === rating);
+  });
+  const pill = $('#status-' + itemId);
+  if (rating) {
+    pill.style.display = '';
+    pill.className = 'item-rated-status ' + rating;
+    pill.textContent = DATA.ratings[rating].label;
+  } else {
+    pill.style.display = 'none';
+  }
+}
+
+function updateSectionUI(sectionId) {
+  const stats = calcSectionStats(sectionId);
+  const el = $('#progress-' + sectionId);
+  if (!el) return;
+  const dot = el.querySelector('.dot');
+  const text = el.querySelector('.text');
+  text.textContent = `${stats.rated} / ${stats.total}`;
+  dot.classList.toggle('complete', stats.rated === stats.total);
+}
+
+function updateAllSectionUI() {
+  DATA.sections.forEach(s => updateSectionUI(s.id));
+}
+
+function updateGlobalScore() {
+  const stats = calcStats();
+  $('#stat-acceptable').textContent = stats.counts.A;
+  $('#stat-monitor').textContent = stats.counts.M;
+  $('#stat-repair').textContent = stats.counts.D;
+  $('#stat-safety').textContent = stats.counts.S;
+
+  const scoreNumEl = $('#score-num');
+  const gradeLetter = $('#grade-letter');
+  const gradeName = $('#grade-name');
+  const gradeDesc = $('#grade-desc');
+  const scoreCircle = $('#score-circle');
+  const abScore = $('#ab-score-text');
+  const abCircle = $('#ab-score-circle');
+  const abProgress = $('#ab-progress');
+
+  abProgress.textContent = `${stats.rated} of ${TOTAL_ITEMS}`;
+
+  if (stats.healthScore === null) {
+    scoreNumEl.innerHTML = '—<small>HEALTH</small>';
+    gradeLetter.textContent = '—';
+    gradeLetter.style.color = 'var(--rate-NA)';
+    gradeName.textContent = 'No items rated yet';
+    gradeDesc.textContent = 'Begin rating items below to see your property health score.';
+    scoreCircle.style.background = 'conic-gradient(var(--rate-NA) 0% 100%)';
+    abScore.textContent = '—';
+    abCircle.style.background = 'conic-gradient(var(--rate-NA) 0% 100%)';
+    return;
+  }
+
+  scoreNumEl.innerHTML = `${stats.healthScore}<small>HEALTH</small>`;
+  abScore.textContent = stats.healthScore;
+  if (stats.grade) {
+    gradeLetter.textContent = stats.grade.letter;
+    gradeLetter.style.color = stats.grade.color;
+    gradeName.textContent = stats.grade.label;
+    gradeDesc.textContent = stats.grade.desc;
+  }
+
+  // Color the score circle based on grade
+  const color = stats.grade ? stats.grade.color : 'var(--rate-NA)';
+  const pct = stats.healthScore;
+  scoreCircle.style.background = `conic-gradient(${color} 0% ${pct}%, var(--bg-tint-2) ${pct}% 100%)`;
+  abCircle.style.background = `conic-gradient(${color} 0% ${pct}%, var(--bg-tint-2) ${pct}% 100%)`;
+}
+
+// ============================================================
+// PDF Report Generation
+// ============================================================
+async function generateReport() {
+  const stats = calcStats();
+  if (stats.rated === 0) {
+    showToast('Rate at least one item first', 'error');
+    return;
+  }
+
+  showToast('Generating report…', '');
+  await new Promise(r => setTimeout(r, 50));  // let toast paint
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'letter', compress: true });
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+
+  const NAVY = [11, 31, 58];
+  const NAVY_700 = [17, 48, 90];
+  const AMBER = [255, 122, 26];
+  const AMBER_DARK = [232, 101, 26];
+  const INK = [11, 31, 58];
+  const INK_2 = [42, 58, 85];
+  const INK_3 = [92, 106, 130];
+  const INK_4 = [139, 151, 172];
+  const HAIRLINE = [224, 227, 235];
+  const BG_TINT = [238, 242, 247];
+  const WHITE = [255, 255, 255];
+  const RATE_COLORS = {
+    A: [52, 199, 89],
+    M: [255, 204, 0],
+    D: [255, 149, 0],
+    S: [255, 59, 48],
+    NA: [139, 151, 172],
+    NI: [92, 106, 130],
+  };
+
+  const today = new Date();
+  const reportId = 'INSP-' + today.getFullYear() + (today.getMonth() + 1).toString().padStart(2, '0') + today.getDate().toString().padStart(2, '0') + '-' + Math.floor(Math.random() * 9000 + 1000);
+
+  // ================================================
+  // PAGE 1 — COVER
+  // ================================================
+  doc.setFillColor(...NAVY);
+  doc.rect(0, 0, pageW, pageH, 'F');
+
+  // Decorative amber circle
+  doc.setFillColor(255, 122, 26);
+  doc.setGState(new doc.GState({ opacity: 0.12 }));
+  doc.circle(pageW + 80, -80, 280, 'F');
+  doc.setGState(new doc.GState({ opacity: 1 }));
+
+  // Brand mark
+  doc.setFillColor(...AMBER);
+  doc.roundedRect(48, 48, 48, 48, 10, 10, 'F');
+  doc.setDrawColor(255, 255, 255);
+  doc.setLineWidth(2.4);
+  const hx = 72, hy = 72, hs = 14;
+  doc.line(hx - hs - 1, hy - hs / 4, hx, hy - hs);
+  doc.line(hx, hy - hs, hx + hs + 1, hy - hs / 4);
+  doc.line(hx - hs, hy - hs / 4, hx - hs, hy + hs);
+  doc.line(hx + hs, hy - hs / 4, hx + hs, hy + hs);
+  doc.line(hx - hs, hy + hs, hx + hs, hy + hs);
+  doc.line(hx - 4, hy + hs, hx - 4, hy + 3);
+  doc.line(hx + 4, hy + hs, hx + 4, hy + 3);
+  doc.line(hx - 4, hy + 3, hx + 4, hy + 3);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(22);
+  doc.setTextColor(255, 255, 255);
+  doc.text('NEPA', 110, 76);
+  const nepaW2 = doc.getTextWidth('NEPA');
+  doc.setTextColor(...AMBER);
+  doc.text('-PRO', 110 + nepaW2, 76);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(255, 255, 255);
+  doc.text('PROPERTY CARE  ·  SINCE 1987', 110, 92);
+
+  // Big eyebrow
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(...AMBER);
+  doc.text('COMPREHENSIVE HOME INSPECTION REPORT', 48, pageH / 2 - 40);
+
+  // Property address (cover headline)
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(34);
+  doc.setTextColor(255, 255, 255);
+  const addrLines = doc.splitTextToSize(STATE.property.prop_address || 'Property Address', pageW - 96);
+  let addrY = pageH / 2;
+  addrLines.slice(0, 2).forEach(line => {
+    doc.text(line, 48, addrY);
+    addrY += 38;
+  });
+
+  // Underline
+  doc.setDrawColor(...AMBER);
+  doc.setLineWidth(2.5);
+  doc.line(48, addrY + 8, 220, addrY + 8);
+
+  // Cover meta
+  const dateStr = STATE.property.prop_inspect_date
+    ? new Date(STATE.property.prop_inspect_date + 'T00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+    : today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  doc.setTextColor(180, 195, 220);
+
+  const metaY = addrY + 40;
+  const labelMeta = (label, value, x, y) => {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(255, 122, 26);
+    doc.text(label.toUpperCase(), x, y);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(255, 255, 255);
+    doc.text(value || '—', x, y + 14);
+  };
+
+  labelMeta('Inspection Date', dateStr, 48, metaY);
+  labelMeta('Client', STATE.property.prop_client_name || '—', 48, metaY + 36);
+  labelMeta('Inspector', STATE.property.prop_inspector || '—', 48, metaY + 72);
+  labelMeta('License / Cert #', STATE.property.prop_inspector_lic || '—', pageW / 2 + 20, metaY + 72);
+
+  if (STATE.property.prop_year_built) labelMeta('Year Built', STATE.property.prop_year_built, pageW / 2 + 20, metaY);
+  if (STATE.property.prop_sqft) labelMeta('Approx. Sq Ft', STATE.property.prop_sqft, pageW / 2 + 20, metaY + 36);
+
+  // Bottom: report ID + jSPdf URL
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(180, 195, 220);
+  doc.text(`Report ID: ${reportId}`, 48, pageH - 40);
+  doc.text('nepa-pro.com  ·  866-NEPA-PRO  ·  service@nepa-pro.com', pageW - 48, pageH - 40, { align: 'right' });
+
+  // ================================================
+  // PAGE 2 — EXECUTIVE SUMMARY
+  // ================================================
+  doc.addPage();
+  drawPageHeader(doc, pageW, 'EXECUTIVE SUMMARY', reportId);
+
+  let y = 130;
+
+  // Property snapshot
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(...INK);
+  doc.text('Property Snapshot', 48, y);
+  y += 8;
+
+  // Health Score box
+  doc.setFillColor(...NAVY);
+  doc.roundedRect(48, y + 8, pageW - 96, 150, 12, 12, 'F');
+
+  // Decorative amber blob
+  doc.setFillColor(255, 122, 26);
+  doc.setGState(new doc.GState({ opacity: 0.18 }));
+  doc.circle(pageW - 60, y + 30, 90, 'F');
+  doc.setGState(new doc.GState({ opacity: 1 }));
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...AMBER);
+  doc.text('PROPERTY HEALTH SCORE', 70, y + 36);
+
+  // Big number
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(60);
+  doc.setTextColor(255, 255, 255);
+  doc.text(String(stats.healthScore), 70, y + 102);
+
+  // /100 suffix
+  const numW = doc.getTextWidth(String(stats.healthScore));
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(20);
+  doc.setTextColor(180, 195, 220);
+  doc.text('/100', 70 + numW + 8, y + 102);
+
+  // Letter Grade column — right-aligned vertical stack
+  if (stats.grade) {
+    const lc = stats.grade.color;
+    const r = parseInt(lc.slice(1, 3), 16), g = parseInt(lc.slice(3, 5), 16), b = parseInt(lc.slice(5, 7), 16);
+    // Letter A in big — right-aligned
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(72);
+    doc.setTextColor(r, g, b);
+    doc.text(stats.grade.letter, pageW - 70, y + 80, { align: 'right' });
+    // Label below letter
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.setTextColor(255, 255, 255);
+    doc.text(stats.grade.label.toUpperCase(), pageW - 70, y + 105, { align: 'right' });
+    // Description further below
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8.5);
+    doc.setTextColor(180, 195, 220);
+    const desc = doc.splitTextToSize(stats.grade.desc, 240);
+    let descY = y + 122;
+    desc.slice(0, 3).forEach(line => { doc.text(line, pageW - 70, descY, { align: 'right' }); descY += 11; });
+  }
+
+  y += 178;
+
+  // Findings counts (4-up)
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...INK_3);
+  doc.text('FINDINGS BY RATING', 48, y);
+  y += 12;
+
+  const colW = (pageW - 96 - 24) / 4;
+  const findings = [
+    { key: 'A', count: stats.counts.A, color: RATE_COLORS.A, label: 'Acceptable' },
+    { key: 'M', count: stats.counts.M, color: RATE_COLORS.M, label: 'Monitor' },
+    { key: 'D', count: stats.counts.D, color: RATE_COLORS.D, label: 'Repair' },
+    { key: 'S', count: stats.counts.S, color: RATE_COLORS.S, label: 'Safety' },
+  ];
+  findings.forEach((f, i) => {
+    const x = 48 + i * (colW + 8);
+    doc.setFillColor(...BG_TINT);
+    doc.roundedRect(x, y, colW, 70, 8, 8, 'F');
+    doc.setFillColor(...f.color);
+    doc.rect(x, y, 5, 70, 'F');
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(28);
+    doc.setTextColor(...f.color);
+    doc.text(String(f.count), x + 14, y + 36);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...INK_3);
+    doc.text(f.label.toUpperCase(), x + 14, y + 56);
+  });
+  y += 86;
+
+  // Coverage
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(...INK_3);
+  doc.text(`${stats.rated} of ${TOTAL_ITEMS} items rated · ${stats.counts.NA} not applicable · ${stats.counts.NI} not inspected`, 48, y);
+  y += 22;
+
+  // Section dashboard
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...INK_3);
+  doc.text('SECTION-BY-SECTION HEALTH', 48, y);
+  y += 14;
+
+  const dashRows = DATA.sections.map(s => {
+    const ss = calcSectionStats(s.id);
+    return [
+      s.label,
+      ss.rated + ' / ' + ss.total,
+      ss.healthScore !== null ? ss.healthScore + '%' : '—',
+      ss.healthScore,
+    ];
+  });
+
+  doc.autoTable({
+    startY: y,
+    head: [['SECTION', 'RATED', 'HEALTH', '']],
+    body: dashRows.map(r => [r[0], r[1], r[2], '']),
+    margin: { left: 48, right: 48 },
+    styles: { fontSize: 9, cellPadding: { top: 5, bottom: 5, left: 8, right: 8 }, lineColor: HAIRLINE, lineWidth: 0.5 },
+    headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+    columnStyles: {
+      0: { cellWidth: 'auto' },
+      1: { cellWidth: 60, halign: 'center' },
+      2: { cellWidth: 60, halign: 'right', fontStyle: 'bold' },
+      3: { cellWidth: 30 },
+    },
+    alternateRowStyles: { fillColor: [250, 251, 253] },
+    didDrawPage: function(d) {
+      // Re-draw header on continuation pages
+      if (d.pageNumber > 1) {
+        drawPageHeader(doc, pageW, 'EXECUTIVE SUMMARY (continued)', reportId);
+        drawPageFooter(doc, pageW, pageH, reportId);
+      }
+    },
+    didDrawCell: function(d) {
+      // Draw a colored bar in the last column for visual section health
+      if (d.section === 'body' && d.column.index === 3) {
+        const score = dashRows[d.row.index][3];
+        if (score !== null && score !== undefined) {
+          let color = RATE_COLORS.A;
+          if (score < 60) color = RATE_COLORS.S;
+          else if (score < 70) color = RATE_COLORS.D;
+          else if (score < 80) color = RATE_COLORS.M;
+          else if (score < 90) color = [90, 200, 250];
+          const barW = (score / 100) * 26;
+          doc.setFillColor(...color);
+          doc.rect(d.cell.x + 1, d.cell.y + d.cell.height / 2 - 3, barW, 6, 'F');
+        }
+      }
+    },
+  });
+
+  drawPageFooter(doc, pageW, pageH, reportId);
+
+  // ================================================
+  // PAGE 3 — MAJOR CONCERNS (if any)
+  // ================================================
+  const safetyAndDefective = [];
+  DATA.sections.forEach(section => {
+    section.items.forEach(item => {
+      const r = STATE.ratings[item.id];
+      if (r === 'D' || r === 'S') {
+        safetyAndDefective.push({ section: section.label, item, rating: r });
+      }
+    });
+  });
+  // Sort: Safety first, then Defective
+  safetyAndDefective.sort((a, b) => {
+    if (a.rating === b.rating) return 0;
+    return a.rating === 'S' ? -1 : 1;
+  });
+
+  if (safetyAndDefective.length > 0) {
+    doc.addPage();
+    drawPageHeader(doc, pageW, 'MAJOR CONCERNS — SAFETY & REPAIR ITEMS', reportId);
+    y = 130;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.setTextColor(...INK);
+    doc.text(`${safetyAndDefective.length} items flagged for immediate or prompt attention`, 48, y);
+    y += 8;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9.5);
+    doc.setTextColor(...INK_3);
+    doc.text('Safety items (red) require immediate attention. Repair items (orange) should be addressed within 30-90 days.', 48, y + 12);
+    y += 28;
+
+    const cBody = safetyAndDefective.map(c => [
+      DATA.ratings[c.rating].label.toUpperCase(),
+      c.section,
+      c.item.label,
+      STATE.notes[c.item.id] || '',
+    ]);
+
+    doc.autoTable({
+      startY: y,
+      head: [['RATING', 'SECTION', 'ITEM', 'NOTES']],
+      body: cBody,
+      margin: { left: 48, right: 48 },
+      styles: { fontSize: 9, cellPadding: { top: 6, bottom: 6, left: 8, right: 8 }, lineColor: HAIRLINE, lineWidth: 0.5, valign: 'top' },
+      headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+      columnStyles: {
+        0: { cellWidth: 56, fontStyle: 'bold', fontSize: 8 },
+        1: { cellWidth: 110 },
+        2: { cellWidth: 'auto', fontStyle: 'bold' },
+        3: { cellWidth: 130, textColor: INK_3, fontSize: 8.5 },
+      },
+      didParseCell: function(d) {
+        if (d.section === 'body' && d.column.index === 0) {
+          const rating = safetyAndDefective[d.row.index].rating;
+          d.cell.styles.textColor = RATE_COLORS[rating];
+          d.cell.styles.fillColor = rating === 'S' ? [255, 235, 235] : [255, 245, 230];
+        }
+      },
+      didDrawPage: function() {
+        drawPageFooter(doc, pageW, pageH, reportId);
+      },
+    });
+  }
+
+  // ================================================
+  // MAINTENANCE ITEMS (Monitor)
+  // ================================================
+  const monitor = [];
+  DATA.sections.forEach(section => {
+    section.items.forEach(item => {
+      if (STATE.ratings[item.id] === 'M') {
+        monitor.push({ section: section.label, item });
+      }
+    });
+  });
+  if (monitor.length > 0) {
+    doc.addPage();
+    drawPageHeader(doc, pageW, 'MAINTENANCE ITEMS — MONITOR', reportId);
+    y = 130;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.setTextColor(...INK);
+    doc.text(`${monitor.length} items to monitor as part of routine maintenance`, 48, y);
+    y += 22;
+
+    doc.autoTable({
+      startY: y,
+      head: [['SECTION', 'ITEM', 'NOTES']],
+      body: monitor.map(m => [m.section, m.item.label, STATE.notes[m.item.id] || '']),
+      margin: { left: 48, right: 48 },
+      styles: { fontSize: 9, cellPadding: { top: 6, bottom: 6, left: 8, right: 8 }, lineColor: HAIRLINE, lineWidth: 0.5, valign: 'top' },
+      headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+      columnStyles: {
+        0: { cellWidth: 130 },
+        1: { cellWidth: 'auto', fontStyle: 'bold' },
+        2: { cellWidth: 200, textColor: INK_3, fontSize: 8.5 },
+      },
+      didDrawPage: function() { drawPageFooter(doc, pageW, pageH, reportId); },
+    });
+  }
+
+  // ================================================
+  // PROPERTY INFORMATION TABLE
+  // ================================================
+  const propRows = DATA.property_fields
+    .filter(f => STATE.property[f.id])
+    .map(f => [f.label, STATE.property[f.id]]);
+  if (propRows.length > 0) {
+    doc.addPage();
+    drawPageHeader(doc, pageW, 'PROPERTY INFORMATION', reportId);
+    y = 130;
+    doc.autoTable({
+      startY: y,
+      head: [['FIELD', 'VALUE']],
+      body: propRows,
+      margin: { left: 48, right: 48 },
+      styles: { fontSize: 10, cellPadding: { top: 8, bottom: 8, left: 12, right: 12 }, lineColor: HAIRLINE, lineWidth: 0.5 },
+      headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+      columnStyles: {
+        0: { cellWidth: 200, fontStyle: 'bold', textColor: INK_3 },
+        1: { cellWidth: 'auto', textColor: INK },
+      },
+      alternateRowStyles: { fillColor: [250, 251, 253] },
+      didDrawPage: function() { drawPageFooter(doc, pageW, pageH, reportId); },
+    });
+  }
+
+  // ================================================
+  // DETAILED FINDINGS — by section
+  // ================================================
+  for (const section of DATA.sections) {
+    const ratedItems = section.items.filter(it => STATE.ratings[it.id]);
+    if (ratedItems.length === 0) continue;
+
+    const ss = calcSectionStats(section.id);
+
+    doc.addPage();
+    drawPageHeader(doc, pageW, section.label.toUpperCase(), reportId);
+    y = 130;
+
+    // Section health bar
+    doc.setFillColor(...BG_TINT);
+    doc.roundedRect(48, y, pageW - 96, 56, 8, 8, 'F');
+
+    // Left side: SECTION HEALTH label + score
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...AMBER_DARK);
+    doc.text('SECTION HEALTH', 60, y + 18);
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(28);
+    if (ss.healthScore !== null) {
+      let color = RATE_COLORS.A;
+      if (ss.healthScore < 60) color = RATE_COLORS.S;
+      else if (ss.healthScore < 70) color = RATE_COLORS.D;
+      else if (ss.healthScore < 80) color = RATE_COLORS.M;
+      else if (ss.healthScore < 90) color = [90, 200, 250];
+      doc.setTextColor(...color);
+      doc.text(`${ss.healthScore}%`, 60, y + 44);
+    } else {
+      doc.setTextColor(...INK_3);
+      doc.text('—', 60, y + 44);
+    }
+
+    // Right side: items rated count (right-aligned, vertically centered)
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...INK_3);
+    doc.text('ITEMS INSPECTED', pageW - 60, y + 18, { align: 'right' });
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(...INK);
+    doc.text(`${ss.rated} / ${ss.total}`, pageW - 60, y + 44, { align: 'right' });
+
+    y += 70;
+
+    // Items table
+    const itemRows = ratedItems.map(it => {
+      const rating = STATE.ratings[it.id];
+      return [
+        DATA.ratings[rating].short,
+        it.label,
+        STATE.notes[it.id] || '',
+      ];
+    });
+
+    doc.autoTable({
+      startY: y,
+      head: [['', 'ITEM', 'NOTES']],
+      body: itemRows,
+      margin: { left: 48, right: 48 },
+      styles: { fontSize: 9.5, cellPadding: { top: 7, bottom: 7, left: 8, right: 8 }, lineColor: HAIRLINE, lineWidth: 0.5, valign: 'top' },
+      headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+      columnStyles: {
+        0: { cellWidth: 28, halign: 'center', fontStyle: 'bold', fontSize: 10 },
+        1: { cellWidth: 220, fontStyle: 'bold' },
+        2: { cellWidth: 'auto', textColor: INK_3, fontSize: 8.5 },
+      },
+      didParseCell: function(d) {
+        if (d.section === 'body' && d.column.index === 0) {
+          const rating = STATE.ratings[ratedItems[d.row.index].id];
+          d.cell.styles.textColor = RATE_COLORS[rating];
+          if (rating === 'S') d.cell.styles.fillColor = [255, 235, 235];
+          else if (rating === 'D') d.cell.styles.fillColor = [255, 245, 230];
+          else if (rating === 'M') d.cell.styles.fillColor = [255, 252, 220];
+        }
+      },
+      didDrawPage: function() { drawPageFooter(doc, pageW, pageH, reportId); },
+    });
+
+    // Photos for items in this section
+    const itemsWithPhotos = ratedItems.filter(it => STATE.photos[it.id] && STATE.photos[it.id].length > 0);
+    if (itemsWithPhotos.length > 0) {
+      let py = doc.lastAutoTable.finalY + 18;
+
+      for (const it of itemsWithPhotos) {
+        if (py > pageH - 200) { doc.addPage(); drawPageHeader(doc, pageW, section.label.toUpperCase() + ' — PHOTOS', reportId); py = 130; }
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.setTextColor(...INK);
+        doc.text(it.label, 48, py);
+        py += 14;
+
+        const photos = STATE.photos[it.id];
+        const thumbW = (pageW - 96 - 12) / 2;
+        const thumbH = thumbW * 0.7;
+        photos.forEach((p, idx) => {
+          if (py + thumbH > pageH - 60) { doc.addPage(); drawPageHeader(doc, pageW, section.label.toUpperCase() + ' — PHOTOS', reportId); py = 130; }
+          const x = 48 + idx * (thumbW + 12);
+          try {
+            doc.addImage(p, 'JPEG', x, py, thumbW, thumbH, undefined, 'FAST');
+            doc.setDrawColor(...HAIRLINE);
+            doc.setLineWidth(0.5);
+            doc.rect(x, py, thumbW, thumbH);
+          } catch (e) {
+            // Photo embedding failed — skip silently
+          }
+        });
+        py += thumbH + 18;
+        drawPageFooter(doc, pageW, pageH, reportId);
+      }
+    }
+  }
+
+  // ================================================
+  // INSPECTOR SIGNATURE & SCOPE
+  // ================================================
+  doc.addPage();
+  drawPageHeader(doc, pageW, 'INSPECTOR & SCOPE', reportId);
+
+  y = 130;
+
+  // Signature block
+  doc.setFillColor(...BG_TINT);
+  doc.roundedRect(48, y, pageW - 96, 100, 10, 10, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...AMBER_DARK);
+  doc.text('REPORT PREPARED BY', 64, y + 22);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(16);
+  doc.setTextColor(...INK);
+  doc.text(STATE.property.prop_inspector || 'Inspector Name', 64, y + 46);
+
+  if (STATE.property.prop_inspector_lic) {
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(...INK_3);
+    doc.text('License / Cert: ' + STATE.property.prop_inspector_lic, 64, y + 62);
+  }
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(...INK_3);
+  doc.text('Inspection date: ' + dateStr, 64, y + 80);
+
+  // Signature line on right
+  doc.setDrawColor(...INK_3);
+  doc.setLineWidth(0.5);
+  doc.line(pageW - 230, y + 60, pageW - 64, y + 60);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(...INK_4);
+  doc.text('Inspector signature', pageW - 230, y + 76);
+
+  y += 122;
+
+  // Scope of inspection
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(...INK);
+  doc.text('Scope of inspection', 48, y);
+  y += 18;
+
+  const scopeText = 'This is a non-invasive, visual inspection of the readily accessible installed systems and components of the property as they exist at the time of the inspection. The inspection is conducted in general accordance with the Standards of Practice published by the American Society of Home Inspectors (ASHI) and the International Association of Certified Home Inspectors (InterNACHI). This inspection is not a code-compliance review, warranty, or guarantee.';
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(...INK_2);
+  const scopeLines = doc.splitTextToSize(scopeText, pageW - 96);
+  scopeLines.forEach(line => { doc.text(line, 48, y); y += 13; });
+
+  y += 14;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(...INK);
+  doc.text('Limitations', 48, y);
+  y += 18;
+
+  const limText = 'Excluded from this inspection: areas not readily accessible (covered by stored items, finished walls, locked rooms, snow, etc.), latent or concealed defects, conditions that may change between inspection and possession, environmental conditions (mold, asbestos, radon, lead, formaldehyde, etc. unless specifically noted), and any system or component not visually accessible. For binding evaluations of any specific concern, engage licensed specialists (electricians, plumbers, structural engineers, HVAC technicians, etc.).';
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(...INK_2);
+  const limLines = doc.splitTextToSize(limText, pageW - 96);
+  limLines.forEach(line => { doc.text(line, 48, y); y += 13; });
+
+  y += 14;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(...INK);
+  doc.text('Rating system reference', 48, y);
+  y += 18;
+
+  const ratingRows = Object.entries(DATA.ratings).map(([k, v]) => [v.short, v.label, v.desc]);
+  doc.autoTable({
+    startY: y,
+    head: [['', 'RATING', 'MEANING']],
+    body: ratingRows,
+    margin: { left: 48, right: 48 },
+    styles: { fontSize: 9, cellPadding: { top: 6, bottom: 6, left: 8, right: 8 }, lineColor: HAIRLINE, lineWidth: 0.5 },
+    headStyles: { fillColor: BG_TINT, textColor: INK_3, fontStyle: 'bold', fontSize: 8 },
+    columnStyles: {
+      0: { cellWidth: 28, halign: 'center', fontStyle: 'bold' },
+      1: { cellWidth: 90, fontStyle: 'bold' },
+      2: { cellWidth: 'auto', textColor: INK_3 },
+    },
+    didParseCell: function(d) {
+      if (d.section === 'body' && d.column.index === 0) {
+        const k = ratingRows[d.row.index][0];
+        const ratingKey = Object.keys(DATA.ratings).find(rk => DATA.ratings[rk].short === k);
+        if (ratingKey) {
+          d.cell.styles.textColor = RATE_COLORS[ratingKey];
+        }
+      }
+    },
+    didDrawPage: function() { drawPageFooter(doc, pageW, pageH, reportId); },
+  });
+
+  // Save
+  const safeName = (STATE.property.prop_address || 'inspection-report').replace(/[^a-z0-9-_]/gi, '_').toLowerCase().slice(0, 50);
+  const filename = `nepa-pro-inspection-${safeName}-${today.getFullYear()}${(today.getMonth()+1).toString().padStart(2,'0')}${today.getDate().toString().padStart(2,'0')}.pdf`;
+  doc.save(filename);
+
+  showToast('Report downloaded', 'success');
+}
+
+function drawPageHeader(doc, pageW, title, reportId) {
+  const NAVY = [11, 31, 58];
+  const AMBER = [255, 122, 26];
+  doc.setFillColor(...NAVY);
+  doc.rect(0, 0, pageW, 78, 'F');
+
+  // Brand mark
+  doc.setFillColor(...AMBER);
+  doc.roundedRect(36, 22, 32, 32, 7, 7, 'F');
+  doc.setDrawColor(255, 255, 255);
+  doc.setLineWidth(1.6);
+  const hx = 52, hy = 38, hs = 9;
+  doc.line(hx - hs - 1, hy - hs / 4, hx, hy - hs);
+  doc.line(hx, hy - hs, hx + hs + 1, hy - hs / 4);
+  doc.line(hx - hs, hy - hs / 4, hx - hs, hy + hs);
+  doc.line(hx + hs, hy - hs / 4, hx + hs, hy + hs);
+  doc.line(hx - hs, hy + hs, hx + hs, hy + hs);
+  doc.line(hx - 2.5, hy + hs, hx - 2.5, hy + 2);
+  doc.line(hx + 2.5, hy + hs, hx + 2.5, hy + 2);
+  doc.line(hx - 2.5, hy + 2, hx + 2.5, hy + 2);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(255, 255, 255);
+  doc.text('NEPA', 80, 38);
+  const w = doc.getTextWidth('NEPA');
+  doc.setTextColor(...AMBER);
+  doc.text('-PRO', 80 + w, 38);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7);
+  doc.setTextColor(255, 255, 255);
+  doc.text('HOME INSPECTION REPORT', 80, 50);
+
+  // Title (right-aligned)
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(255, 255, 255);
+  doc.text(title, pageW - 36, 38, { align: 'right' });
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(180, 195, 220);
+  doc.text(reportId, pageW - 36, 52, { align: 'right' });
+}
+
+function drawPageFooter(doc, pageW, pageH, reportId) {
+  const HAIRLINE = [224, 227, 235];
+  const INK_4 = [139, 151, 172];
+  const pageNum = doc.internal.getCurrentPageInfo().pageNumber;
+  doc.setDrawColor(...HAIRLINE);
+  doc.setLineWidth(0.5);
+  doc.line(36, pageH - 28, pageW - 36, pageH - 28);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7);
+  doc.setTextColor(...INK_4);
+  doc.text('© 2026 NEPA-PRO  ·  EIN 39-2873591', 36, pageH - 16);
+  doc.text('nepa-pro.com  ·  866-NEPA-PRO', pageW / 2, pageH - 16, { align: 'center' });
+  doc.text(`Page ${pageNum}`, pageW - 36, pageH - 16, { align: 'right' });
+}
+
+// ============================================================
+// Save / Load / Email / Reset
+// ============================================================
+const STORAGE_KEY = 'nepa-pro-inspection-v1';
+
+function saveProgress() {
+  try {
+    // Build a save object — INCLUDE photos? They blow up size fast.
+    // Approach: ask user. For now, save without photos but warn.
+    const photoCount = Object.values(STATE.photos).reduce((acc, p) => acc + p.length, 0);
+    let savedPhotos = STATE.photos;
+
+    // Estimate size — if too large, drop photos
+    const tryFull = JSON.stringify({
+      property: STATE.property,
+      ratings: STATE.ratings,
+      notes: STATE.notes,
+      photos: STATE.photos,
+      ts: Date.now(),
+    });
+
+    if (tryFull.length > 4_500_000) {
+      // > 4.5MB — drop photos
+      savedPhotos = {};
+      const data = JSON.stringify({
+        property: STATE.property,
+        ratings: STATE.ratings,
+        notes: STATE.notes,
+        photos: {},
+        photosOmitted: true,
+        ts: Date.now(),
+      });
+      localStorage.setItem(STORAGE_KEY, data);
+      showToast(`Saved (photos too large — ${photoCount} photos NOT saved)`, 'error');
+      return;
+    }
+
+    localStorage.setItem(STORAGE_KEY, tryFull);
+    showToast(photoCount > 0 ? `Saved with ${photoCount} photos` : 'Progress saved', 'success');
+  } catch (e) {
+    showToast('Could not save (browser storage full)', 'error');
+  }
+}
+
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      showToast('No saved inspection found', 'error');
+      return;
+    }
+    const data = JSON.parse(raw);
+    STATE.property = data.property || {};
+    STATE.ratings = data.ratings || {};
+    STATE.notes = data.notes || {};
+    STATE.photos = data.photos || {};
+    initialRender();
+    if (data.photosOmitted) {
+      showToast('Loaded (photos were omitted at save time)', '');
+    } else {
+      showToast('Inspection loaded', 'success');
+    }
+  } catch (e) {
+    showToast('Could not load saved inspection', 'error');
+  }
+}
+
+function emailSummary() {
+  const stats = calcStats();
+  if (stats.rated === 0) { showToast('Rate items first', 'error'); return; }
+
+  let body = `NEPA-PRO Home Inspection Summary\n`;
+  body += `=================================\n\n`;
+  body += `Property: ${STATE.property.prop_address || '(address)'}\n`;
+  body += `Date: ${STATE.property.prop_inspect_date || new Date().toLocaleDateString()}\n`;
+  body += `Inspector: ${STATE.property.prop_inspector || '(inspector)'}\n\n`;
+  body += `PROPERTY HEALTH SCORE: ${stats.healthScore}/100\n`;
+  if (stats.grade) body += `GRADE: ${stats.grade.letter} (${stats.grade.label})\n\n`;
+
+  body += `FINDINGS\n`;
+  body += `--------\n`;
+  body += `Acceptable:    ${stats.counts.A}\n`;
+  body += `Monitor:       ${stats.counts.M}\n`;
+  body += `Repair:        ${stats.counts.D}\n`;
+  body += `Safety:        ${stats.counts.S}\n`;
+  body += `Not applicable: ${stats.counts.NA}\n`;
+  body += `Not inspected: ${stats.counts.NI}\n\n`;
+
+  // Major concerns
+  const concerns = [];
+  DATA.sections.forEach(section => {
+    section.items.forEach(item => {
+      const r = STATE.ratings[item.id];
+      if (r === 'D' || r === 'S') concerns.push({ section: section.label, item, rating: r });
+    });
+  });
+  if (concerns.length) {
+    body += `MAJOR CONCERNS\n--------------\n`;
+    concerns.forEach(c => {
+      const tag = c.rating === 'S' ? '[SAFETY]' : '[REPAIR]';
+      body += `${tag} ${c.section} — ${c.item.label}\n`;
+      if (STATE.notes[c.item.id]) body += `  Notes: ${STATE.notes[c.item.id]}\n`;
+    });
+    body += `\n`;
+  }
+
+  body += `Full report PDF available on request.\n\n---\nNEPA-PRO  ·  nepa-pro.com  ·  866-NEPA-PRO`;
+
+  const subject = `NEPA-PRO Inspection Summary — ${STATE.property.prop_address || 'Property'}`;
+  window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function resetReport() {
+  if (!confirm('Clear all ratings, notes, and photos? This cannot be undone.')) return;
+  STATE.property = {};
+  STATE.ratings = {};
+  STATE.notes = {};
+  STATE.photos = {};
+  STATE.openSections.clear();
+  initialRender();
+  showToast('Inspection reset', '');
+}
+
+// ============================================================
+// Initialize
+// ============================================================
+function initialRender() {
+  renderPropertyFields();
+  renderSections();
+  STATE.openSections.forEach(sid => {
+    const sec = document.querySelector(`.insp-section[data-section-id="${sid}"]`);
+    if (sec) sec.classList.add('open');
+  });
+  // Update all section progress
+  updateAllSectionUI();
+  updateGlobalScore();
+  // Update item rating UI for any pre-loaded ratings
+  Object.keys(STATE.ratings).forEach(itemId => updateItemUI(itemId));
+}
+
+function init() {
+  initialRender();
+  $('#btn-save').addEventListener('click', saveProgress);
+  $('#btn-load').addEventListener('click', loadProgress);
+  $('#btn-email').addEventListener('click', emailSummary);
+  $('#btn-reset').addEventListener('click', resetReport);
+  $('#btn-pdf').addEventListener('click', generateReport);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

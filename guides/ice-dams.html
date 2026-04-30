@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>Ice dams aren't a gutter problem (here's the real cause) · NEPA-PRO Guides</title>
+<meta name="description" content="If you're cleaning gutters every fall and still getting ice dams every winter, your gutters aren't the problem. The problem is in your attic, and it's almost always one of three things. Here's the diagnosis tree we use." />
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="../favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="Ice dams aren't a gutter problem · NEPA-PRO Guides" />
+<meta property="og:description" content="If you're cleaning gutters every fall and still getting ice dams, the gutters aren't the problem. Here's the real cause." />
+<meta property="og:url" content="https://nepa-pro.com/guides/ice-dams" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="NEPA-PRO — Your home, handled. Property care subscription plans for Northeast Pennsylvania." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ice dams aren't a gutter problem · NEPA-PRO Guides" />
+<meta name="twitter:description" content="If you're cleaning gutters every fall and still getting ice dams, the gutters aren't the problem. Here's the real cause." />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+<meta name="twitter:image:alt" content="NEPA-PRO — Your home, handled." />
+
+<style>
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 62px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  padding-top: calc(var(--safe-top) + 56px);
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom));
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ios-blue); text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
+
+/* App bar */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11, 31, 58, 0.90);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--safe-top);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 8px 18px -8px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name { font-weight: 800; letter-spacing: .02em; line-height: 1; font-size: 18px; }
+.brand-name .accent { color: var(--amber-500); }
+.brand-sub { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 700; font-size: 13px;
+}
+
+/* Article hero */
+.article-hero {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 65%, var(--bg) 100%);
+  padding: 28px 0 60px; color: #fff;
+}
+.crumbs { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs .sep { margin: 0 8px; opacity: .4; }
+.article-hero .tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: var(--r-pill);
+  background: rgba(255,122,26,.15); color: var(--amber-500);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.article-hero h1 {
+  margin: 0 0 14px; font-size: clamp(30px, 7vw, 44px); line-height: 1.08;
+  font-weight: 800; letter-spacing: -.02em; color: #fff;
+}
+.article-hero .dek {
+  margin: 0; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.78); max-width: 64ch;
+}
+.article-hero .meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  margin-top: 22px; font-size: 13px; color: rgba(255,255,255,.7);
+}
+.article-hero .meta .author-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: inline-grid; place-items: center;
+  font-weight: 700; font-size: 11px; color: #fff;
+  margin-right: 6px;
+}
+.article-hero .meta strong { color: rgba(255,255,255,.92); font-weight: 600; }
+
+/* Body — reading optimized */
+.article-body {
+  background: var(--bg);
+  padding: 0 0 48px;
+}
+.article-body .col {
+  max-width: 720px; margin: -36px auto 0;
+  background: #fff; border-radius: var(--r-lg);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-md);
+}
+.article-body h2 {
+  font-size: clamp(22px, 4.5vw, 28px); margin: 32px 0 12px;
+  font-weight: 800; letter-spacing: -.01em; color: var(--ink);
+}
+.article-body h2:first-child { margin-top: 4px; }
+.article-body h3 {
+  font-size: 18px; margin: 22px 0 8px;
+  font-weight: 700; color: var(--ink);
+}
+.article-body p {
+  margin: 0 0 16px; font-size: 16px; line-height: 1.62; color: var(--ink-2);
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 18px; padding-left: 22px;
+}
+.article-body li { margin: 0 0 8px; line-height: 1.55; color: var(--ink-2); }
+.article-body strong { color: var(--ink); font-weight: 700; }
+.article-body em { color: var(--ink); font-style: italic; }
+.article-body a { color: var(--ios-blue); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.article-body code {
+  background: var(--bg-tint); padding: 2px 6px; border-radius: 4px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 14px;
+}
+.article-body blockquote {
+  margin: 22px 0; padding: 14px 18px;
+  border-left: 4px solid var(--amber-500);
+  background: var(--amber-100);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.article-body blockquote p:last-child { margin-bottom: 0; }
+.article-body hr { border: 0; border-top: 1px solid var(--hairline); margin: 32px 0; }
+
+/* Table of contents */
+.toc {
+  background: var(--bg-tint); border-radius: var(--r-md);
+  padding: 16px 20px; margin: 0 0 28px;
+  border: 1px solid var(--hairline);
+}
+.toc-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 8px;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0 0 6px; }
+.toc a {
+  color: var(--ink); font-size: 14.5px;
+  display: inline-flex; align-items: baseline; gap: 8px;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--ios-blue); }
+.toc a::before { content: counter(toc); counter-increment: toc; color: var(--amber-500); font-weight: 700; min-width: 20px; }
+.toc ul { counter-reset: toc; }
+
+/* Callout box */
+.callout {
+  background: linear-gradient(135deg, var(--bg-tint), #fff);
+  border: 1px solid var(--hairline); border-left: 4px solid var(--amber-500);
+  border-radius: var(--r-md);
+  padding: 16px 18px; margin: 22px 0;
+}
+.callout .label {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 6px;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout.danger { border-left-color: var(--ios-red); }
+.callout.danger .label { color: var(--ios-red); }
+.callout.info { border-left-color: var(--ios-blue); }
+.callout.info .label { color: var(--ios-blue); }
+.callout.success { border-left-color: #34C759; }
+.callout.success .label { color: #2A9947; }
+
+/* Cross-promo — Solar Mason etc */
+.cross-promo {
+  margin: 28px 0;
+  padding: 20px 22px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #F0F4FA, #E8EFF8);
+  border: 1px solid rgba(11,31,58,.10);
+}
+.cross-promo .eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 6px;
+}
+.cross-promo h4 { margin: 0 0 6px; font-size: 17px; color: var(--ink); }
+.cross-promo p { margin: 0 0 10px; font-size: 14.5px; color: var(--ink-2); }
+.cross-promo a {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 14px; font-weight: 600; color: var(--ios-blue);
+  text-decoration: none;
+}
+
+/* Closing CTA back to plans — every guide ends with this */
+.guide-cta {
+  margin: 40px 0 0;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.guide-cta .cta-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-500); margin-bottom: 8px;
+}
+.guide-cta h3 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800; letter-spacing: -.01em;
+  color: #fff; line-height: 1.2;
+}
+.guide-cta p {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.78); font-size: 15px; line-height: 1.5;
+  max-width: 50ch; margin-left: auto; margin-right: auto;
+}
+.guide-cta-row {
+  display: flex; flex-direction: column; gap: 10px; align-items: stretch;
+}
+.guide-cta-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 14px 22px; border-radius: var(--r-pill);
+  background: var(--amber-500); color: #fff !important; font-weight: 700; font-size: 15px;
+  box-shadow: 0 10px 24px -8px rgba(255,122,26,.55);
+  transition: background .2s ease, transform .15s ease;
+  text-decoration: none !important;
+}
+.guide-cta-primary:hover { background: var(--amber-600); }
+.guide-cta-primary:active { transform: scale(.98); }
+.guide-cta-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  background: transparent; color: rgba(255,255,255,.92) !important; font-weight: 600; font-size: 14px;
+  border: 1px solid rgba(255,255,255,.20);
+  text-decoration: none !important;
+}
+@media (min-width: 720px) {
+  .guide-cta-row { flex-direction: row; justify-content: center; }
+  .guide-cta-row > * { flex: 0 0 auto; }
+}
+
+/* Related guides */
+.related {
+  max-width: 720px; margin: 36px auto 0;
+}
+.related h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-3); margin: 0 0 12px;
+}
+.related-grid {
+  display: grid; gap: 10px; grid-template-columns: 1fr;
+}
+.related-card {
+  background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 14px 16px;
+  text-decoration: none; color: var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  display: block;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--amber-500); }
+.related-card .rc-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber-600); margin-bottom: 4px;
+}
+.related-card .rc-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+@media (min-width: 720px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Tab bar (mobile only) */
+.tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--hairline);
+  padding: 6px 4px calc(6px + var(--safe-bottom));
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 2px; color: var(--ink-3); text-decoration: none;
+  font-size: 10px; font-weight: 600; letter-spacing: .02em;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab.active { color: var(--ios-blue); }
+
+/* Footer */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 40px 0 24px; margin-top: 48px;
+}
+footer .brand { color: #fff; margin-bottom: 24px; }
+.foot-grid {
+  display: grid; gap: 24px; grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+}
+.foot-grid h4 {
+  color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.foot-grid a {
+  display: block; color: rgba(255,255,255,.55); text-decoration: none;
+  font-size: 14px; padding: 4px 0;
+}
+.foot-grid a:hover { color: #fff; }
+.foot-bottom {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+}
+@media (min-width: 720px) {
+  .foot-grid { grid-template-columns: repeat(4, 1fr); }
+  .foot-bottom { flex-direction: row; justify-content: space-between; }
+}
+
+/* Desktop polish */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: 0; }
+  .article-hero { padding: 56px 0 80px; }
+  .article-hero h1 { max-width: 22ch; }
+  .article-body .col { padding: 40px 56px; margin-top: -48px; }
+  .article-body p { font-size: 17px; line-height: 1.7; }
+  .article-body h2 { font-size: 30px; margin-top: 36px; }
+  footer { padding: 56px 0 32px; }
+  .foot-grid { gap: 32px; margin-top: 32px; }
+  .appbar-row { padding: 14px 16px; }
+}
+</style>
+</head>
+<body data-active-tab="guides">
+
+<header class="appbar">
+  <div class="wrap appbar-row">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="../index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../guides.html">Guides</a>
+      <span class="sep">›</span>
+      <span>Ice dams aren't a gutter problem (here's the real cause)</span>
+    </div>
+    <span class="tag">Seasonal</span>
+    <h1>Ice dams aren't a gutter problem (here's the real cause)</h1>
+    <p class="dek">If you're cleaning gutters every fall and still getting ice dams every winter, your gutters aren't the problem. The problem is in your attic, and it's almost always one of three things. Here's the diagnosis tree we use.</p>
+    <div class="meta">
+      <span><span class="author-dot">NP</span> <strong>The NEPA-PRO Team</strong></span>
+      <span>·</span>
+      <span>8 min read</span>
+      <span>·</span>
+      <span>Updated April 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col">
+    
+<div class="toc">
+  <div class="toc-title">What's in this guide</div>
+  <ul>
+    <li><a href="#myth">The gutter myth (and why it persists)</a></li>
+    <li><a href="#real">What's actually happening up there</a></li>
+    <li><a href="#cause1">Cause #1: Insufficient attic insulation</a></li>
+    <li><a href="#cause2">Cause #2: Poor attic ventilation</a></li>
+    <li><a href="#cause3">Cause #3: Air leaks from house into attic</a></li>
+    <li><a href="#diagnose">The diagnosis tree</a></li>
+    <li><a href="#bandaids">Things that help in the short term</a></li>
+    <li><a href="#emergency">If you have one right now</a></li>
+  </ul>
+</div>
+
+<p>Every January, our phones ring with the same problem. "We've got ice dams again. Can you come clean the gutters?"</p>
+
+<p>The gutters aren't the problem. They've never been the problem. We can clean them, but the ice dams will be back next year. And the year after. The actual problem is in your attic — and once you understand what's happening, the fix is permanent.</p>
+
+<p>This is one of the most consistently misunderstood building-science issues we deal with in NEPA. Worth getting right because the damage from ice dams — water leaking down interior walls, ruining ceilings, rotting framing — can run into the tens of thousands.</p>
+
+<h2 id="myth">The gutter myth (and why it persists)</h2>
+
+<p>Here's the typical story homeowners believe: "Ice forms in my gutters because they're full of leaves. The ice backs up under the shingles. So I need to clean my gutters better."</p>
+
+<p>Half-right. Ice does back up under the shingles. But it's not because of the gutters. The ice in the gutter is a <em>symptom</em>, not a cause. The actual cause is happening 20 feet up your roof, near the peak.</p>
+
+<p>The myth persists because gutters are visible and attics are not. Homeowners look up, see ice in the gutter, and connect the dots in the wrong direction. Roofers reinforce this because cleaning gutters is something they can sell. Insulation contractors don't sell ice dam fixes because they can't get on the homeowner's radar — by the time the dam forms, the homeowner is already calling the roofer.</p>
+
+<h2 id="real">What's actually happening up there</h2>
+
+<p>Picture your roof on a 28°F day with 6 inches of snow on it. Three things are happening simultaneously:</p>
+
+<ol>
+  <li><strong>Heat from your house is rising</strong> through ceilings, escaping through air leaks, and warming the underside of the roof deck.</li>
+  <li><strong>This warmth melts the snow on top of the roof,</strong> starting from the upper sections (closest to the heated house, farthest from the cold eaves).</li>
+  <li><strong>Meltwater runs down the roof</strong> until it hits the eaves — the part of the roof that overhangs the exterior walls.</li>
+</ol>
+
+<p>Here's the key part: <strong>the eaves are not heated by the house.</strong> They're outside the conditioned space. So the meltwater hits the cold eaves, refreezes, and starts building up.</p>
+
+<p>That ice keeps growing as more water keeps coming. Eventually it forms a "dam" at the eave that traps subsequent meltwater behind it. The trapped water has nowhere to go but back up — under the shingles, into the roof deck, into the wall, into your living room ceiling.</p>
+
+<p>By the time you see ice on the gutter, the actual leak is already happening 4 feet up the roof, behind the dam. Cleaning the gutter does nothing. The dam isn't in the gutter — the gutter is just where the ice that's in the gutter ends up.</p>
+
+<div class="callout info">
+  <div class="label">The diagnostic test</div>
+  <p>Look at your roof during winter. If snow is melting from the top down (peak clears first while eaves stay snowy), you have ice dam conditions even if no dam has formed yet. A correctly insulated and ventilated NEPA roof should have snow melt evenly across the whole surface — or, ideally, melt only from solar gain, with the underside of the roof deck staying cold.</p>
+</div>
+
+<h2 id="cause1">Cause #1: Insufficient attic insulation</h2>
+
+<p>This is the most common cause in NEPA. A lot of our housing stock has 4-6 inches of old fiberglass batt insulation in the attic — that gives you maybe R-15 to R-19 in the ceiling. Current code requires R-49 in our climate zone. The gap is enormous.</p>
+
+<p>Less insulation = more heat escapes into the attic = warmer roof deck = more melting = more ice damming.</p>
+
+<h3>How to check</h3>
+
+<p>Stick your head into your attic. Old fiberglass batts compressed to 4 inches between joists are R-15 (terrible). Loose-fill cellulose 12-18 inches deep is R-40-R-55 (good). Spray foam to the underside of the roof deck is R-30-R-40 (excellent if done correctly, problematic if done wrong — see ventilation section).</p>
+
+<p>You can usually see the joists in older NEPA attics — if you can, the insulation is at most level with the joists, which is way too thin. Modern code requires insulation 6+ inches above the joists.</p>
+
+<h3>The fix</h3>
+
+<p>Add insulation. In NEPA, the most cost-effective is blown-in cellulose ($1.20-$1.80/sf installed) over your existing batts. For a 1,500 sq ft footprint house, you're looking at $1,800-$2,700 to bring the attic up to R-49+. The energy savings alone pay this back in 4-6 years; the avoidance of ice dam damage is bonus.</p>
+
+<p>One caveat: don't add insulation that buries the existing knob-and-tube wiring (if you have any). Old K&T needs air circulation to dissipate heat. Insulation contractors should know this and either work around it or rewire first.</p>
+
+<h2 id="cause2">Cause #2: Poor attic ventilation</h2>
+
+<p>Even with great insulation, a properly built attic needs ventilation. The cold outdoor air should be flowing through the attic, keeping it cold. If it can't, heat builds up under the roof deck.</p>
+
+<h3>How attic ventilation should work</h3>
+
+<p>Cold air enters through soffit vents (under the eaves) and exits through ridge vents (at the peak). The principle is convection — warm air rises, pulling cold air in behind it. The whole attic stays close to outdoor temperature.</p>
+
+<p>This requires both intake (soffits) and exhaust (ridge). Most NEPA homes have one or the other, not both, or have them blocked.</p>
+
+<h3>How to check</h3>
+
+<p>Look at the underside of your eaves from outside. Do you see vents? Are they obvious — slotted, plastic mesh, or aluminum strip vents? If you see solid wood with no openings, you have no soffit vents.</p>
+
+<p>Look at the peak of your roof. Is there a continuous ridge vent (a slight raised line running along the peak)? Or are there individual vents (mushroom caps, gable vents) instead?</p>
+
+<p>If you have neither, you have an unventilated attic, and that's a major contributor to ice damming.</p>
+
+<h3>The fix</h3>
+
+<p>Adding soffit vents and a ridge vent to an existing house is moderately invasive — usually $1,200-$3,000 depending on roof and soffit configuration. Best done at the same time as a roof replacement, since the work overlaps.</p>
+
+<p>If you have soffit vents but they're blocked by insulation pushed into them (a common problem), the fix is to install baffles that hold the insulation back from the soffits. About $20 each, plus labor.</p>
+
+<h3>Spray foam exception</h3>
+
+<p>If your attic has spray foam under the roof deck (an "unvented" assembly), it's intentionally not ventilated. The foam keeps the underside of the roof deck warm enough to prevent the cold-eave problem. This is a different building-science approach that works if executed correctly. Don't add ventilation to a foamed attic — you'll defeat the design.</p>
+
+<h2 id="cause3">Cause #3: Air leaks from house into attic</h2>
+
+<p>The third major cause is the easiest to overlook: air from your heated living space leaking up into the attic. This air carries heat directly into the attic, bypassing your insulation entirely.</p>
+
+<h3>Where these leaks happen</h3>
+
+<ul>
+  <li><strong>Recessed can lights.</strong> Old recessed lights are open at the top — they're literally chimneys for warm air. Newer "IC-rated, airtight" cans don't have this issue. If you have older cans, they need to be retrofitted with airtight covers.</li>
+  <li><strong>Bathroom fans.</strong> Should vent to the outside, not into the attic. Many older NEPA installations vent into the attic, dumping warm wet air directly above the insulation.</li>
+  <li><strong>Attic hatches and pull-down stairs.</strong> Almost always poorly sealed. The hatch itself is usually a thin piece of plywood with no insulation.</li>
+  <li><strong>Plumbing vent stack penetrations.</strong> The pipe that goes through the attic to the roof. Gap around it leaks warm air.</li>
+  <li><strong>Wire and pipe penetrations.</strong> Anywhere wires or pipes pass from heated space into the attic.</li>
+  <li><strong>Top of interior walls.</strong> If interior walls aren't capped at the top, warm air rises through the wall cavity into the attic.</li>
+</ul>
+
+<h3>The fix</h3>
+
+<p>Air sealing is the highest-ROI work you can do in your attic. Foam around all penetrations, gaskets on attic hatches, airtight covers on can lights, properly insulated and gasketed pull-down stair covers. Material cost: $200-$600. Labor: another $400-$800 if you hire it out.</p>
+
+<p>This is often more impactful than insulation alone. A poorly air-sealed attic with R-50 insulation can lose more heat than a well-air-sealed attic with R-30. Both matter; air sealing is usually the missing piece.</p>
+
+<h2 id="diagnose">The diagnosis tree</h2>
+
+<p>You have ice dams. Here's how to figure out why:</p>
+
+<h3>Step 1: How thick is your attic insulation?</h3>
+
+<p>Less than 8 inches above the joists = primary cause is insufficient insulation. Add more.</p>
+
+<p>8 inches or more = move to step 2.</p>
+
+<h3>Step 2: Do you have working soffit and ridge vents?</h3>
+
+<p>Both present and unblocked = ventilation is fine. Move to step 3.</p>
+
+<p>Missing or blocked = ventilation is a major contributor. Add or unblock.</p>
+
+<h3>Step 3: On a cold day with the heat running, climb into the attic and feel for warm spots.</h3>
+
+<p>If specific areas feel warmer than the rest = you have point-source air leaks (probably can lights, bath fans, or a poorly-sealed hatch). Find and fix them.</p>
+
+<p>If the whole attic feels warm = your ceiling has lots of small leaks. Comprehensive air sealing is needed.</p>
+
+<h3>Step 4: Are your bath fans venting into the attic?</h3>
+
+<p>Yes = re-route them to the outside immediately. This is a building code violation and a major source of moisture damage even beyond ice dams.</p>
+
+<h3>Step 5: Is there a specific section of roof where the dams form?</h3>
+
+<p>If dams form only above one part of the house = there's a specific defect there. Could be a localized insulation gap (often around can lights), an interior wall that connects to the attic without being capped, or a duct running through that area.</p>
+
+<p>If dams form along the whole length of the eave = it's a whole-house issue, not localized.</p>
+
+<h2 id="bandaids">Things that help in the short term</h2>
+
+<p>Real fixes take time and cost money. If you have an active situation right now, these are temporary measures that buy you time:</p>
+
+<h3>Heat cables on the roof</h3>
+
+<p>Wires that warm up to keep the eaves above freezing. They work — they prevent the dam from forming at the eave because the meltwater can keep flowing past. About $300-$1,000 installed.</p>
+
+<p>Downsides: high electricity cost when running ($30-$60/month), they're a band-aid that doesn't fix the underlying issue, and they wear out in 5-7 years and need replacing.</p>
+
+<p>Think of them as a tourniquet, not a cure. Useful while you save up for the real fix.</p>
+
+<h3>Roof rake</h3>
+
+<p>A long-handled tool that lets you pull snow off the lower 4-6 feet of roof from the ground. Costs $40 at hardware stores. Used after each snowfall, it removes the snow that would have melted and refrozen at the eaves.</p>
+
+<p>This actually works pretty well for one-story sections of roof. Doesn't work for two-story sections without a 30-foot extension that's awkward to use.</p>
+
+<p>Don't use a roof rake on roofs you can't reach safely. People fall trying to do this from ladders.</p>
+
+<h3>Calcium chloride socks</h3>
+
+<p>Old-school remedy: fill old pantyhose or socks with calcium chloride ice melt and lay them across an existing dam. The chemical melts a channel through the dam, releasing the trapped water. Smelly, kind of janky, but it works in a pinch.</p>
+
+<p>Don't use rock salt (sodium chloride) — it's corrosive to metal flashings and asphalt shingles. Calcium chloride is gentler. But this is an emergency measure, not a routine response.</p>
+
+<h2 id="emergency">If you have one right now</h2>
+
+<p>Active ice dam, water leaking into the house. What to do:</p>
+
+<h3>Inside the house</h3>
+
+<ol>
+  <li><strong>Move stuff away from the leak.</strong> Don't worry about the floor first — move furniture, electronics, valuables out of the wet area.</li>
+  <li><strong>Put down towels and buckets.</strong> Whatever it takes to manage the water.</li>
+  <li><strong>Document with photos.</strong> Time-stamped phone photos. Insurance will need them.</li>
+  <li><strong>Call your insurance carrier.</strong> Most homeowner policies cover ice dam damage. Start the claim process now — don't wait until the leak stops.</li>
+  <li><strong>Don't punch a hole in the ceiling</strong> unless water is pooling above and threatening to break through anyway. If pooling is significant, a small relief hole at the lowest point of the bulge can prevent a worse failure.</li>
+</ol>
+
+<h3>Outside the house</h3>
+
+<ol>
+  <li><strong>Don't go on the roof.</strong> Slippery, ice-covered, you will fall. ER bills are expensive.</li>
+  <li><strong>Use the calcium chloride sock method</strong> if you can do it from a ladder safely (don't try this in a snowstorm or wind).</li>
+  <li><strong>Call a roofer or property service.</strong> Steam removal of the ice dam is the safe professional method. Costs $400-$1,200 depending on extent. Don't let anyone hammer the ice off — they'll damage the shingles, voiding your roof warranty.</li>
+</ol>
+
+<div class="callout danger">
+  <div class="label">Beware door-to-door "ice dam removers"</div>
+  <p>After major NEPA storms, scammers go door-to-door offering ice dam removal. Some show up with a hammer and chisel. They will destroy your roof. Real ice dam removal uses a steam machine, takes 2-4 hours, and is done by an established roofing contractor. If someone knocks on your door offering immediate service for cash, don't hire them.</p>
+</div>
+
+<h2>Once the immediate emergency is over</h2>
+
+<p>If you've had ice dams once, you'll have them again unless you fix the cause. Set aside the budget and time to address the actual issue:</p>
+
+<ol>
+  <li>Get an attic inspection. Many home performance contractors do free or low-cost ($150-$300) attic audits.</li>
+  <li>Get insulation and ventilation upgraded. Total cost typically $2,500-$5,000 for a comprehensive fix.</li>
+  <li>Air seal everything that's leaking warm air into the attic.</li>
+  <li>Document what was done so insurance and future buyers know.</li>
+</ol>
+
+<div class="callout success">
+  <div class="label">A subscription approach</div>
+  <p>Our Premier-tier subscription includes a winter attic audit and ongoing monitoring. We document attic conditions in early fall before snow flies, so we know what's normal for your house, and we identify ice dam risk factors before they become a problem. <a href="../index.html#pricing">See plans →</a> The bigger picture: if you're planning to stay in your NEPA home long-term, getting the attic right pays you back in lower heating bills, fewer ice dam issues, and a more comfortable house.</p>
+</div>
+
+<h2>The bottom line</h2>
+
+<p>Ice dams are a building science problem with a building science solution. The gutters are not the answer. Cleaning them is fine — they should be cleaned anyway — but you'll have ice dams next year regardless if you don't fix what's happening up in the attic.</p>
+
+<p>The good news: the fix is permanent. Get the attic right once, and you'll likely never see another ice dam. The investment pays back in lower heating costs, eliminated emergency bills, and a roof that lasts longer because it's not under constant freeze-thaw stress.</p>
+
+<p>And if you want help diagnosing what's actually going on with your specific house — that's exactly the kind of thing our techs do. <a href="../contact.html">Give us a call</a> and we'll come take a look.</p>
+
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="col" style="margin-top: 16px; padding: 0; box-shadow: none; background: transparent;">
+    <div class="guide-cta">
+      <span class="cta-eyebrow">Stop chasing this stuff every year</span>
+      <h3>Put your property on auto-pilot.</h3>
+      <p>Our subscription plans handle the seasonal prep, the small repairs, and the 2am emergencies — so you don't have to remember any of it. One predictable monthly price, no service-call surprises.</p>
+      <div class="guide-cta-row">
+        <a class="guide-cta-primary" href="../index.html#pricing">
+          See Plans &amp; Pricing
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="guide-cta-secondary" href="../contact.html">Talk to a tech first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<aside class="related wrap">
+  <h4>Keep reading</h4>
+  <div class="related-grid">
+    <a class="related-card" href="winter-prep.html">
+  <div class="rc-tag">Seasonal</div>
+  <div class="rc-title">The NEPA Winter Prep Checklist</div>
+</a>
+<a class="related-card" href="two-quotes.html">
+  <div class="rc-tag">Money</div>
+  <div class="rc-title">How to read two contractor quotes</div>
+</a>
+
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <a href="../index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="../index.html#pricing">IT Services</a>
+        <a href="../index.html#pricing">Essential</a>
+        <a href="../index.html#pricing">Pro</a>
+        <a href="../index.html#pricing">Premier</a>
+        <a href="../index.html#pricing">Estate</a>
+        <a href="../index.html#outdoor">Outdoor Care</a>
+        <a href="../index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="../index.html#services">Maintenance</a>
+        <a href="../index.html#services">Repairs</a>
+        <a href="../index.html#services">Renovations</a>
+        <a href="../index.html#services">Solar</a>
+        <a href="../index.html#services">IT Services</a>
+        <a href="../index.html#outdoor">Lawn Care</a>
+        <a href="../index.html#outdoor">Snow Removal</a>
+        <a href="../index.html#services">Fences</a>
+        <a href="../index.html#services">Concrete</a>
+        <a href="../index.html#services">Excavation</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../guides.html">Guides</a>
+        <a href="../media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="../index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab" href="../index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab" href="../inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab" href="../renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="../contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<script>
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

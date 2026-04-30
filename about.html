@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>About NEPA-PRO — 38 Years of Northeast Pennsylvania Property Care</title>
+<meta name="description" content="Since 1987, NEPA-PRO has been the property-care team Northeast Pennsylvania families trust. Family-owned. Veteran-led. Local. Always answering the phone." />
+<!-- Favicons & PWA -->
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B1F3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NEPA-PRO" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NEPA-PRO" />
+<meta property="og:title" content="About NEPA-PRO · Family-Owned, Veteran-Led, Since 1987" />
+<meta property="og:description" content="38 years. One promise: we answer the phone. The story behind the property care team Northeast Pennsylvania families trust." />
+<meta property="og:url" content="https://nepa-pro.com/about" />
+<meta property="og:image" content="https://nepa-pro.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="NEPA-PRO — Your home, handled. Property care subscription plans for Northeast Pennsylvania." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About NEPA-PRO · Family-Owned, Veteran-Led, Since 1987" />
+<meta name="twitter:description" content="38 years. One promise: we answer the phone. The story behind the property care team Northeast Pennsylvania families trust." />
+<meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
+<meta name="twitter:image:alt" content="NEPA-PRO — Your home, handled." />
+
+<style>
+/* === Inlined shared.css === */
+/* ===========================================================
+   NEPA-PRO · shared.css
+   Base design system used by all sub-pages.
+   index.html keeps its own inline styles; this is for sub-pages.
+   =========================================================== */
+:root {
+  --navy-900: #07172E;
+  --navy-800: #0B1F3A;
+  --navy-700: #11305A;
+  --navy-600: #1A4480;
+  --amber-500: #FF7A1A;
+  --amber-600: #E8651A;
+  --amber-100: #FFE9D6;
+  --ios-blue: #0A84FF;
+  --ios-blue-pressed: #0066CC;
+  --ios-green: #34C759;
+  --ios-red:   #FF3B30;
+  --bg: #F5F6F9;
+  --bg-elev: #FFFFFF;
+  --bg-tint: #EEF2F7;
+  --hairline: rgba(10, 31, 64, 0.10);
+  --hairline-strong: rgba(10, 31, 64, 0.18);
+  --ink: #0B1F3A;
+  --ink-2: #2A3A55;
+  --ink-3: #5C6A82;
+  --ink-4: #8B97AC;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(7,23,46,.06), 0 1px 1px rgba(7,23,46,.04);
+  --shadow-md: 0 8px 24px -8px rgba(7,23,46,.18), 0 2px 6px rgba(7,23,46,.06);
+  --shadow-lg: 0 24px 60px -20px rgba(7,23,46,.30), 0 8px 20px -8px rgba(7,23,46,.10);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 78px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+               "Helvetica Neue", system-ui, sans-serif;
+  font-size: 17px; line-height: 1.5;
+  color: var(--ink); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom));
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+
+.display {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+               "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  letter-spacing: -0.035em; line-height: 1.04; font-weight: 700;
+}
+
+.wrap { width: 100%; max-width: 480px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+@media (min-width: 720px) { .wrap { max-width: 720px; } }
+@media (min-width: 980px) { .wrap { max-width: 1100px; padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 1200px) { .wrap { max-width: 1280px; } }
+
+/* ====== App bar ====== */
+.appbar {
+  position: sticky; top: 0; z-index: 50;
+  padding-top: var(--safe-top);
+  background: rgba(11, 31, 58, .85);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.appbar-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center;
+  box-shadow: 0 6px 14px -4px rgba(255,122,26,.55), inset 0 1px 0 rgba(255,255,255,.30);
+}
+.brand-mark svg { width: 20px; height: 20px; }
+.brand-name { font-size: 17px; }
+.brand-name .accent { color: var(--amber-500); font-weight: 800; letter-spacing: 0; }
+.brand-sub { display: block; font-size: 10px; font-weight: 500; opacity: .65; letter-spacing: .12em; text-transform: uppercase; margin-top: 1px; }
+
+.appbar-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: var(--r-pill);
+  background: var(--ios-blue); color: #fff; font-weight: 600; font-size: 14px;
+  box-shadow: 0 4px 12px -4px rgba(10,132,255,.55);
+  transition: transform .15s ease;
+}
+.appbar-cta:active { transform: scale(.97); }
+
+/* ====== Generic page hero ====== */
+.page-hero {
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(255,122,26,.18), transparent 55%),
+    radial-gradient(80% 60% at 0% 100%, rgba(10,132,255,.20), transparent 55%),
+    linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+  color: #fff;
+  padding: 36px 0 48px;
+  overflow: hidden;
+}
+.page-hero::after {
+  content:""; position:absolute; inset:0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 0);
+  background-size: 18px 18px;
+  pointer-events:none; mix-blend-mode: overlay;
+}
+.page-hero-inner { position: relative; z-index: 1; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff;
+}
+.page-eyebrow .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-500); box-shadow: 0 0 0 3px rgba(255,122,26,.25); }
+.page-hero h1 { margin: 16px 0 12px; font-size: clamp(34px, 8vw, 56px); }
+.page-hero p.lede { margin: 0; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,.78); max-width: 56ch; }
+
+/* ====== Breadcrumb ====== */
+.crumbs {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: rgba(255,255,255,.6);
+  margin-bottom: 8px;
+}
+.crumbs a { color: rgba(255,255,255,.85); }
+.crumbs svg { width: 10px; height: 10px; opacity: .5; }
+
+/* ====== Section base ====== */
+section { padding: 44px 0; }
+.section-head { margin-bottom: 22px; }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--amber-600);
+}
+.section-title { margin: 8px 0 8px; font-size: clamp(28px, 6vw, 42px); font-weight: 700; color: var(--ink); letter-spacing: -.03em; line-height: 1.1; }
+.section-sub { color: var(--ink-3); font-size: 16px; max-width: 64ch; margin: 0; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px; border-radius: var(--r-pill);
+  background: var(--amber-500); color: #fff; font-weight: 700;
+  box-shadow: 0 12px 28px -10px rgba(255,122,26,.7);
+  transition: background .2s ease, transform .15s ease;
+}
+.btn-primary:hover { background: var(--amber-600); }
+.btn-primary:active { transform: scale(.98); }
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,.10); color: #fff; font-weight: 600;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.btn-ghost.dark {
+  background: var(--bg-elev); color: var(--ink);
+  border: 1px solid var(--hairline-strong);
+}
+
+/* ====== Footer ====== */
+footer {
+  background: var(--navy-900); color: rgba(255,255,255,.65);
+  padding: 36px 0 24px; font-size: 14px;
+}
+footer .brand { color: #fff; }
+footer .brand-sub { color: rgba(255,255,255,.6); }
+.foot-grid {
+  display: grid; gap: 22px; grid-template-columns: 1fr 1fr; margin-top: 22px;
+}
+@media (min-width: 720px) { .foot-grid { grid-template-columns: repeat(4, 1fr); } }
+.foot-grid h4 { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #fff; margin: 0 0 10px; }
+.foot-grid a { display: block; padding: 4px 0; }
+.foot-bottom {
+  margin-top: 28px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.10);
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; font-size: 12px;
+}
+
+/* ====== Bottom tab bar ====== */
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  padding: 8px 16px calc(8px + var(--safe-bottom));
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--hairline);
+}
+.tabbar-row { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 4px; border-radius: 12px; color: var(--ink-3); font-size: 10px; font-weight: 600;
+  transition: color .15s ease;
+}
+.tab svg { width: 26px; height: 26px; }
+.tab.active { color: var(--ios-blue); }
+.tab.active.subscribe { color: var(--amber-500); }
+
+/* Reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ===========================================================
+   DESKTOP POLISH (≥ 980px) — additive only, never overrides mobile
+   =========================================================== */
+@media (min-width: 980px) {
+  .tabbar { display: none; }
+  body { padding-bottom: 0; }
+
+  .page-hero { padding: 60px 0 72px; }
+  .page-hero h1 { font-size: clamp(56px, 5vw, 72px); max-width: 22ch; }
+  .page-hero p.lede { font-size: 19px; max-width: 60ch; }
+  .crumbs { font-size: 13px; }
+
+  section { padding: 72px 0; }
+  .section-head { max-width: 780px; margin-bottom: 32px; }
+  .section-title { font-size: clamp(36px, 4vw, 52px); }
+  .section-sub { font-size: 17px; }
+
+  .appbar-row { padding: 14px 16px; }
+
+  footer { padding: 56px 0 32px; }
+  .foot-grid { gap: 32px; margin-top: 32px; }
+}
+
+</style>
+
+<style>
+/* About-specific styles */
+
+/* Story / mission */
+.story {
+  background: #fff; padding: 56px 0;
+}
+.story-grid {
+  display: grid; gap: 32px; grid-template-columns: 1fr;
+}
+@media (min-width: 980px) { .story-grid { grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; } }
+.story-text p { font-size: 16.5px; line-height: 1.65; color: var(--ink-2); margin: 0 0 14px; }
+.story-text p:first-child::first-letter {
+  font-size: 56px; font-weight: 800; float: left;
+  line-height: 0.95; padding: 8px 10px 0 0;
+  color: var(--amber-500); letter-spacing: -.04em;
+}
+.story-card {
+  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  color: #fff; border-radius: var(--r-xl); padding: 28px;
+  position: relative; overflow: hidden;
+}
+.story-card::after {
+  content: ""; position: absolute; right: -40px; top: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,122,26,.25), transparent 70%);
+}
+.story-card .quote {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+  font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.35;
+  margin: 0 0 18px; position: relative; z-index: 1;
+}
+.story-card .quote-by { display: flex; align-items: center; gap: 12px; }
+.story-card .avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  display: grid; place-items: center; font-weight: 800; color: #fff; font-size: 18px;
+}
+.story-card .name { font-size: 14px; font-weight: 700; }
+.story-card .role { font-size: 12px; color: rgba(255,255,255,.65); }
+
+/* Stats strip */
+.stats-band {
+  background: var(--bg);
+  padding: 40px 0;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+}
+@media (min-width: 720px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat-tile {
+  background: #fff; border: 1px solid var(--hairline);
+  border-radius: var(--r-md); padding: 20px;
+  text-align: center;
+}
+.stat-tile .num {
+  font-size: 36px; font-weight: 800; letter-spacing: -.04em;
+  color: var(--navy-800); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat-tile .label {
+  font-size: 11px; color: var(--ink-3); margin-top: 6px;
+  text-transform: uppercase; letter-spacing: .12em; font-weight: 700;
+}
+
+/* Values */
+.values {
+  background: #fff;
+  padding: 56px 0;
+}
+.values-grid {
+  display: grid; gap: 14px; grid-template-columns: 1fr;
+  margin-top: 24px;
+}
+@media (min-width: 720px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .values-grid { grid-template-columns: repeat(4, 1fr); } }
+.value-card {
+  background: var(--bg); border: 1px solid var(--hairline);
+  border-radius: var(--r-md); padding: 24px;
+  transition: all .2s ease;
+}
+.value-card:hover { background: #fff; border-color: var(--hairline-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.value-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: linear-gradient(135deg, var(--navy-700), var(--navy-800));
+  display: grid; place-items: center; color: #fff;
+  margin-bottom: 14px;
+}
+.value-icon svg { width: 22px; height: 22px; }
+.value-card:nth-child(2) .value-icon { background: linear-gradient(135deg, var(--amber-500), var(--amber-600)); }
+.value-card:nth-child(3) .value-icon { background: linear-gradient(135deg, #1AC2A8, #0E8F7C); }
+.value-card:nth-child(4) .value-icon { background: linear-gradient(135deg, var(--ios-blue), #0066CC); }
+.value-card h3 { font-size: 17px; font-weight: 700; margin: 0 0 6px; letter-spacing: -.01em; }
+.value-card p { color: var(--ink-3); font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+/* Timeline */
+.timeline {
+  background: var(--bg);
+  padding: 56px 0;
+}
+.tl-list {
+  display: grid; gap: 16px; margin-top: 24px;
+}
+.tl-item {
+  background: #fff; border: 1px solid var(--hairline);
+  border-radius: var(--r-md); padding: 22px 22px 22px 80px;
+  position: relative;
+}
+.tl-year {
+  position: absolute; left: 18px; top: 18px;
+  font-size: 22px; font-weight: 800; letter-spacing: -.03em;
+  color: var(--amber-500); line-height: 1;
+  font-variant-numeric: tabular-nums;
+  width: 50px;
+}
+.tl-item h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+.tl-item p { color: var(--ink-3); font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+/* Service area */
+.area {
+  background: #fff;
+  padding: 56px 0;
+}
+.area-card {
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  color: #fff; border-radius: var(--r-xl); padding: 32px;
+  display: grid; gap: 24px; grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .area-card { grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; } }
+.area-card h3 { font-size: 24px; font-weight: 700; margin: 0 0 10px; letter-spacing: -.02em; }
+.area-card p { color: rgba(255,255,255,.78); margin: 0 0 16px; line-height: 1.55; }
+.county-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+}
+.county-list li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: rgba(255,255,255,.92);
+}
+.county-list svg { width: 14px; height: 14px; color: var(--amber-500); flex-shrink: 0; }
+
+/* CTA */
+.cta-band {
+  background:
+    radial-gradient(80% 60% at 100% 0%, rgba(255,122,26,.30), transparent 55%),
+    linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  color: #fff; padding: 56px 0;
+}
+.cta-band h2 { font-size: clamp(28px, 6vw, 40px); margin: 0 0 12px; letter-spacing: -.03em; line-height: 1.15; }
+.cta-band p { color: rgba(255,255,255,.78); margin: 0 0 22px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+</style>
+</head>
+
+<body data-active-tab="about">
+
+<!-- ============= APP BAR ============= -->
+<header class="appbar">
+  <div class="wrap appbar-row">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+    <a class="appbar-cta" href="index.html#pricing">
+      Get Plan
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="wrap page-hero-inner">
+    <div class="crumbs">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      <span>About</span>
+    </div>
+    <span class="page-eyebrow"><span class="badge-dot"></span> Family-Owned · Veteran-Led · NEPA Native</span>
+    <h1 class="display">38 years. One promise: <em style="background:linear-gradient(135deg,#ffd1a8,var(--amber-500));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;">we answer the phone.</em></h1>
+    <p class="lede">NEPA-PRO has been the team Northeast Pennsylvania families call when something needs handling — for nearly four decades. We're built different on purpose. Read why.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <p>NEPA-PRO started in 1987 in a Scranton garage with one truck, one phone line, and a stubborn belief: people in this part of Pennsylvania deserve a contractor who actually shows up. Almost four decades later, that belief is still the entire company strategy.</p>
+        <p>We've watched a lot of competitors come and go — the "we do everything" outfits that disappear at the first real emergency, the smooth-talking flippers chasing the latest service-of-the-month, the franchises with rotating crews who don't know your name. We've been here through six recessions, two pandemics, and at least 38 winters. We're still answering the phone.</p>
+        <p>What changed? The technology, the trucks, the tools, the size of the team. What didn't change: a Northeast Pennsylvania crew, doing Northeast Pennsylvania work, for Northeast Pennsylvania families. Our crew still lives off Route 6. Most of our techs grew up within twenty miles of where they work. When you call us at 2am because the basement is flooding, the person who shows up isn't a stranger from a call center — it's somebody whose kid goes to school with yours.</p>
+        <p>That's it. That's the whole story. We do good work, we treat people right, we pick up the phone, and we've been doing it since Reagan was president.</p>
+      </div>
+
+      <aside class="story-card reveal">
+        <p class="quote">"We're not the cheapest. We're not the biggest. We're just the ones still here, still answering, still doing the work the right way. That's worth something."</p>
+        <div class="quote-by">
+          <div class="avatar">NP</div>
+          <div>
+            <div class="name">The NEPA-PRO Team</div>
+            <div class="role">Family-Owned · Veteran-Led · Since 1987</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-tile reveal"><div class="num">38</div><div class="label">Years in NEPA</div></div>
+      <div class="stat-tile reveal"><div class="num">12k+</div><div class="label">Jobs completed</div></div>
+      <div class="stat-tile reveal"><div class="num">4.9★</div><div class="label">Avg customer rating</div></div>
+      <div class="stat-tile reveal"><div class="num">7</div><div class="label">Counties served</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">What We Stand For</span>
+      <h2 class="section-title display">Four rules. Non-negotiable.</h2>
+      <p class="section-sub">Every NEPA-PRO tech, every job, every day. If we ever break one of these, we make it right.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg></div>
+        <h3>We answer the phone</h3>
+        <p>A real person, every call, including weekends. Members get 24/7 priority. Voicemail is a fallback, not a strategy.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>We tell you the truth</h3>
+        <p>If a repair is the better call, we say so. If a replacement is overkill, we'll tell you. No upsells, no scare tactics, no surprise charges.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>We finish what we start</h3>
+        <p>Job's not done until it's done right. We come back for warranty work, we follow up after major projects, we close the loop. Every time.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>We respect your time</h3>
+        <p>We arrive in the window we promised. We text before we head out. We clean up before we leave. Your time is worth more than ours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">The Journey</span>
+      <h2 class="section-title display">A few of our chapters.</h2>
+    </div>
+    <div class="tl-list">
+      <div class="tl-item reveal">
+        <div class="tl-year">'87</div>
+        <h3>NEPA-PRO is founded in Scranton</h3>
+        <p>One truck, one phone, one promise. Started as a general contracting outfit serving Lackawanna County.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">'95</div>
+        <h3>Expanded into trades</h3>
+        <p>Added in-house electrical and plumbing crews — meaning you could finally get one number for your whole project.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">'08</div>
+        <h3>Survived the recession</h3>
+        <p>While many local outfits shuttered, we doubled down on existing customers. The relationships we kept then are still paying back today.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">'15</div>
+        <h3>Launched solar division</h3>
+        <p>NEPA's energy mix was changing. We built solar capacity in-house instead of subcontracting it — keeping quality control where it belongs.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">'20</div>
+        <h3>Storm-hardened equipment line</h3>
+        <p>After watching one bad winter destroy three sites, we partnered with SEMS Solar Equipment to bring American-made, NEPA-tested racking to the region.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">'26</div>
+        <h3>Subscription property care launches</h3>
+        <p>We turned 38 years of "call us for anything" into a single monthly plan. Same crew, same number, predictable bill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Where We Work</span>
+      <h2 class="section-title display">All of Northeast Pennsylvania.</h2>
+      <p class="section-sub">If you're in any of these counties, we're already nearby. If you're outside the zone, ask us — we still take Estate-tier customers anywhere in PA.</p>
+    </div>
+    <div class="area-card reveal">
+      <div>
+        <h3>Counties we serve</h3>
+        <p>From the Poconos to the Endless Mountains, our trucks have been on these roads for nearly four decades. We know which back roads close in winter, which neighborhoods have well water, and which townships make permitting a nightmare.</p>
+        <div class="cta-row" style="margin-top: 18px;">
+          <a class="btn-primary" href="contact.html">Check My Address
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <ul class="county-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Lackawanna County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Luzerne County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wayne County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pike County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Susquehanna County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wyoming County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Monroe County</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Carbon County</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="display">Ready to put your home on a plan?</h2>
+    <p>Pick a tier in two taps. We'll have a senior tech at your door within the week.</p>
+    <div class="cta-row">
+      <a href="index.html#pricing" class="btn-primary">See Plans
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+18666372776" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+        Call 866-NEPA-PRO
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        NEPA<span class="accent">-PRO</span>
+        <span class="brand-sub">Property Care · Since 1987</span>
+      </span>
+    </a>
+
+    <div class="foot-grid">
+      <div>
+        <h4>Plans</h4>
+        <a href="index.html#pricing">IT Services</a>
+        <a href="index.html#pricing">Essential</a>
+        <a href="index.html#pricing">Pro</a>
+        <a href="index.html#pricing">Premier</a>
+        <a href="index.html#pricing">Estate</a>
+        <a href="index.html#outdoor">Outdoor Care</a>
+        <a href="index.html#elder">Senior Services</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Maintenance</a>
+        <a href="index.html#services">Repairs</a>
+        <a href="index.html#services">Renovations</a>
+        <a href="index.html#services">Solar</a>
+        <a href="index.html#services">IT Services</a>
+        <a href="index.html#outdoor">Lawn Care</a>
+        <a href="index.html#outdoor">Snow Removal</a>
+        <a href="index.html#services">Fences</a>
+        <a href="index.html#services">Concrete</a>
+        <a href="index.html#services">Excavation</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="guides.html">Guides</a>
+        <a href="media.html">Media Kit</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+18666372776">866-NEPA-PRO</a>
+        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
+        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+<!-- ============= BOTTOM TAB BAR (iOS native) ============= -->
+<nav class="tabbar" role="tablist" aria-label="Primary">
+  <div class="tabbar-row">
+    <a class="tab" href="index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
+      Home
+    </a>
+    <a class="tab subscribe" href="index.html#pricing" aria-label="Plans">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+      Plans
+    </a>
+    <a class="tab" href="inspection.html" aria-label="Inspection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      Inspect
+    </a>
+    <a class="tab" href="renovate.html" aria-label="Estimate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      Estimate
+    </a>
+    <a class="tab" href="contact.html" aria-label="Contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<script>
+// Reveal-on-scroll
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
