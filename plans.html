@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
-<title>NEPA-PRO — Property Care on Subscription · Since 1987</title>
-<meta name="description" content="NEPA-PRO is your home's autopilot. Expert property maintenance across Northeast Pennsylvania on a simple monthly plan — maintenance, repairs, renovations, solar, electrical & plumbing." />
+<title>Plans &amp; Pricing · NEPA-PRO Property Care</title>
+<meta name="description" content="All NEPA-PRO subscription plans in one place — IT $49.99, Essential $99, Pro $199, Premier $349, Estate $699 plus Outdoor Care and Senior Services. Pick a plan, we do the rest." />
 <!-- Favicons & PWA -->
 <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -18,9 +18,9 @@
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="NEPA-PRO" />
-<meta property="og:title" content="NEPA-PRO · Your Home's Autopilot." />
-<meta property="og:description" content="Northeast Pennsylvania's all-in-one property service team. Maintenance, repairs, solar, electrical, plumbing, IT, lawn & snow — on a simple monthly plan." />
-<meta property="og:url" content="https://nepa-pro.com/" />
+<meta property="og:title" content="NEPA-PRO Plans · Property Care Subscriptions" />
+<meta property="og:description" content="All NEPA-PRO plans in one place — Property, Outdoor, and Senior Services. Subscribe online via Stripe." />
+<meta property="og:url" content="https://nepa-pro.com/plans.html" />
 <meta property="og:image" content="https://nepa-pro.com/og-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -28,14 +28,10 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="NEPA-PRO · Your Home's Autopilot." />
-<meta name="twitter:description" content="Northeast Pennsylvania's all-in-one property service team. Maintenance, repairs, solar, electrical, plumbing, IT, lawn & snow — on a simple monthly plan." />
+<meta name="twitter:title" content="NEPA-PRO Plans · Property Care Subscriptions" />
+<meta name="twitter:description" content="All NEPA-PRO plans in one place — Property, Outdoor, and Senior Services. Subscribe online via Stripe." />
 <meta name="twitter:image" content="https://nepa-pro.com/og-card.png" />
 <meta name="twitter:image:alt" content="NEPA-PRO — Your Home's Autopilot." />
-
-<!-- iOS Web App / PWA -->
-<meta name="mobile-web-app-capable" content="yes" />
-<!-- Fonts: pure iOS system stack (SF Pro) — no external fonts -->
 
 <style>
 /* ===========================================================
@@ -1100,9 +1096,122 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
 }
 
 </style>
+
+<style>
+/* === Plans page-specific styles === */
+.plans-hero {
+  background: linear-gradient(180deg, #0B1F3A 0%, #07172E 100%);
+  color: #fff;
+  padding: 32px 0 28px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.plans-hero .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  padding: 6px 14px; font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.85); margin-bottom: 16px;
+}
+.plans-hero .badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--amber-500); display: inline-block;
+}
+.plans-hero h1.display {
+  font-size: clamp(34px, 7vw, 56px); line-height: 1.05;
+  letter-spacing: -.025em; font-weight: 800;
+  color: #fff; margin: 0 0 14px;
+}
+.plans-hero h1.display em {
+  font-style: italic;
+  background: linear-gradient(135deg, #ffd1a8, var(--amber-500));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.plans-hero .lede {
+  font-size: clamp(15px, 2.4vw, 18px); line-height: 1.5;
+  color: rgba(255,255,255,.72); max-width: 640px; margin: 0 0 18px;
+}
+.plans-hero .hero-meta {
+  display: flex; flex-wrap: wrap; gap: 16px 22px;
+  margin-bottom: 22px;
+  font-size: 13.5px; color: rgba(255,255,255,.78);
+}
+.plans-hero .hero-meta .m {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.plans-hero .hero-meta svg { width: 16px; height: 16px; }
+.plan-jump {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.jump-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: #fff; text-decoration: none;
+  font-weight: 600; font-size: 13.5px;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.jump-pill svg { width: 16px; height: 16px; opacity: .9; }
+.jump-pill:hover {
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+
+/* Closing CTA */
+.closing-cta {
+  padding: 56px 0 80px;
+  background: var(--ink-1, #f7f9fc);
+}
+.closing-card {
+  max-width: 720px; margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(11,31,58,.08);
+  border-radius: 24px;
+  padding: 48px 36px;
+  box-shadow: 0 12px 32px -16px rgba(11,31,58,.20);
+}
+.closing-card h2 { font-size: clamp(28px, 4.5vw, 38px); margin: 0 0 12px; color: #0B1F3A; }
+.closing-card p  { font-size: 17px; color: rgba(11,31,58,.72); max-width: 520px; margin: 0 auto 24px; }
+.closing-row {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+}
+.closing-row .btn-primary, .closing-row .btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px; border-radius: 999px;
+  font-weight: 700; font-size: 15px; text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.closing-row .btn-primary {
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  color: #fff;
+  box-shadow: 0 8px 20px -6px rgba(255,122,26,.50);
+}
+.closing-row .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -8px rgba(255,122,26,.60); }
+.closing-row .btn-primary svg { width: 18px; height: 18px; }
+.closing-row .btn-secondary {
+  background: transparent; color: #0B1F3A;
+  border: 1px solid rgba(11,31,58,.20);
+}
+.closing-row .btn-secondary:hover { background: rgba(11,31,58,.04); border-color: rgba(11,31,58,.32); }
+
+/* Mobile tweaks for plans hero */
+@media (max-width: 720px) {
+  .plans-hero { padding: 24px 0 20px; }
+  .plans-hero h1.display { font-size: clamp(28px, 9vw, 42px); }
+  .plan-jump { gap: 8px; }
+  .jump-pill { padding: 9px 14px; font-size: 12.5px; }
+  .closing-cta { padding: 40px 0 56px; }
+  .closing-card { padding: 36px 22px; border-radius: 20px; margin: 0 16px; }
+}
+</style>
 </head>
 
-<body data-active-tab="home">
+<body data-active-tab="contact">
 
 <!-- ============= APP BAR ============= -->
 <header class="appbar">
@@ -1118,89 +1227,55 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
         <span class="brand-sub">Property Care · Since 1987</span>
       </span>
     </a>
-    <a class="appbar-cta" href="plans.html">
+    <a class="appbar-cta" href="#pricing">
       Get Plan
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
   </div>
 </header>
-
 <!-- ============= HERO ============= -->
-<section class="hero" id="hero">
-  <div class="wrap hero-inner">
-    <span class="eyebrow"><span class="badge-dot"></span> Property care, on subscription</span>
+<section class="page-hero plans-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="badge-dot"></span> Plans &amp; Pricing</span>
     <h1 class="display">
-      Your Home's <em>Autopilot.</em><br/>
-      Every month. By NEPA-PRO.
+      Property care plans. <em>All on one bill.</em>
     </h1>
     <p class="lede">
-      Northeast Pennsylvania's all-in-one property service team — maintenance,
-      repairs, solar, electrical, plumbing, IT, lawn &amp; snow — on a simple monthly plan.
+      Property care, outdoor service, and senior household help — all on one predictable
+      monthly bill. Cancel anytime. No setup fees. Real people answer the phone.
     </p>
-
     <div class="hero-meta">
+      <span class="m">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        Cancel anytime
+      </span>
+      <span class="m">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        24/7 priority on Pro+
+      </span>
       <span class="m">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
         Licensed &amp; insured
       </span>
-      <span class="m">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        24/7 priority response (Pro+)
-      </span>
-      <span class="m">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-        No contracts · Cancel anytime
-      </span>
     </div>
 
-    <a href="plans.html" class="hero-price-card" aria-label="See plans starting at $49.99 a month">
-      <div>
-        <div class="label">Plans starting at</div>
-        <div class="price">$49.99<small>/ month</small></div>
-      </div>
-      <span class="price-cta">
-        See Plans
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </span>
-    </a>
-  </div>
-</section>
-
-<!-- ============= HONOR DISCOUNT (Veterans · First Responders · Law Enforcement) ============= -->
-<section id="honor">
-  <div class="wrap">
-    <div class="honor-card reveal">
-      <div class="honor-medal" aria-hidden="true">
-        <!-- Shield with star — universal honor/service emblem -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>
-          <path d="M12 7.5l1.5 3.2 3.5.5-2.5 2.4.6 3.4L12 15.5l-3.1 1.5.6-3.4L7 11.2l3.5-.5L12 7.5z" fill="currentColor"/>
-        </svg>
-      </div>
-
-      <div class="honor-body">
-        <span class="honor-eyebrow">Honor Discount · 10% Off</span>
-        <h3>Thank you for your service. 10% off, on us.</h3>
-        <p>Active duty, veterans, first responders, and law enforcement get 10% off any residential subscription plan we offer — across the board, no hoops, just bring proof of service.</p>
-        <div class="who">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> U.S. Military · Active &amp; Veterans</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Firefighters &amp; EMS</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Police &amp; Law Enforcement</span>
-        </div>
-      </div>
-
-      <div class="honor-cta-wrap">
-        <a class="honor-cta" href="qualify.html?code=honor">
-          Apply Now
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <span class="honor-disclaimer">Residential plans only · Cannot be combined with the Senior Discount</span>
-      </div>
+    <div class="plan-jump">
+      <a href="#pricing" class="jump-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Property Plans
+      </a>
+      <a href="#outdoor" class="jump-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18V8c0-2 2-4 4-4M9 18V6M13 18v-7M17 18v-3"/></svg>
+        Outdoor Care
+      </a>
+      <a href="#senior" class="jump-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        Senior Services
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============= PRICING (the main event) ============= -->
 <section id="pricing">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1318,7 +1393,6 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   </div>
 </section>
 
-<!-- ============= OUTDOOR CARE (LAWN + SNOW ADD-ONS) ============= -->
 <section id="outdoor">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1431,8 +1505,7 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   </div>
 </section>
 
-<!-- ============= SENIOR SERVICES · DISCOUNTED PROPERTY HELP ============= -->
-<section id="elder">
+<section id="senior">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="section-eyebrow">Senior Services · Discounted Property Help for Homeowners 65+</span>
@@ -1576,369 +1649,33 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   </div>
 </section>
 
-<!-- ============= SERVICES ============= -->
-<section id="services">
+<!-- ============= CLOSING CTA ============= -->
+<section class="closing-cta">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Full-Service Capabilities</span>
-      <h2 class="section-title display">One number for every job.</h2>
-      <p class="section-sub">From your monthly plan to one-off project work — same crew, same number. Subscriptions cover routine care; bigger jobs like fences, concrete, and excavation get a free written quote.</p>
-    </div>
-
-    <div class="svc-grid">
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg></div>
-        <div class="svc-title">Maintenance</div>
-        <p class="svc-sub">Filters, gutters, decks, doors, locks &amp; routine wear.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-7 7a2 2 0 1 0 2.83 2.83l7-7a4 4 0 0 0 5.4-5.4l-2.83 2.83-2.83-2.83 2.83-2.83z"/></svg></div>
-        <div class="svc-title">Repairs</div>
-        <p class="svc-sub">Drywall, trim, flooring, doors, windows &amp; fixtures.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
-        <div class="svc-title">Renovations</div>
-        <p class="svc-sub">Kitchens, baths, basements &amp; whole-home remodels.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg></div>
-        <div class="svc-title">Solar</div>
-        <p class="svc-sub">Panel cleaning, monitoring, repairs &amp; new installs.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 13h7l-1 7 9-13h-7l1-7z"/></svg></div>
-        <div class="svc-title">Electrical</div>
-        <p class="svc-sub">Panels, EV chargers, lighting &amp; rough-in work.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <div class="svc-title">Plumbing</div>
-        <p class="svc-sub">Leaks, fixtures, water heaters &amp; new lines.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M7 9h2M7 13h6"/></svg></div>
-        <div class="svc-title">IT Services</div>
-        <p class="svc-sub">Wi-Fi, smart home, cameras &amp; remote support.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18V8c0-2 2-4 4-4M9 18V6M13 18v-7M17 18v-3"/><path d="M7 10c1-1 2-2 4-2"/></svg></div>
-        <div class="svc-title">Lawn Care</div>
-        <p class="svc-sub">Weekly mow, trim, edge &amp; seasonal cleanups.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07L19.07 4.93"/></svg></div>
-        <div class="svc-title">Snow Removal</div>
-        <p class="svc-sub">Plow, shovel, salt &amp; storm-day priority.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V8M9 20V8M13 20V8M17 20V8M3 8h18M3 12h18M3 16h18"/></svg></div>
-        <div class="svc-title">Fences</div>
-        <p class="svc-sub">Wood, vinyl &amp; chain link · Quoted by project.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 17h18M3 7h18M7 7v10M12 7v10M17 7v10"/></svg></div>
-        <div class="svc-title">Concrete</div>
-        <p class="svc-sub">Driveways, walks, patios &amp; pads · Quoted by project.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11l5-3 4 2 5-3v14M9 16h.01M14 14h.01"/></svg></div>
-        <div class="svc-title">Excavation</div>
-        <p class="svc-sub">Grading, drainage, footings &amp; site work · Quoted by project.</p>
+    <div class="closing-card reveal">
+      <h2 class="display">Not sure which plan fits?</h2>
+      <p>Tell us about the property — we'll recommend the right one in plain language. No sales pitch.</p>
+      <div class="closing-row">
+        <a class="btn-primary" href="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Talk to a real person
+        </a>
+        <a class="btn-secondary" href="qualify.html">
+          See if you qualify for 10% off
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============= RENOVATION ESTIMATOR CTA ============= -->
-<section id="renovate-cta" style="padding: 24px 0 0;">
-  <div class="wrap">
-    <a href="renovate.html" class="reno-cta reveal" style="
-      display: block;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
-      color: #fff;
-      border-radius: var(--r-lg);
-      padding: 28px 24px;
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
-    ">
-      <div style="position: absolute; right: -60px; top: -60px; width: 240px; height: 240px;
-        background: radial-gradient(circle, rgba(255,122,26,.22) 0%, transparent 70%);
-        filter: blur(20px); pointer-events: none;"></div>
-      <div style="position: relative; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
-        <div style="
-          flex-shrink: 0;
-          width: 56px; height: 56px;
-          border-radius: 14px;
-          background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
-          display: grid; place-items: center;
-          box-shadow: 0 8px 18px -8px rgba(255,122,26,.55);
-        ">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-        </div>
-        <div style="flex: 1; min-width: 220px;">
-          <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-500); margin-bottom: 6px;">
-            Free Tool · No Sign-Up
-          </div>
-          <h3 style="font-size: 22px; margin: 0 0 4px; font-weight: 800; color: #fff; line-height: 1.15;">
-            Plan your renovation in 2 minutes.
-          </h3>
-          <p style="font-size: 14px; color: rgba(255,255,255,.75); margin: 0; line-height: 1.5;">
-            23 categories · Real NEPA pricing · Branded PDF estimate · Save and share.
-          </p>
-        </div>
-        <div style="flex-shrink: 0;
-          display: inline-flex; align-items: center; gap: 6px;
-          padding: 12px 20px;
-          background: var(--amber-500); color: #fff;
-          border-radius: var(--r-pill);
-          font-size: 14px; font-weight: 700;
-          white-space: nowrap;
-        ">
-          Open Estimator
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ============= HOME INSPECTION CTA ============= -->
-<section id="inspect-cta" style="padding: 14px 0 0;">
-  <div class="wrap">
-    <a href="inspection.html" class="insp-cta reveal" style="
-      display: block;
-      text-decoration: none;
-      background: linear-gradient(135deg, #0B1F3A, #1A4480);
-      color: #fff;
-      border-radius: var(--r-lg);
-      padding: 28px 24px;
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
-    ">
-      <div style="position: absolute; left: -60px; bottom: -60px; width: 240px; height: 240px;
-        background: radial-gradient(circle, rgba(52,199,89,.20) 0%, transparent 70%);
-        filter: blur(20px); pointer-events: none;"></div>
-      <div style="position: relative; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
-        <div style="
-          flex-shrink: 0;
-          width: 56px; height: 56px;
-          border-radius: 14px;
-          background: linear-gradient(135deg, #34C759, #28a745);
-          display: grid; place-items: center;
-          box-shadow: 0 8px 18px -8px rgba(52,199,89,.55);
-        ">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
-        </div>
-        <div style="flex: 1; min-width: 220px;">
-          <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #34C759; margin-bottom: 6px;">
-            371-Point Inspection · ASHI Aligned
-          </div>
-          <h3 style="font-size: 22px; margin: 0 0 4px; font-weight: 800; color: #fff; line-height: 1.15;">
-            Inspect any property, end to end.
-          </h3>
-          <p style="font-size: 14px; color: rgba(255,255,255,.75); margin: 0; line-height: 1.5;">
-            21 sections · Health score · Photos &amp; notes · Branded PDF report · Industry-standard ratings.
-          </p>
-        </div>
-        <div style="flex-shrink: 0;
-          display: inline-flex; align-items: center; gap: 6px;
-          padding: 12px 20px;
-          background: #34C759; color: #fff;
-          border-radius: var(--r-pill);
-          font-size: 14px; font-weight: 700;
-          white-space: nowrap;
-        ">
-          Open Inspection Tool
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ============= HOW IT WORKS ============= -->
-<section id="how">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">How It Works</span>
-      <h2 class="section-title display">Three taps to a managed home.</h2>
-    </div>
-
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <div class="step-title">Pick your plan</div>
-        <p class="step-text">Choose Essential, Pro, Premier, or Estate. Stripe handles checkout — no contracts, no setup fees.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">02</div>
-        <div class="step-title">We schedule a walkthrough</div>
-        <p class="step-text">A senior tech tours your property within 7 days, builds your service plan, and starts your log.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">03</div>
-        <div class="step-title">Relax. We're on it.</div>
-        <p class="step-text">Visits, repairs, and emergencies get dispatched automatically. Track every job in your dashboard.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============= PROOF ============= -->
-<section id="proof">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Trusted Across NEPA</span>
-      <h2 class="section-title display">Built on 38 years of doing the work.</h2>
-    </div>
-
-    <div class="quote reveal">
-      <p class="quote-text">NEPA-PRO completely transformed how I run my rental properties. I stopped chasing contractors. Now it just… happens.</p>
-      <div class="quote-by">
-        <div class="quote-avatar">M</div>
-        <div>
-          <div class="quote-name">Maria L.</div>
-          <div class="quote-role">Property owner · Clarks Summit, PA</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="stats">
-      <div class="stat reveal"><div class="stat-num">38</div><div class="stat-label">Years in NEPA</div></div>
-      <div class="stat reveal"><div class="stat-num">12k+</div><div class="stat-label">Jobs completed</div></div>
-      <div class="stat reveal"><div class="stat-num">4.9★</div><div class="stat-label">Avg rating</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============= FAQ ============= -->
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Questions</span>
-      <h2 class="section-title display">Everything you'd want to ask.</h2>
-    </div>
-
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">Is there a contract or cancellation fee?</summary>
-        <div class="faq-a">No contracts and no cancellation fees. You can pause, upgrade, downgrade, or cancel any time from your member dashboard.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">What areas do you serve?</summary>
-        <div class="faq-a">All of Northeast Pennsylvania — Lackawanna, Luzerne, Wayne, Pike, Susquehanna, Wyoming, and Monroe counties. If you're outside our zone, we can usually still help on the Estate plan with a small travel surcharge.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">What if my repair takes longer than my monthly hours?</summary>
-        <div class="faq-a">Anything beyond your included hours is billed at your member discount (10–25% off our standard rates depending on plan). You'll always get a written estimate before we start.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are emergencies really 24/7?</summary>
-        <div class="faq-a">Yes — Premier and Estate members reach a real on-call tech 24/7. Pro members get a guaranteed 24-hour response window. We prioritize active leaks, no-heat, no-power, and lock-outs ahead of all non-member work.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">How do payments work?</summary>
-        <div class="faq-a">All subscriptions are billed securely via Stripe. We accept Apple Pay, Google Pay, and every major card. You'll receive an itemized invoice each month and can manage your card from the dashboard.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Do you handle short-term rentals (Airbnb / VRBO)?</summary>
-        <div class="faq-a">Yes — STRs are one of our specialties. Premier and Estate plans include guest-turn coordination and emergency response designed for hosts.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============= CTA ============= -->
-<section id="cta">
-  <div class="wrap">
-    <h2>Ready to stop managing contractors?</h2>
-    <p>Pick a plan in two taps. We'll have a senior tech at your door within the week.</p>
-    <div class="cta-row">
-      <a href="plans.html" class="btn-primary">Choose a Plan
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-      <a href="tel:+18666372776" class="btn-ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19.79 19.79 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75c.13.71.34 1.4.62 2.06a1 1 0 0 1-.23 1L7 8.46a16 16 0 0 0 8.54 8.54l1.65-1.48a1 1 0 0 1 1-.23c.66.28 1.35.49 2.06.62a1 1 0 0 1 .75 1z"/></svg>
-        Call 866-NEPA-PRO
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============= FOOTER ============= -->
-<footer>
-  <div class="wrap">
-    <a href="index.html" class="brand" aria-label="NEPA-PRO home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="brand-name">
-        NEPA<span class="accent">-PRO</span>
-        <span class="brand-sub">Property Care · Since 1987</span>
-      </span>
-    </a>
-
-    <div class="foot-grid">
-      <div>
-        <h4>Plans</h4>
-        <a href="plans.html">IT Services</a>
-        <a href="plans.html">Essential</a>
-        <a href="plans.html">Pro</a>
-        <a href="plans.html">Premier</a>
-        <a href="plans.html">Estate</a>
-        <a href="#outdoor">Outdoor Care</a>
-        <a href="#elder">Senior Services</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="#services">Maintenance</a>
-        <a href="#services">Repairs</a>
-        <a href="#services">Renovations</a>
-        <a href="#services">Solar</a>
-        <a href="#services">IT Services</a>
-        <a href="#outdoor">Lawn Care</a>
-        <a href="#outdoor">Snow Removal</a>
-        <a href="#services">Fences</a>
-        <a href="#services">Concrete</a>
-        <a href="#services">Excavation</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="guides.html">Guides</a>
-        <a href="media.html">Media Kit</a>
-      </div>
-      <div>
-        <h4>Connect</h4>
-        <a href="tel:+18666372776">866-NEPA-PRO</a>
-        <a href="mailto:service@nepa-pro.com">service@nepa-pro.com</a>
-        <a href="https://www.google.com/maps/place/Scranton,+PA" target="_blank" rel="noopener">Scranton, PA</a>
-      </div>
-    </div>
-
-    <div class="foot-bottom">
-      <span>© 2026 NEPA-PRO · EIN 39-2873591 · Licensed &amp; Insured</span>
-      <span>Payments secured by Stripe</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ============= BOTTOM TAB BAR (iOS native) ============= -->
 <nav class="tabbar" role="tablist" aria-label="Primary">
   <div class="tabbar-row">
-    <a class="tab active" href="index.html" aria-label="Home">
+    <a class="tab" href="index.html" aria-label="Home">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
       Home
     </a>
-    <a class="tab subscribe" href="plans.html" aria-label="Plans">
+    <a class="tab subscribe active" href="plans.html" aria-label="Plans">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
       Plans
     </a>
@@ -1956,19 +1693,31 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
     </a>
   </div>
 </nav>
-
-<!-- ============= INSTALL BANNER (iOS / PWA) ============= -->
-<div id="install" class="install-banner" role="dialog" aria-label="Install NEPA-PRO">
-  <div class="ic">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></svg>
-  </div>
-  <div class="body">
-    <div class="t1">Install NEPA-PRO</div>
-    <div class="t2" id="install-hint">Add to your Home Screen for quicker access.</div>
-  </div>
-  <button class="act" id="install-btn">Install</button>
-  <button class="x" id="install-x" aria-label="Dismiss">×</button>
-</div>
+<script>
+// Reveal-on-scroll — robust version with fail-safe
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  
+  // Reveal anything already in viewport on load
+  function isInView(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0;
+  }
+  els.forEach(function(el) { if (isInView(el)) el.classList.add('in'); });
+  
+  // Observer for the rest
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+  els.forEach(function(el) { if (!el.classList.contains('in')) io.observe(el); });
+  
+  // Safety net: reveal everything after 1 second no matter what
+  setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el) { el.classList.add('in'); });
+  }, 1000);
+})();
+</script>
 
 <script>
 /* =================================================================
@@ -2049,6 +1798,7 @@ document.querySelectorAll('.plan-cta, .od-cta, .el-cta, .bundle-cta').forEach(bt
   const btn = document.getElementById('install-btn');
   const x = document.getElementById('install-x');
   const hint = document.getElementById('install-hint');
+  if (!banner || !btn) return;  // install banner not present on this page
   let deferred = null;
 
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -2088,6 +1838,5 @@ document.querySelectorAll('.plan-cta, .od-cta, .el-cta, .bundle-cta').forEach(bt
 
 
 </script>
-
 </body>
 </html>
