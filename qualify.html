@@ -129,6 +129,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   background: var(--ios-blue); color: #fff; font-weight: 600; font-size: 14px;
   box-shadow: 0 4px 12px -4px rgba(10,132,255,.55);
   transition: transform .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .appbar-cta:active { transform: scale(.97); }
 
@@ -187,6 +189,8 @@ section { padding: 44px 0; }
   background: var(--amber-500); color: #fff; font-weight: 700;
   box-shadow: 0 12px 28px -10px rgba(255,122,26,.7);
   transition: background .2s ease, transform .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .btn-primary:hover { background: var(--amber-600); }
 .btn-primary:active { transform: scale(.98); }
@@ -231,7 +235,19 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
   padding: 6px 4px; border-radius: 12px; color: var(--ink-3); font-size: 10px; font-weight: 600;
   transition: color .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
+  cursor: pointer;
+  -webkit-user-select: none; user-select: none;
 }
+/* Tap feedback: instant visual response on pointerdown */
+.tab.is-pressing {
+  background: rgba(11, 31, 58, 0.06);
+  transform: scale(0.96);
+  transition: transform .08s ease, background .08s ease;
+}
+.tab.active.is-pressing { background: rgba(0, 122, 255, 0.10); }
+.tab.subscribe.is-pressing { background: rgba(255, 122, 26, 0.10); }
 .tab svg { width: 26px; height: 26px; }
 .tab.active { color: var(--ios-blue); }
 .tab.active.subscribe { color: var(--amber-500); }
@@ -1229,5 +1245,88 @@ body[data-mode="honor"] .qualify-wrap::before {
 })();
 </script>
 
+<script>
+/* ============================================================
+   INSTANT TAB TAPS — bypass iOS Safari's tap-delay heuristics
+   ============================================================ */
+(function() {
+  'use strict';
+  if (!('PointerEvent' in window)) return;
+  
+  // For each tab in the bottom tabbar, navigate on pointerup (after pointerdown
+  // on same element). This fires before iOS finishes its 300ms double-tap
+  // detection, eliminating the perceived "double tap required" behavior.
+  const tabs = document.querySelectorAll('.tabbar .tab');
+  tabs.forEach(function(tab) {
+    let downEl = null;
+    let downTime = 0;
+    
+    tab.addEventListener('pointerdown', function(e) {
+      // Only respond to primary touches/clicks
+      if (!e.isPrimary) return;
+      downEl = tab;
+      downTime = Date.now();
+      // Give immediate visual feedback
+      tab.classList.add('is-pressing');
+    }, {passive: true});
+    
+    tab.addEventListener('pointerup', function(e) {
+      if (!e.isPrimary) return;
+      tab.classList.remove('is-pressing');
+      // Was this the same element that received pointerdown?
+      // And was it within reasonable time (not a long press / drag)?
+      if (downEl === tab && (Date.now() - downTime) < 800) {
+        const href = tab.getAttribute('href');
+        if (href && href !== '#') {
+          // For in-page anchors (#pricing etc), let default behavior handle it
+          if (href.startsWith('#')) {
+            // Default click will handle it; do nothing
+            return;
+          }
+          // Navigate immediately — beats iOS click delay
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = href;
+        }
+      }
+      downEl = null;
+    });
+    
+    tab.addEventListener('pointercancel', function() {
+      tab.classList.remove('is-pressing');
+      downEl = null;
+    }, {passive: true});
+    
+    // Don't allow contextmenu / long-press to interfere
+    tab.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  });
+  
+  // Same fix for appbar Get Plan CTA
+  const cta = document.querySelector('.appbar-cta');
+  if (cta) {
+    let downCta = false;
+    let downTimeCta = 0;
+    cta.addEventListener('pointerdown', function(e) {
+      if (!e.isPrimary) return;
+      downCta = true;
+      downTimeCta = Date.now();
+    }, {passive: true});
+    cta.addEventListener('pointerup', function(e) {
+      if (!e.isPrimary) return;
+      if (downCta && (Date.now() - downTimeCta) < 800) {
+        const href = cta.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('#')) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = href;
+        }
+      }
+      downCta = false;
+    });
+  }
+})();
+</script>
 </body>
 </html>

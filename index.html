@@ -156,6 +156,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   background: var(--ios-blue); color: #fff; font-weight: 600; font-size: 14px;
   box-shadow: 0 4px 12px -4px rgba(10,132,255,.55);
   transition: transform .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .appbar-cta:active { transform: scale(.97); }
 
@@ -298,6 +300,8 @@ section { padding: 44px 0; }
 .plan.featured .plan-cta {
   background: var(--amber-500); color: #fff;
   box-shadow: 0 10px 24px -10px rgba(255,122,26,.6);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .plan.featured .plan-cta:hover { background: var(--amber-600); }
 
@@ -520,6 +524,8 @@ section { padding: 44px 0; }
 .outdoor-card.bundle .od-cta {
   background: #6FE3B5; color: #052D22;
   box-shadow: 0 10px 24px -10px rgba(111,227,181,.55);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .outdoor-card.bundle .od-cta:hover { background: #58D2A2; }
 .outdoor-card.bundle .od-foot { color: rgba(255,255,255,.55); }
@@ -665,6 +671,8 @@ section { padding: 44px 0; }
 .elder-card.featured .el-cta {
   background: #E8A88A; color: #3F2820;
   box-shadow: 0 10px 24px -10px rgba(232, 168, 138, .55);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .elder-card.featured .el-cta:hover { background: #DC9577; }
 .elder-card.featured .el-foot { color: rgba(255,255,255,.55); }
@@ -760,6 +768,8 @@ section { padding: 44px 0; }
   box-shadow: 0 10px 24px -10px rgba(58, 42, 34, .55);
   transition: background .2s ease, transform .15s ease;
   white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .elder-bundle .bundle-cta:hover { background: #1F1612; }
 .elder-bundle .bundle-cta:active { transform: scale(.98); }
@@ -928,6 +938,8 @@ section { padding: 44px 0; }
   background: var(--amber-500); color: #fff; font-weight: 700;
   box-shadow: 0 12px 28px -10px rgba(255,122,26,.7);
   transition: background .2s ease, transform .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
 }
 .btn-primary:hover { background: var(--amber-600); }
 .btn-primary:active { transform: scale(.98); }
@@ -975,7 +987,19 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
   padding: 6px 4px; border-radius: 12px; color: var(--ink-3); font-size: 10px; font-weight: 600;
   transition: color .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,122,26,0.15);
+  cursor: pointer;
+  -webkit-user-select: none; user-select: none;
 }
+/* Tap feedback: instant visual response on pointerdown */
+.tab.is-pressing {
+  background: rgba(11, 31, 58, 0.06);
+  transform: scale(0.96);
+  transition: transform .08s ease, background .08s ease;
+}
+.tab.active.is-pressing { background: rgba(0, 122, 255, 0.10); }
+.tab.subscribe.is-pressing { background: rgba(255, 122, 26, 0.10); }
 .tab svg { width: 26px; height: 26px; }
 .tab.active { color: var(--ios-blue); }
 .tab.active.subscribe { color: var(--amber-500); }
@@ -1099,6 +1123,51 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
   .plan-price { font-size: 44px; }
 }
 
+
+/* === Labor-only disclaimer === */
+.labor-banner {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-left: 4px solid var(--amber-500);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 0 auto 28px;
+  max-width: 880px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #7C2D12;
+}
+.labor-banner svg {
+  flex-shrink: 0; width: 20px; height: 20px;
+  color: var(--amber-600); margin-top: 1px;
+}
+.labor-banner strong { color: #431407; font-weight: 700; }
+.labor-note {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px;
+  background: rgba(255, 122, 26, 0.10);
+  border: 1px solid rgba(255, 122, 26, 0.25);
+  color: #9A3412;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin: 12px 0 6px;
+  align-self: flex-start;
+  width: fit-content;
+}
+.labor-note svg { width: 12px; height: 12px; }
+.plan.featured .labor-note {
+  background: rgba(255, 209, 168, 0.14);
+  border-color: rgba(255, 209, 168, 0.30);
+  color: #FFD1A8;
+}
+@media (max-width: 720px) {
+  .labor-banner { margin: 0 16px 24px; padding: 12px 14px; font-size: 13px; }
+  .labor-note { font-size: 10.5px; padding: 4px 9px; }
+}
+
 </style>
 </head>
 
@@ -1209,6 +1278,15 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
       <p class="section-sub">One predictable monthly price. No service-call surprises. Pause, upgrade, or cancel anytime from your dashboard.</p>
     </div>
 
+    
+    <div class="labor-banner reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </svg>
+      <span><strong>Labor only:</strong> All NEPA-PRO subscriptions cover skilled labor only. Materials, parts, and equipment are not included and are billed separately at member rates.</span>
+    </div>
+
     <div class="plans" id="plans">
       <!-- IT SERVICES -->
       <article class="plan tech reveal" data-plan="it">
@@ -1226,6 +1304,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="plan-foot">No setup fee · Add to any plan</div>
       </article>
 
@@ -1245,6 +1330,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="plan-foot">No setup fee · Cancel anytime</div>
       </article>
 
@@ -1266,6 +1358,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="plan-foot">No setup fee · Cancel anytime</div>
       </article>
 
@@ -1286,6 +1385,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="plan-foot">For homes 3,000+ sqft &amp; STRs</div>
       </article>
 
@@ -1306,6 +1412,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="plan-foot">Heavy commercial — see Outdoor Care commercial tier</div>
       </article>
     </div>
@@ -1338,6 +1451,15 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
       </div>
     </div>
 
+    
+    <div class="labor-banner reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </svg>
+      <span><strong>Labor only:</strong> All NEPA-PRO subscriptions cover skilled labor only. Materials, parts, and equipment are not included and are billed separately at member rates.</span>
+    </div>
+
     <div class="outdoor-grid">
       <!-- LAWN CARE -->
       <article class="outdoor-card reveal" data-svc="lawn">
@@ -1362,6 +1484,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="od-foot">Up to 1/2 acre · Larger lots quoted</div>
       </article>
 
@@ -1390,6 +1519,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="od-foot">Cancel anytime · No seasonal contract</div>
       </article>
 
@@ -1416,6 +1552,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="od-foot">Standard driveway · Long lanes quoted</div>
       </article>
     </div>
@@ -1451,6 +1594,15 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
       </div>
     </div>
 
+    
+    <div class="labor-banner reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </svg>
+      <span><strong>Labor only:</strong> All NEPA-PRO subscriptions cover skilled labor only. Materials, parts, and equipment are not included and are billed separately at member rates.</span>
+    </div>
+
     <div class="elder-grid">
       <!-- SENIOR DISCOUNT (lead offer) -->
       <article class="elder-card featured reveal" data-svc="discount">
@@ -1474,6 +1626,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Apply for the Discount
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="el-foot">Verify once · Cannot be combined with Honor Discount</div>
       </article>
 
@@ -1497,6 +1656,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="el-foot">Property check only · Not a wellness service</div>
       </article>
 
@@ -1520,6 +1686,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="el-foot">Pure handyman work · Property only</div>
       </article>
 
@@ -1543,6 +1716,13 @@ footer .brand-sub { color: rgba(255,255,255,.6); }
           Subscribe
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+                <div class="labor-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Labor only · No materials or equipment
+        </div>
+
         <div class="el-foot">No setup fee · Cancel anytime</div>
       </article>
     </div>
@@ -2089,5 +2269,88 @@ document.querySelectorAll('.plan-cta, .od-cta, .el-cta, .bundle-cta').forEach(bt
 
 </script>
 
+<script>
+/* ============================================================
+   INSTANT TAB TAPS — bypass iOS Safari's tap-delay heuristics
+   ============================================================ */
+(function() {
+  'use strict';
+  if (!('PointerEvent' in window)) return;
+  
+  // For each tab in the bottom tabbar, navigate on pointerup (after pointerdown
+  // on same element). This fires before iOS finishes its 300ms double-tap
+  // detection, eliminating the perceived "double tap required" behavior.
+  const tabs = document.querySelectorAll('.tabbar .tab');
+  tabs.forEach(function(tab) {
+    let downEl = null;
+    let downTime = 0;
+    
+    tab.addEventListener('pointerdown', function(e) {
+      // Only respond to primary touches/clicks
+      if (!e.isPrimary) return;
+      downEl = tab;
+      downTime = Date.now();
+      // Give immediate visual feedback
+      tab.classList.add('is-pressing');
+    }, {passive: true});
+    
+    tab.addEventListener('pointerup', function(e) {
+      if (!e.isPrimary) return;
+      tab.classList.remove('is-pressing');
+      // Was this the same element that received pointerdown?
+      // And was it within reasonable time (not a long press / drag)?
+      if (downEl === tab && (Date.now() - downTime) < 800) {
+        const href = tab.getAttribute('href');
+        if (href && href !== '#') {
+          // For in-page anchors (#pricing etc), let default behavior handle it
+          if (href.startsWith('#')) {
+            // Default click will handle it; do nothing
+            return;
+          }
+          // Navigate immediately — beats iOS click delay
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = href;
+        }
+      }
+      downEl = null;
+    });
+    
+    tab.addEventListener('pointercancel', function() {
+      tab.classList.remove('is-pressing');
+      downEl = null;
+    }, {passive: true});
+    
+    // Don't allow contextmenu / long-press to interfere
+    tab.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  });
+  
+  // Same fix for appbar Get Plan CTA
+  const cta = document.querySelector('.appbar-cta');
+  if (cta) {
+    let downCta = false;
+    let downTimeCta = 0;
+    cta.addEventListener('pointerdown', function(e) {
+      if (!e.isPrimary) return;
+      downCta = true;
+      downTimeCta = Date.now();
+    }, {passive: true});
+    cta.addEventListener('pointerup', function(e) {
+      if (!e.isPrimary) return;
+      if (downCta && (Date.now() - downTimeCta) < 800) {
+        const href = cta.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('#')) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = href;
+        }
+      }
+      downCta = false;
+    });
+  }
+})();
+</script>
 </body>
 </html>
