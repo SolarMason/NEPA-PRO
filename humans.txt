@@ -1,0 +1,24 @@
+/* TEAM */
+NEPA-PRO Property Care
+Veteran-Owned · Licensed & Insured · Since 1987
+Location: Clarks Summit, Pennsylvania, USA
+
+/* SITE */
+Last updated: 2026-05-08
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, ES6+, JSON-LD, Open Graph, Twitter Cards
+Components: Web Components, Service Worker, PWA
+Software: GitHub Pages, Stripe Payments, Cloudflare
+
+/* THANKS */
+NEPA homeowners across 8 counties — thank you for trusting us with your property.
+
+/* CONTACT */
+service@nepa-pro.com
++1-866-637-2776 (866-NEPA-PRO)
+https://nepa-pro.com
+
+# Service area: Lackawanna, Luzerne, Wyoming, Susquehanna,
+#               Wayne, Pike, Monroe, Bradford counties, PA
